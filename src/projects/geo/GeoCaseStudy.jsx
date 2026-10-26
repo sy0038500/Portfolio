@@ -52,7 +52,7 @@ function GeoCaseStudy() {
 
         <div className="geo-case__visual">
           <img
-            src="/assets/geo/pf_pro1_detail1.png"
+            src="assets/geo/pf_pro1_detail1.png"
             alt="국토정보플렛폼 리디자인 데스크톱 화면 목업"
             className="geo-case__visual-image"
           />

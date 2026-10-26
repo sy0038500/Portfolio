@@ -1,6 +1,6 @@
 import "./GeoDesignSystem.css";
 
-const iconPath = "/assets/geo/icons/";
+const iconPath = "assets/geo/icons/";
 
 const typography = [
   ["Card Title", "32pt", "Extra Bold"],
@@ -152,7 +152,7 @@ function GeoDesignSystem() {
 
             <div className="geo-ds__logo-image">
               <img
-                src="/assets/geo/logo-icon.png"
+                src="assets/geo/logo-icon.png"
                 alt="국토정보플랫폼 메인 로고"
                 loading="lazy"
               />
@@ -307,7 +307,7 @@ function GeoDesignSystem() {
                   className={`geo-ds__map-card geo-ds__map-card--${state}`}
                 >
                   <img
-                    src="/assets/geo/map-card-image.jpeg"
+                    src="assets/geo/map-card-image.jpeg"
                     alt="국토정보플랫폼 지도 서비스 미리보기"
                     loading="lazy"
                   />

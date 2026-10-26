@@ -47,7 +47,7 @@ function GeoResult() {
           <div className="geo-result__metric-content">
             <div className="geo-result__score-image">
               <img
-                src="/assets/geo/pf_pro1_result.png"
+                src="assets/geo/pf_pro1_result.png"
                 alt="Lighthouse 측정 결과: 접근성 96점, Best Practices 81점, SEO 100점"
                 loading="lazy"
                 decoding="async"

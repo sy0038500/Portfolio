@@ -61,7 +61,7 @@ export default function P_Ending() {
 
         <div className="p-ending__phone">
           <img
-            src="/assets/index/pf_index2.webp"
+            src="assets/index/pf_index2.webp"
             alt="RETRO CELL CLUB 모바일 목업"
             loading="lazy"
           />

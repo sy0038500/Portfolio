@@ -129,14 +129,14 @@ export default function P_Hypothesis() {
         {/* 기존 노란 화살표 SVG 그대로 사용 */}
         <img
           className="p-hypo__arrow p-hypo__arrow--first"
-          src="/assets/Power/P_HypoArrow1.svg"
+          src="assets/Power/P_HypoArrow1.svg"
           alt=""
           aria-hidden="true"
         />
 
         <img
           className="p-hypo__arrow p-hypo__arrow--second"
-          src="/assets/Power/P_HypoArrow2.svg"
+          src="assets/Power/P_HypoArrow2.svg"
           alt=""
           aria-hidden="true"
         />

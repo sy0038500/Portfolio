@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import "./P_Background.css";
 
-const ASSETS = "/assets/Power/";
+const ASSETS = "assets/Power/";
 
 export default function P_Background() {
   const sectionRef = useRef(null);

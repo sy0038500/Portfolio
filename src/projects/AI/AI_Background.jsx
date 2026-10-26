@@ -70,7 +70,7 @@ export default function AI_Background() {
       <div className="ai-background__question">
         <img
           className="ai-background__quote-icon"
-          src="/assets/AI/AI_QuoteLeft.svg"
+          src="assets/AI/AI_QuoteLeft.svg"
           alt=""
           aria-hidden="true"
         />
@@ -84,7 +84,7 @@ export default function AI_Background() {
 
         <img
           className="ai-background__quote-icon"
-          src="/assets/AI/AI_QuoteRight.svg"
+          src="assets/AI/AI_QuoteRight.svg"
           alt=""
           aria-hidden="true"
         />

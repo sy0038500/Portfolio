@@ -45,7 +45,7 @@ export default function AI_MainDesign() {
       {/* 02. 메인 반응형 목업 이미지 */}
       <div className="ai-main-design__visual">
         <img
-          src="/assets/AI/pf_pro3_main.png"
+          src="assets/AI/pf_pro3_main.png"
           alt="AI 개인화 대시보드의 데스크톱, 노트북, 스마트폰, 태블릿 화면 목업"
           loading="lazy"
           decoding="async"

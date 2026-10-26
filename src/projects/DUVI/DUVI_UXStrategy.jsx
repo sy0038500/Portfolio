@@ -12,19 +12,19 @@ const states = [
     no: "01",
     title: "Default",
     detail: "전체 지도 확인",
-    image: "/assets/DUVI/pro3_uxhypo1.png",
+    image: "assets/DUVI/pro3_uxhypo1.png",
   },
   {
     no: "02",
     title: "Hover",
     detail: "영역 탐색",
-    image: "/assets/DUVI/inter1.png",
+    image: "assets/DUVI/inter1.png",
   },
   {
     no: "03",
     title: "Select",
     detail: "지역 선택",
-    image: "/assets/DUVI/inter2.png",
+    image: "assets/DUVI/inter2.png",
   },
 ];
 
@@ -71,7 +71,7 @@ export default function DUVI_UXStrategy() {
         <div className="duvi-ux__laptop" data-active={activeStep + 1}>
           {/* 기존 DUVI 노트북 목업 이미지 */}
           <img
-            src="/assets/DUVI/pf_pro4_uxhypomac@2x.png"
+            src="assets/DUVI/pf_pro4_uxhypomac@2x.png"
             alt="DUVI 웹서비스의 지도와 상세정보 화면"
             loading="lazy"
           />
@@ -141,7 +141,7 @@ export default function DUVI_UXStrategy() {
           <p>상세정보 갱신</p>
           <div className="duvi-ux__state-image duvi-ux__state-image--update">
             <img
-              src="/assets/DUVI/inter3.png"
+              src="assets/DUVI/inter3.png"
               alt="강남구 논현1동의 DUVI Score 28.73 및 2등급 상세 패널"
               loading="lazy"
             />

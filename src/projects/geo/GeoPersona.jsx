@@ -19,7 +19,7 @@ function GeoPersona() {
         <div className="geo-persona__profile">
           <img
             className="geo-persona__portrait"
-            src="/assets/geo/pf_pro1_persona.png"
+            src="assets/geo/pf_pro1_persona.png"
             alt="김영수 페르소나의 인물 사진"
             loading="lazy"
           />
@@ -41,7 +41,7 @@ function GeoPersona() {
           <div className="geo-persona__block">
             <div className="geo-persona__block-heading">
               <img
-                src="/assets/geo/pf_pro1_situation.svg"
+                src="assets/geo/pf_pro1_situation.svg"
                 alt=""
                 aria-hidden="true"
               />
@@ -57,7 +57,7 @@ function GeoPersona() {
           <div className="geo-persona__block">
             <div className="geo-persona__block-heading">
               <img
-                src="/assets/geo/pf_pro1_pain.svg"
+                src="assets/geo/pf_pro1_pain.svg"
                 alt=""
                 aria-hidden="true"
               />

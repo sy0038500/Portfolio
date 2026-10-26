@@ -1,8 +1,8 @@
 import "./W_Overview.css";
 
 const images = {
-  master: "/assets/Urban/W_Master.png",
-  view: "/assets/Urban/W_View.png",
+  master: "assets/Urban/W_Master.png",
+  view: "assets/Urban/W_View.png",
 };
 
 const approaches = [

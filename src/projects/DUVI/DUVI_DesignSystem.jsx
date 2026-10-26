@@ -38,18 +38,18 @@ const domainColumns = [
 
 /* [03] Figma에서 원래 이미지였던 UI 요소들은 이미지 그대로 사용 */
 const uiAssets = {
-  years: "/assets/DUVI/ds_years.png", // Figma 362:1379 (650 × 83)
-  domains: "/assets/DUVI/ds_domains.png", // Figma 362:1382 (1684 × 85)
-  detail: "/assets/DUVI/ds_detail.png", // Figma 362:1386 (377 × 556)
-  rankTop: "/assets/DUVI/ds_ranking_top.png", // Figma 362:1390 (393 × 556)
-  rankBottom: "/assets/DUVI/ds_ranking_bottom.png", // Figma 362:1391 (394 × 556)
+  years: "assets/DUVI/ds_years.png", // Figma 362:1379 (650 × 83)
+  domains: "assets/DUVI/ds_domains.png", // Figma 362:1382 (1684 × 85)
+  detail: "assets/DUVI/ds_detail.png", // Figma 362:1386 (377 × 556)
+  rankTop: "assets/DUVI/ds_ranking_top.png", // Figma 362:1390 (393 × 556)
+  rankBottom: "assets/DUVI/ds_ranking_bottom.png", // Figma 362:1391 (394 × 556)
 };
 
 /* [04] Figma Interactions는 확대/크롭 완료된 실제 이미지 3장 사용 */
 const interactionImages = [
-  { src: "/assets/DUVI/ds_map_default.png", label: "Default" },
-  { src: "/assets/DUVI/ds_map_hover.png", label: "Hover" },
-  { src: "/assets/DUVI/ds_map_selected.png", label: "Selected" },
+  { src: "assets/DUVI/ds_map_default.png", label: "Default" },
+  { src: "assets/DUVI/ds_map_hover.png", label: "Hover" },
+  { src: "assets/DUVI/ds_map_selected.png", label: "Selected" },
 ];
 
 function ColorTable() {

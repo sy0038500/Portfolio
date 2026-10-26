@@ -161,7 +161,7 @@ export default function AI_UXStrategy() {
                 aria-hidden="true"
               >
                 <img
-                  src="/assets/AI/AI_UXStrategy_Arrows.svg"
+                  src="assets/AI/AI_UXStrategy_Arrows.svg"
                   alt=""
                   width="43"
                   height="559"

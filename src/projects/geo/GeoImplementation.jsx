@@ -67,7 +67,7 @@ function GeoImplementation() {
       <div className="geo-impl__visual">
         <img
           className="geo-impl__laptop"
-          src="/assets/geo/pf_markup_mockup.png"
+          src="assets/geo/pf_markup_mockup.png"
           alt="React 프로젝트의 VS Code 작업 화면이 표시된 노트북 목업"
           loading="lazy"
           decoding="async"
@@ -76,7 +76,7 @@ function GeoImplementation() {
         <div className="geo-impl__code-frame">
           <img
             className="geo-impl__code"
-            src="/assets/geo/pf_markup_mockup2.png"
+            src="assets/geo/pf_markup_mockup2.png"
             alt="접근성을 고려한 React 컴포넌트 코드 작업 화면"
             loading="lazy"
             decoding="async"

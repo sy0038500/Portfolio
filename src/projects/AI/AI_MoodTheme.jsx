@@ -142,7 +142,7 @@ export default function AI_MoodTheme() {
       {/* 03. 하단 전체 테마 목업 */}
       <div className="ai-mood-theme__preview">
         <img
-          src="/assets/AI/pf_pro3_colorview.png"
+          src="assets/AI/pf_pro3_colorview.png"
           alt="아홉 가지 감정 테마가 적용된 모바일 대시보드 디자인 비교"
           loading="lazy"
           decoding="async"

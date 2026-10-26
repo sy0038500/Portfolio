@@ -13,7 +13,7 @@ const personas = [
     needs: "대중교통, 주거비, 안전 관련 정보",
     pain: "여러 서비스를 오가며 정보를 반복해서 검색해야 함",
     goal: "통근과 생활에 적합한 지역을 빠르게 비교해 이사 후보지를 정하고 싶음",
-    image: "/assets/DUVI/persona1.png",
+    image: "assets/DUVI/persona1.png",
   },
   {
     id: "second",
@@ -26,7 +26,7 @@ const personas = [
     needs: "교육시설, 문화시설, 생활 인프라",
     pain: "가족에게 필요한 조건을 한곳에서 종합적으로 비교하기 어려움",
     goal: "교육과 생활환경이 균형 있게 갖춰진 지역을 찾고 싶음",
-    image: "/assets/DUVI/persona2.png",
+    image: "assets/DUVI/persona2.png",
   },
 ];
 

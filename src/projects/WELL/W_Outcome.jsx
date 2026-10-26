@@ -106,10 +106,10 @@ export default function W_Outcome({ onPreview }) {
             type="button"
             className="w-page__image-button w-outcome__panel-button"
             aria-label="FINAL DESIGN 전체 패널 크게 보기"
-            onClick={(event) => onPreview("/assets/Urban/W_Panel.png", "FINAL DESIGN", event)}
+            onClick={(event) => onPreview("assets/Urban/W_Panel.png", "FINAL DESIGN", event)}
           >
             <img
-              src="/assets/Urban/W_Panel.png"
+              src="assets/Urban/W_Panel.png"
               alt="WELL-BEING 사월마을 도시설계 최종 패널"
               loading="lazy"
               decoding="async"

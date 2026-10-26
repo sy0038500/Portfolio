@@ -15,7 +15,7 @@ function About() {
 
           <img
             className="about__accent"
-            src="/assets/about-accent.svg"
+            src="assets/about-accent.svg"
             alt=""
             aria-hidden="true"
             width="85"
@@ -33,7 +33,7 @@ function About() {
 
           <img
             className="about__divider"
-            src="/assets/about-divider.svg"
+            src="assets/about-divider.svg"
             alt=""
             aria-hidden="true"
             width="85"
@@ -49,7 +49,7 @@ function About() {
 
         <div className="about__visual">
           <img
-            src="/assets/about-art.png"
+            src="assets/about-art.png"
             alt="노란색과 베이지색의 건축 구조물, 계단과 원형 요소를 조합한 추상 일러스트"
             width="704"
             height="705"

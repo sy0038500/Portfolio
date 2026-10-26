@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./HAVEN_Page.css";
 
-const PANEL_SRC = "/assets/Urban/HAVEN_Panel.png";
+const PANEL_SRC = "assets/Urban/HAVEN_Panel.png";
 
 const approachItems = [
   {

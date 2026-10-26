@@ -60,7 +60,7 @@ export default function AI_Hypothesis() {
 
         <img
           className="ai-hypothesis__step ai-hypothesis__plus"
-          src="/assets/AI/AI_Plus.svg"
+          src="assets/AI/AI_Plus.svg"
           alt="더하기"
         />
 
@@ -71,7 +71,7 @@ export default function AI_Hypothesis() {
 
         <img
           className="ai-hypothesis__step ai-hypothesis__plus"
-          src="/assets/AI/AI_Plus.svg"
+          src="assets/AI/AI_Plus.svg"
           alt="더하기"
         />
 
@@ -84,15 +84,15 @@ export default function AI_Hypothesis() {
       {/* 다섯 요소가 모두 등장한 후 화살표 */}
       <img
         className="ai-hypothesis__arrow"
-        src="/assets/AI/AI_ArrowDown.svg"
+        src="assets/AI/AI_ArrowDown.svg"
         alt="아래 결과를 향하는 화살표"
       />
 
       {/* 화살표 다음으로 최종 문장 */}
       <div className="ai-hypothesis__conclusion">
-        <img src="/assets/AI/AI_BracketLeft.svg" alt="" aria-hidden="true" />
+        <img src="assets/AI/AI_BracketLeft.svg" alt="" aria-hidden="true" />
         <p>복잡한 탐색 없이 오늘의 흐름을 한눈에 파악하는 시작 화면</p>
-        <img src="/assets/AI/AI_BracketRight.svg" alt="" aria-hidden="true" />
+        <img src="assets/AI/AI_BracketRight.svg" alt="" aria-hidden="true" />
       </div>
     </section>
   );

@@ -17,7 +17,7 @@ function GeoWireframe() {
       <div className="geo-wireframe__gallery">
         <div className="geo-wireframe__item">
           <img
-            src="/assets/geo/pf1_wireframe_01.png"
+            src="assets/geo/pf1_wireframe_01.png"
             alt="국토정보플랫폼 메인 화면 와이어프레임"
             loading="lazy"
           />
@@ -25,7 +25,7 @@ function GeoWireframe() {
 
         <div className="geo-wireframe__item">
           <img
-            src="/assets/geo/pf1_wireframe_02.png"
+            src="assets/geo/pf1_wireframe_02.png"
             alt="국토정보플랫폼 카드형 화면 와이어프레임"
             loading="lazy"
           />
@@ -33,7 +33,7 @@ function GeoWireframe() {
 
         <div className="geo-wireframe__item">
           <img
-            src="/assets/geo/pf1_wireframe_03.png"
+            src="assets/geo/pf1_wireframe_03.png"
             alt="국토정보플랫폼 리스트형 화면 와이어프레임"
             loading="lazy"
           />

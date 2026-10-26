@@ -61,7 +61,7 @@ export default function AI_Cover() {
       {/* 04. 대표 목업 */}
       <div className="ai-cover__visual">
         <img
-          src="/assets/AI/pf_pro3_colorview.png"
+          src="assets/AI/pf_pro3_colorview.png"
           alt="AI 개인화 대시보드의 모바일 화면과 다양한 컬러 테마 목업"
           fetchPriority="high"
         />

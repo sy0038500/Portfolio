@@ -1,7 +1,7 @@
 import "./P_Cover.css";
 import Magnet from "./Magnet";
 
-const assets = "/assets/Power/";
+const assets = "assets/Power/";
 
 export default function P_Cover() {
   return (

@@ -5,7 +5,7 @@ const strategies = [
   {
     id: "01",
     title: "선택 전 정보가 부족한 지도 서비스",
-    image: "/assets/geo/pf1_asto.png",
+    image: "assets/geo/pf1_asto.png",
     alt: "국토정보플랫폼 서비스의 기존 화면과 카드형 UI 개선 화면 비교",
     problem:
       "항목명만으로는 어떤 데이터를 제공하는 서비스인지 판단하기 어려웠습니다.",
@@ -20,7 +20,7 @@ const strategies = [
   {
     id: "02",
     title: "서로 다른 정보가 비슷하게 보이는 구조",
-    image: "/assets/geo/pf1_asto2.png",
+    image: "assets/geo/pf1_asto2.png",
     alt: "국토정보플랫폼의 반복적인 정보 배열과 유형별 화면 구조 개선 비교",
     problem: "서비스들의 정보 간 차이와 우선순위를 구별하기 어려웠습니다.",
     why: "성격이 다른 콘텐츠가 비슷한 박스 형태와 배열로 반복되어, 각 정보의 역할이 화면에서 충분히 드러나지 않았습니다.",
@@ -35,7 +35,7 @@ const strategies = [
   {
     id: "03",
     title: "버튼 반응 인지 어려움",
-    image: "/assets/geo/pf1_asto3.png",
+    image: "assets/geo/pf1_asto3.png",
     alt: "국토정보플랫폼의 기존 버튼과 상호작용 상태 개선 화면 비교",
     problem:
       "사용자가 클릭 가능한 요소와 현재 상태를 직관적으로 인지하기 어려웠습니다.",

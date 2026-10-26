@@ -64,7 +64,7 @@ export default function DUVI_Ending() {
         {/* 02. 기존 INDEX 모바일 목업 */}
         <div className="duvi-ending__phone">
           <img
-            src="/assets/index/pf_index4.webp"
+            src="assets/index/pf_index4.webp"
             alt="DUVI 도시활력지표 웹서비스 모바일 목업"
             loading="lazy"
             decoding="async"

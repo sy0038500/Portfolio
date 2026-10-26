@@ -7,7 +7,7 @@ const features = [
     title: "Yearly DUVI Map",
     description:
       "연도를 선택하면 서울시 행정동별 도시활력 등급과 평균·최고·최저 점수를 확인할 수 있습니다.",
-    image: "/assets/DUVI/pro4_detail1.png",
+    image: "assets/DUVI/pro4_detail1.png",
     alt: "연도별 도시활력 지도 정보",
   },
   {
@@ -15,7 +15,7 @@ const features = [
     title: "Region Detail View",
     description:
       "관심 행정동을 선택하면 종합점수와 등급, 분야별 세부점수를 한 화면에서 확인할 수 있습니다.",
-    image: "/assets/DUVI/pro4_deatil2.png",
+    image: "assets/DUVI/pro4_deatil2.png",
     alt: "행정동별 DUVI 상세정보",
   },
   {
@@ -23,7 +23,7 @@ const features = [
     title: "Ranking",
     description:
       "선택 연도의 상위 행정동을 순위로 제공해 지역 간 점수와 상대적인 위치를 빠르게 비교할 수 있습니다.",
-    image: "/assets/DUVI/pro4_detail3.png",
+    image: "assets/DUVI/pro4_detail3.png",
     alt: "DUVI 행정동별 순위 화면",
   },
 ];

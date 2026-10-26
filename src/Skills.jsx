@@ -159,7 +159,7 @@ function Skills() {
                       }}
                     >
                       <img
-                        src={`/assets/skills/${tool.file}`}
+                        src={`assets/skills/${tool.file}`}
                         alt=""
                         width="76"
                         height="76"

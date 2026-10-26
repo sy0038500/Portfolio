@@ -18,7 +18,7 @@ function GeoDesignDetail() {
       <div className="geo-detail__top">
         <div className="geo-detail__top-image">
           <img
-            src="/assets/geo/pf_pro1_detail_top.png"
+            src="assets/geo/pf_pro1_detail_top.png"
             alt="국토정보플랫폼 리디자인 메인 화면. 검색창, 서비스 바로가기 및 지도 정보 카드"
             loading="lazy"
             decoding="async"
@@ -59,7 +59,7 @@ function GeoDesignDetail() {
       <div className="geo-detail__bottom">
         <div className="geo-detail__bottom-image">
           <img
-            src="/assets/geo/pf_pro1_detail_bottom.png"
+            src="assets/geo/pf_pro1_detail_bottom.png"
             alt="국토정보플랫폼 리디자인의 자료실 목록과 지원서비스 카드 화면"
             loading="lazy"
             decoding="async"

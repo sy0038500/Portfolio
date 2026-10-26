@@ -115,7 +115,7 @@ function Header() {
             setHeaderHidden(false);
           }}
         >
-          <img src="/assets/header-menu.svg" alt="" width="40" height="20" />
+          <img src="assets/header-menu.svg" alt="" width="40" height="20" />
         </button>
       </div>
 

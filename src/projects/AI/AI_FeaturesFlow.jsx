@@ -214,7 +214,7 @@ export default function AI_FeaturesFlow() {
           <article className="ai-feature-card ai-feature-card--quote">
             <div className="ai-feature-card__image ai-feature-card__image--quote">
               <img
-                src="/assets/AI/pf_pro3_ai@2x.png"
+                src="assets/AI/pf_pro3_ai@2x.png"
                 alt="AI 맞춤 명언 예시"
                 loading="lazy"
               />
@@ -233,7 +233,7 @@ export default function AI_FeaturesFlow() {
           <article className="ai-feature-card ai-feature-card--mood">
             <div className="ai-feature-card__image ai-feature-card__image--mood">
               <img
-                src="/assets/AI/pf_pro3_mood@2x.png"
+                src="assets/AI/pf_pro3_mood@2x.png"
                 alt="기분에 따른 테마 선택 화면"
                 loading="lazy"
               />
@@ -252,7 +252,7 @@ export default function AI_FeaturesFlow() {
           <article className="ai-feature-card ai-feature-card--widget">
             <div className="ai-feature-card__image ai-feature-card__image--widget">
               <img
-                src="/assets/AI/pf_pro3_system@2x.png"
+                src="assets/AI/pf_pro3_system@2x.png"
                 alt="위젯 추가 및 레이아웃 편집 메뉴"
                 loading="lazy"
               />
@@ -272,7 +272,7 @@ export default function AI_FeaturesFlow() {
             <div className="ai-feature-card__focus-images">
               <div className="ai-feature-card__image ai-feature-card__image--focus">
                 <img
-                  src="/assets/AI/pf_pro3_focus@2x.png"
+                  src="assets/AI/pf_pro3_focus@2x.png"
                   alt="오늘의 핵심 목표 위젯"
                   loading="lazy"
                 />
@@ -280,7 +280,7 @@ export default function AI_FeaturesFlow() {
 
               <div className="ai-feature-card__image ai-feature-card__image--memo">
                 <img
-                  src="/assets/AI/pf_pro3_memo@2x.png"
+                  src="assets/AI/pf_pro3_memo@2x.png"
                   alt="오늘 할 일 위젯"
                   loading="lazy"
                 />

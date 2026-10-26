@@ -26,7 +26,7 @@ function GeoBackground() {
         {/* 왼쪽: 기존 사이트 목업 */}
         <div className="geo-background__visual">
           <img
-            src="/assets/geo/pf_pro1_background.png"
+            src="assets/geo/pf_pro1_background.png"
             alt="기존 국토정보플랫폼 모바일 화면"
             loading="lazy"
           />

@@ -6,7 +6,7 @@ export default function DUVI_Cover() {
       {/* 01. 기존 DUVI 목업 이미지: 새 에셋을 만들지 않음 */}
       <div className="duvi-cover__visual" aria-hidden="true">
         <img
-          src="/assets/DUVI/pf_pro4_cover.png"
+          src="assets/DUVI/pf_pro4_cover.png"
           alt=""
           fetchPriority="high"
           decoding="async"

@@ -62,7 +62,7 @@ export default function GeoEnding() {
 
         <div className="geo-ending__phone">
           <img
-            src="/assets/index/pf_index1.webp"
+            src="assets/index/pf_index1.webp"
             alt="국토정보플랫폼 리디자인 모바일 목업"
             loading="lazy"
           />

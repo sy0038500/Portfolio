@@ -7,7 +7,7 @@ const implementations = [
     number: "01",
     title: "SEMANTIC MARKUP",
     subtitle: "콘텐츠 역할에 따른 구조화",
-    image: "/assets/DUVI/pro4_imple1.png",
+    image: "assets/DUVI/pro4_imple1.png",
     alt: "React에서 main, section, aside 등을 사용한 시맨틱 마크업 코드",
     description:
       "화면을 역할별 React 컴포넌트로 분리하고, 각 컴포넌트의 JSX 내부에 시맨틱 HTML 태그를 적용해 주요 화면 영역과 정보의 관계가 코드 구조에서도 드러나도록 구성했습니다.",
@@ -17,7 +17,7 @@ const implementations = [
     number: "02",
     title: "RESPONSIVE UI",
     subtitle: "화면 크기에 유연하게 대응",
-    image: "/assets/DUVI/pro4_imple2.png",
+    image: "assets/DUVI/pro4_imple2.png",
     alt: "DUVI 모바일 미디어쿼리와 CSS Grid 반응형 코드",
     description:
       "CSS Grid와 미디어쿼리를 활용해 데스크톱의 다단 레이아웃을 모바일에서 단일 열로 재배치했습니다. 메인 타이틀에는 clamp()를 적용해 화면 너비에 따라 글자 크기가 유동적으로 변화하도록 구현했습니다.",
@@ -27,7 +27,7 @@ const implementations = [
     number: "03",
     title: "MAP INTERACTION",
     subtitle: "사용자 선택에 반응하는 지도",
-    image: "/assets/DUVI/pro4_imple3.png",
+    image: "assets/DUVI/pro4_imple3.png",
     alt: "Leaflet의 click, mouseover, mouseout 이벤트 처리 코드",
     description:
       "Leaflet의 click, mouseover, mouseout 이벤트를 활용해 Hover와 Selected 상태를 구현하고, 선택한 행정동이 유지되도록 지도 레이어의 스타일과 상태를 제어했습니다.",

@@ -103,13 +103,13 @@ export default function P_Strategy() {
       >
         <img
           className="p-strategy__yellow"
-          src="/assets/Power/P_StrategyYellow.svg"
+          src="assets/Power/P_StrategyYellow.svg"
           alt=""
         />
 
         <img
           className="p-strategy__red"
-          src="/assets/Power/P_StrategyRed.svg"
+          src="assets/Power/P_StrategyRed.svg"
           alt=""
         />
 
@@ -117,7 +117,7 @@ export default function P_Strategy() {
           <img
             key={number}
             className={`p-strategy__line p-strategy__line--${number}`}
-            src="/assets/Power/P_StrategyLine.svg"
+            src="assets/Power/P_StrategyLine.svg"
             alt=""
           />
         ))}

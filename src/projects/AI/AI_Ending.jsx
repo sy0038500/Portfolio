@@ -62,7 +62,7 @@ export default function AI_Ending() {
 
         <div className="ai-ending__phone">
           <img
-            src="/assets/index/pf_index3.webp"
+            src="assets/index/pf_index3.webp"
             alt="AI 개인화 대시보드 모바일 목업"
             loading="lazy"
             decoding="async"

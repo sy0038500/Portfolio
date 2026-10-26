@@ -6,7 +6,7 @@ const interactions = [
   {
     id: "scroll",
     name: "Scroll Reveal",
-    gif: "/assets/Power/pf_pro2_gif1.gif",
+    gif: "assets/Power/pf_pro2_gif1.gif",
     imageClass: "p-showcase__media--first",
     reverse: false,
     trigger: "사용자가 페이지를 스크롤",
@@ -17,7 +17,7 @@ const interactions = [
   {
     id: "hover",
     name: "Custom Cursor & Hover",
-    gif: "/assets/Power/pf_pro2_gif2.gif",
+    gif: "assets/Power/pf_pro2_gif2.gif",
     imageClass: "p-showcase__media--second",
     reverse: true,
     trigger: "사용자가 버튼 또는 카드에 마우스를 올림",
@@ -27,7 +27,7 @@ const interactions = [
   {
     id: "click",
     name: "Click Spark & Magnet Button",
-    gif: "/assets/Power/pr_pro2_gif3.gif",
+    gif: "assets/Power/pr_pro2_gif3.gif",
     imageClass: "p-showcase__media--third",
     reverse: false,
     trigger: "사용자가 CTA 버튼에 접근하거나 클릭",
@@ -37,7 +37,7 @@ const interactions = [
   {
     id: "cards",
     name: "Mouse Responsive Cards",
-    gif: "/assets/Power/pf_pro2_gif4.gif",
+    gif: "assets/Power/pf_pro2_gif4.gif",
     imageClass: "p-showcase__media--fourth",
     reverse: true,
     trigger: "사용자가 마지막 섹션 카드 영역에서 마우스를 움직임",
