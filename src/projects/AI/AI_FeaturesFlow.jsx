@@ -216,7 +216,7 @@ export default function AI_FeaturesFlow() {
               <img
                 src={`${import.meta.env.BASE_URL}assets/AI/pf_pro3_ai@2x.png`}
                 alt="AI 맞춤 명언 예시"
-                loading="lazy"
+                loading="eager"
               />
             </div>
 
@@ -235,7 +235,7 @@ export default function AI_FeaturesFlow() {
               <img
                 src={`${import.meta.env.BASE_URL}assets/AI/pf_pro3_mood@2x.png`}
                 alt="기분에 따른 테마 선택 화면"
-                loading="lazy"
+                loading="eager"
               />
             </div>
 
@@ -254,7 +254,7 @@ export default function AI_FeaturesFlow() {
               <img
                 src={`${import.meta.env.BASE_URL}assets/AI/pf_pro3_system@2x.png`}
                 alt="위젯 추가 및 레이아웃 편집 메뉴"
-                loading="lazy"
+                loading="eager"
               />
             </div>
 
@@ -274,7 +274,7 @@ export default function AI_FeaturesFlow() {
                 <img
                   src={`${import.meta.env.BASE_URL}assets/AI/pf_pro3_focus@2x.png`}
                   alt="오늘의 핵심 목표 위젯"
-                  loading="lazy"
+                  loading="eager"
                 />
               </div>
 
@@ -282,7 +282,7 @@ export default function AI_FeaturesFlow() {
                 <img
                   src={`${import.meta.env.BASE_URL}assets/AI/pf_pro3_memo@2x.png`}
                   alt="오늘 할 일 위젯"
-                  loading="lazy"
+                  loading="eager"
                 />
               </div>
             </div>
