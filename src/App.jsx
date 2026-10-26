@@ -3,6 +3,7 @@ import Header from "./Header";
 import About from "./About";
 import Skills from "./Skills";
 import Index from "./Index";
+import Contact from "./Contact";
 import { useEffect, useState } from "react";
 
 import GeoCaseStudy from "./projects/geo/GeoCaseStudy";
@@ -193,6 +194,7 @@ function App() {
         <About />
         <Skills />
         <Index />
+        <Contact />
       </main>
     </>
   );
