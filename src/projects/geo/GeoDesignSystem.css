@@ -158,8 +158,10 @@
 }
 
 .geo-ds__table-scroll {
+  width: 100%;
   max-width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .geo-ds__type-table,
@@ -857,8 +859,13 @@
   }
 
   .geo-ds__two-columns {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 50px;
+  }
+
+  /* 표 너비가 부모 그리드를 늘리지 못하도록 제한 */
+  .geo-ds__two-columns > * {
+    min-width: 0;
   }
 
   .geo-ds__neutral-colors {
@@ -918,7 +925,7 @@
   }
 
   .geo-ds__component-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 25px;
 
     margin-top: 40px;

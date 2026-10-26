@@ -431,10 +431,9 @@
 
   text-align: center;
 
-  translate: -50% 0;
-
+  /* Safari에서도 노드가 정확히 가운데 놓이도록 transform 사용 */
   opacity: 0;
-  transform: translateY(12px);
+  transform: translate(-50%, 12px);
 
   backdrop-filter: blur(12.5px);
   -webkit-backdrop-filter: blur(12.5px);
@@ -661,12 +660,12 @@
 @keyframes ai-flow-enter {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translate(-50%, 12px);
   }
 
   to {
     opacity: 1;
-    transform: none;
+    transform: translate(-50%, 0);
   }
 }
 
@@ -944,7 +943,7 @@
 
   .ai-flow-node {
     opacity: 1 !important;
-    transform: none !important;
+    transform: translate(-50%, 0) !important;
     animation: none !important;
   }
 
