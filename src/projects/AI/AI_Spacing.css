@@ -1,0 +1,118 @@
+/* =========================================
+   AI DASHBOARD — 공통 가로 여백
+   표지 / 엔딩 제외
+========================================= */
+
+/* 01. 데스크탑 — 최대 콘텐츠 1440px */
+@media (min-width: 1201px) {
+
+  .ai-page> :is(.ai-background,
+    .ai-hypothesis,
+    .ai-ux-strategy,
+    .ai-main-design,
+    .ai-features-flow,
+    .ai-mood-theme,
+    .ai-result-review,
+    .ai-project-review) {
+    --ai-content-width: min(90%, 1440px);
+    --ai-content-gutter: max(5%,
+        calc((100% - 1440px) / 2));
+  }
+
+  /* 페이지 제목 왼쪽 정렬 */
+  .ai-page .ai-background__eyebrow,
+  .ai-page .ai-hypothesis__eyebrow,
+  .ai-page .ai-ux-strategy__eyebrow,
+  .ai-page .ai-project-review__title {
+    margin-left: var(--ai-content-gutter);
+  }
+
+  .ai-page .ai-main-design__eyebrow,
+  .ai-page .ai-mood-theme__eyebrow,
+  .ai-page .ai-result-review__eyebrow {
+    left: var(--ai-content-gutter);
+  }
+
+  /* Background & Goal */
+  .ai-page .ai-background__question,
+  .ai-page .ai-background__cards {
+    width: var(--ai-content-width);
+    max-width: 1440px;
+  }
+
+  /* Core UX Hypothesis */
+  .ai-page .ai-hypothesis__intro,
+  .ai-page .ai-hypothesis__equation {
+    width: var(--ai-content-width);
+    max-width: 1440px;
+  }
+
+  /* UX Strategy */
+  .ai-page .ai-ux-strategy__intro {
+    width: var(--ai-content-width);
+    max-width: 1440px;
+  }
+
+  /* Mood Theme System */
+  .ai-page .ai-mood-theme__grid {
+    width: var(--ai-content-width);
+    max-width: 1440px;
+  }
+
+  /* Result & Review */
+  .ai-page .ai-result-review__grid {
+    width: var(--ai-content-width);
+    max-width: 1440px;
+  }
+
+  /* Project Review */
+  .ai-page .ai-project-review__columns {
+    width: var(--ai-content-width);
+    max-width: 1440px;
+    gap: clamp(32px, 4.5vw, 86px);
+  }
+}
+
+/* 02. 태블릿 — 좌우 5% */
+@media (min-width: 768px) and (max-width: 1200px) {
+
+  .ai-page .ai-background__eyebrow,
+  .ai-page .ai-hypothesis__eyebrow,
+  .ai-page .ai-ux-strategy__eyebrow,
+  .ai-page .ai-project-review__title {
+    margin-left: 5%;
+  }
+
+  .ai-page .ai-main-design__eyebrow,
+  .ai-page .ai-mood-theme__eyebrow,
+  .ai-page .ai-result-review__eyebrow {
+    left: 5%;
+  }
+
+  .ai-page .ai-ux-strategy__comparison {
+    width: min(90%, 1213px);
+  }
+
+  .ai-page .ai-mood-theme__grid {
+    width: 90%;
+  }
+
+  /* AI Flow는 각 절반 영역을 기준으로 정렬 */
+  .ai-page .ai-features-flow__eyebrow,
+  .ai-page .ai-features-flow__flow>.ai-features-flow__eyebrow {
+    left: 5%;
+  }
+
+  .ai-page .ai-background__question,
+  .ai-page .ai-background__cards,
+  .ai-page .ai-hypothesis__intro,
+  .ai-page .ai-hypothesis__equation,
+  .ai-page .ai-ux-strategy__intro,
+  .ai-page .ai-result-review__grid,
+  .ai-page .ai-project-review__columns {
+    max-width: 90%;
+  }
+}
+
+/* 03. 모바일 — 기존 좌우 20px 유지 */
+/* 카드 배열과 AI Flow 연결선은 변경하지 않음 */

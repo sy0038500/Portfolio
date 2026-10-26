@@ -1,0 +1,239 @@
+/* =========================================
+ ENDING
+========================================= */
+
+.ai-ending,
+.ai-ending * {
+  box-sizing: border-box;
+}
+
+/* 01. Desktop */
+
+.ai-ending {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  width: 100%;
+  max-width: 1920px;
+  min-height: clamp(720px, 56.25vw, 1080px);
+  margin: 0 auto;
+
+  background: #ffffff;
+  color: #0f0f0f;
+  font-family: "Pretendard", sans-serif;
+}
+
+/* Figma 하단 주황색 그라데이션 */
+
+.ai-ending::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 0;
+  height: 43.6111%;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 165, 0, 0.25) 100%
+  );
+
+  pointer-events: none;
+}
+
+/* Main layout */
+
+.ai-ending__inner {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 684fr)
+    minmax(0, 385fr);
+  align-items: center;
+  gap: 0;
+
+  width: min(1069px, 85%);
+  margin: 0 auto;
+
+  transform: translateX(
+    clamp(-71.5px, -3.725vw, -20px)
+  );
+}
+
+/* Ending quote */
+
+.ai-ending__quote {
+  min-width: 0;
+  margin: 0;
+
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.1875;
+  letter-spacing: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+
+  transform: translateY(-49.5px);
+
+  transition:
+    opacity 800ms ease,
+    transform 800ms ease;
+}
+
+.ai-ending__quote strong {
+  font-weight: 700;
+}
+
+.ai-ending__quote-line,
+.ai-ending__quote-mark {
+  display: block;
+}
+
+.ai-ending__quote-mark {
+  line-height: 1.1875;
+}
+
+/* Mobile mockup */
+
+.ai-ending__phone {
+  width: 100%;
+  max-width: 385px;
+  aspect-ratio: 385 / 791;
+
+  margin: 0;
+  justify-self: center;
+
+  --phone-offset: -17.5px;
+  transform: translateY(var(--phone-offset));
+
+  transition:
+    opacity 850ms ease 150ms,
+    transform 850ms ease 150ms;
+}
+
+.ai-ending__phone img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* Scroll reveal */
+
+.ai-ending:not(.is-visible) .ai-ending__quote {
+  opacity: 0;
+  transform: translate(-25px, -49.5px);
+}
+
+.ai-ending:not(.is-visible) .ai-ending__phone {
+  opacity: 0;
+  transform: translate(25px, -17.5px);
+}
+
+/* Mockup hover */
+
+@media (hover: hover) and (pointer: fine) {
+  .ai-ending.is-visible .ai-ending__phone:hover {
+    transform: translateY(
+      calc(var(--phone-offset) - 10px)
+    );
+  }
+}
+
+/* =========================================
+    02. Tablet
+========================================= */
+
+@media (max-width: 1200px) {
+  .ai-ending {
+    min-height: 720px;
+    padding: 70px 5%;
+  }
+
+  .ai-ending__inner {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 290px);
+
+    gap: 32px;
+    width: 100%;
+    max-width: 1000px;
+
+    transform: none;
+  }
+
+  .ai-ending__quote {
+    font-size: 34px;
+    line-height: 1.35;
+    transform: none;
+  }
+
+  .ai-ending__phone {
+    max-width: 290px;
+    --phone-offset: 0px;
+    transform: none;
+  }
+
+  .ai-ending:not(.is-visible) .ai-ending__quote {
+    transform: translateX(-25px);
+  }
+
+  .ai-ending:not(.is-visible) .ai-ending__phone {
+    transform: translateX(25px);
+  }
+}
+
+/* =========================================
+    03. Mobile
+========================================= */
+
+@media (max-width: 767px) {
+  .ai-ending {
+    min-height: 0;
+    padding: 60px 20px 70px;
+  }
+
+  .ai-ending__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .ai-ending__quote {
+    width: 100%;
+
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.45;
+    letter-spacing: -0.025em;
+  }
+
+  .ai-ending__phone {
+    width: min(235px, 65vw);
+    max-width: none;
+  }
+
+  .ai-ending:not(.is-visible) .ai-ending__quote,
+  .ai-ending:not(.is-visible) .ai-ending__phone {
+    transform: translateY(25px);
+  }
+}
+
+/* =========================================
+    04. Reduced Motion
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-ending__quote,
+  .ai-ending__phone {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

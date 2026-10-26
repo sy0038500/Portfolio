@@ -1,0 +1,460 @@
+/* DUVI 05 / Core UX Hypothesis — Figma 362:1230 */
+
+/*
+============================================================
+[05페이지] CORE UX HYPOTHESIS — 한국어 수정 안내
+============================================================
+구성: 상단 좌·우 페르소나 + 가운데 공통문제 → 점선 → 파란 가설 박스 → 이미지 카드 3개
+  ① 전체 배경/페이지 좌우 여백: .duvi-hypothesis
+  ② 좌상단 제목(24/20/18): .duvi-hypothesis__eyebrow
+  ③ 상단 3열 비율: .duvi-hypothesis__problem
+  ④ 인물 일러스트/흰 설명 카드: .duvi-hypothesis__person (img / p)
+  ⑤ COMMON PROBLEM 제목·본문: .duvi-hypothesis__common
+  ⑥ 중앙 점선 길이: .duvi-hypothesis__stem
+  ⑦ CORE HYPOTHESIS 파란 박스: .duvi-hypothesis__thesis
+  ⑧ 아래 이미지 카드 3열: .duvi-hypothesis__cards
+  ⑨ 이미지 자르기/비율: .duvi-hypothesis__image / img
+  ⑩ 카드 제목/설명: .duvi-hypothesis__card h4 / p
+
+height/min-height=고정/최소 높이, padding=안쪽 공간, margin=바깥 공간,
+font-size=글씨, gap=카드 사이 간격, aspect-ratio=가로:세로 비율,
+object-fit:cover=프레임 꽉 채우면서 이미지 일부 잘릴 수 있음.
+@media(1100px / 767px)에서 태블릿과 모바일 배치를 따로 지정함.
+CSS 수치는 그대로 유지하고 주석만 추가함.
+============================================================
+*/
+
+/* 페이지 안 전체 요소 box-sizing. */
+.duvi-hypothesis,
+.duvi-hypothesis * {
+  box-sizing: border-box
+}
+
+/* [05 페이지 전체] 배경색, 위·좌우·아래 패딩, 최대폭. */
+.duvi-hypothesis {
+  max-width: 1920px;
+  margin: auto;
+  padding: 120px 6% 80px;
+  position: relative;
+  background: #f4f7fb;
+  color: #0f0f0f;
+  font-family: Pretendard, sans-serif
+}
+
+/* [좌상단 Core UX Hypothesis] top/left 위치와 24px 타이틀. */
+.duvi-hypothesis__eyebrow {
+  position: absolute;
+  top: 35px;
+  left: 31px;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 400
+}
+
+/* [맨 윗줄 3열] 왼쪽 직장인 / 가운데 공통문제 / 오른쪽 학부모의 너비 비율. */
+.duvi-hypothesis__problem {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(350px, 2fr) minmax(0, 1fr);
+  gap: 22px;
+  align-items: center
+}
+
+/* [양쪽 페르소나 공통] 일러스트 위쪽 공간(padding-top) 및 설명 카드 기준점. */
+.duvi-hypothesis__person {
+  position: relative;
+  min-width: 0;
+  padding-top: 135px
+}
+
+/* [직장인/가족 캐릭터 이미지] 위·왼쪽 위치, 너비·높이, 비율 보존. */
+.duvi-hypothesis__person img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(210px, 55%);
+  height: 150px;
+  object-fit: contain;
+  object-position: bottom
+}
+
+/* [오른쪽 가족 캐릭터만] 오른쪽 끝으로 정렬. */
+.duvi-hypothesis__person--right img {
+  left: auto;
+  right: 0;
+  transform: scaleX(-1);
+}
+
+/* [PERSONA 01/02 흰색 설명 말풍선] min-height, 패딩, 모서리 둥글기, 글씨. */
+.duvi-hypothesis__person p {
+  min-height: 165px;
+  margin: 0;
+  padding: 22px 20px;
+  border-radius: 35px;
+  background: #fff;
+  font-size: clamp(15px, 1.25vw, 27px);
+  line-height: 1.4;
+  word-break: keep-all
+}
+
+/* [오른쪽 PERSONA 02 설명] 텍스트 오른쪽 정렬. */
+.duvi-hypothesis__person--right p {
+  text-align: right
+}
+
+/* [위 가운데 COMMON PROBLEM 전체] top 공간(padding-top)과 가운데 정렬. */
+.duvi-hypothesis__common {
+  text-align: center;
+  align-self: start;
+  padding: 95px 10px 0
+}
+
+/* [COMMON PROBLEM 파란 제목] 글씨 크기와 아래 여백. */
+.duvi-hypothesis__common h3 {
+  margin: 0 0 15px;
+  color: #3182bd;
+  font-size: clamp(23px, 2.5vw, 48px);
+  font-weight: 700
+}
+
+/* [공통문제 설명 3줄] 글씨 크기·줄 간격. */
+.duvi-hypothesis__common p {
+  margin: 0;
+  font-size: clamp(16px, 1.65vw, 32px);
+  line-height: 1.45;
+  word-break: keep-all
+}
+
+/* [COMMON PROBLEM 아래 점선 연결선] height가 점선 길이, border-left가 색과 굵기. */
+.duvi-hypothesis__stem {
+  width: 0;
+  height: 105px;
+  margin: 0 auto;
+  border-left: 3px dashed #bdd7e7
+}
+
+/* [중앙 큰 진파란 CORE HYPOTHESIS 박스] width 최대폭, 내부 패딩, 모서리·아래 카드와 간격. */
+.duvi-hypothesis__thesis {
+  width: min(100%, 1050px);
+  margin: 0 auto 60px;
+  padding: 45px 55px;
+  background: #08519c;
+  border-radius: 55px;
+  text-align: center;
+  color: #bdd7e7
+}
+
+/* [파란 박스 안 CORE HYPOTHESIS 제목] 글씨 크기·아래 여백. */
+.duvi-hypothesis__thesis h3 {
+  margin: 0 0 25px;
+  color: #f4f7fb;
+  font-size: clamp(25px, 2.5vw, 48px);
+  font-weight: 800
+}
+
+/* [파란 박스 안 가설 4줄 본문] 글씨 크기·행간·글씨 굵기. */
+.duvi-hypothesis__thesis p {
+  margin: 0;
+  font-size: clamp(20px, 1.98vw, 38px);
+  font-weight: 400;
+  line-height: 1.45;
+  word-break: keep-all
+}
+
+/* [하단 가설 카드 3장 묶음] 카드 열 개수, 세 카드 사이 간격(gap). */
+.duvi-hypothesis__cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 3.7vw, 71px);
+  align-items: stretch
+}
+
+/* [01/02/03 흰색 카드 각각] 내부 패딩, 모서리, Hover 움직임 준비. */
+.duvi-hypothesis__card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 40px 25px;
+  border-radius: 45px;
+  background: #fff;
+  transition: transform .25s ease, box-shadow .25s ease
+}
+
+/* [가설 이미지 네모 프레임] aspect-ratio:1 정사각형, 둥근 모서리 및 넘친 이미지 잘라내기. */
+.duvi-hypothesis__image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #f4f7fb;
+}
+
+/* [pro3_uxhypo1/2/3.png] 현재 object-fit:cover라 일부 잘릴 수 있음. 비율 전체 표시하려면 contain 검토. */
+
+/* 가설 카드 이미지 공통 */
+.duvi-hypothesis__image img {
+  position: absolute;
+  display: block;
+  max-width: none;
+  object-fit: fill;
+}
+
+/* [01 빠른 현황 파악] Figma 크롭 */
+.duvi-hypothesis__card:nth-child(1) .duvi-hypothesis__image img {
+  width: 116.56%;
+  height: 142%;
+  left: -4.03%;
+  top: -21%;
+}
+
+/* [02 선택을 통한 이해] Figma 크롭 */
+.duvi-hypothesis__card:nth-child(2) .duvi-hypothesis__image img {
+  width: 108.67%;
+  height: 113%;
+  left: -4.34%;
+  top: -2.63%;
+}
+
+/* [03 목적에 맞는 비교·탐색] Figma 크롭 */
+.duvi-hypothesis__card:nth-child(3) .duvi-hypothesis__image img {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* [01 빠른 현황/02 선택/03 비교 카드 제목] 글씨 크기, 이미지와 거리(margin-top). */
+.duvi-hypothesis__card h4 {
+  margin: 25px 0 10px;
+  color: #08519c;
+  text-align: center;
+  font-size: clamp(20px, 1.85vw, 36px);
+  line-height: 1.25;
+  word-break: keep-all
+}
+
+/* [가설 카드 하단 한글 설명] 글씨·줄 간격. */
+.duvi-hypothesis__card p {
+  margin: 0;
+  font-size: clamp(16px, 1.46vw, 28px);
+  line-height: 1.45;
+  word-break: keep-all
+}
+
+/* ===== 마우스 Hover 기능 — PC에서만 카드/말풍선에 마우스를 올렸을 때 움직임 ===== */
+@media(hover:hover) and (pointer:fine) {
+
+  /* [마우스 Hover 가능한 PC만] [PC 마우스 카드 Hover] 위로 7px 이동, 그림자 변경. */
+  .duvi-hypothesis__card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 32px rgba(31, 41, 55, .08)
+  }
+
+}
+
+/* ===== 태블릿 / 1100px 이하 전용 — 이 아래 선택자들은 PC 기본 스타일보다 우선 적용됨 ===== */
+@media(max-width:1100px) {
+
+  /* [태블릿/좁은 PC ≤1100px] [05 페이지 전체] 배경색, 위·좌우·아래 패딩, 최대폭. */
+  .duvi-hypothesis {
+    padding: 100px 5% 70px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [좌상단 Core UX Hypothesis] top/left 위치와 24px 타이틀. */
+  .duvi-hypothesis__eyebrow {
+    font-size: 20px;
+    top: 32px;
+    left: 5%
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [맨 윗줄 3열] 왼쪽 직장인 / 가운데 공통문제 / 오른쪽 학부모의 너비 비율. */
+  .duvi-hypothesis__problem {
+    grid-template-columns: 1fr 1.6fr 1fr;
+    gap: 12px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [양쪽 페르소나 공통] 일러스트 위쪽 공간(padding-top) 및 설명 카드 기준점. */
+  .duvi-hypothesis__person {
+    padding-top: 90px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [직장인/가족 캐릭터 이미지] 위·왼쪽 위치, 너비·높이, 비율 보존. */
+  .duvi-hypothesis__person img {
+    height: 95px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [PERSONA 01/02 흰색 설명 말풍선] min-height, 패딩, 모서리 둥글기, 글씨. */
+  .duvi-hypothesis__person p {
+    padding: 15px;
+    min-height: 140px;
+    font-size: 14px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [위 가운데 COMMON PROBLEM 전체] top 공간(padding-top)과 가운데 정렬. */
+  .duvi-hypothesis__common {
+    align-self: center;
+    padding: 0 10px;
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [COMMON PROBLEM 파란 제목] 글씨 크기와 아래 여백. */
+  .duvi-hypothesis__common h3 {
+    font-size: 25px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [공통문제 설명 3줄] 글씨 크기·줄 간격. */
+  .duvi-hypothesis__common p {
+    font-size: 16px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [중앙 큰 진파란 CORE HYPOTHESIS 박스] width 최대폭, 내부 패딩, 모서리·아래 카드와 간격. */
+  .duvi-hypothesis__thesis {
+    padding: 32px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [파란 박스 안 가설 4줄 본문] 글씨 크기·행간·글씨 굵기. */
+  .duvi-hypothesis__thesis p {
+    font-size: 21px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [하단 가설 카드 3장 묶음] 카드 열 개수, 세 카드 사이 간격(gap). */
+  .duvi-hypothesis__cards {
+    gap: 14px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [01/02/03 흰색 카드 각각] 내부 패딩, 모서리, Hover 움직임 준비. */
+  .duvi-hypothesis__card {
+    padding: 20px 15px;
+    border-radius: 25px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [01 빠른 현황/02 선택/03 비교 카드 제목] 글씨 크기, 이미지와 거리(margin-top). */
+  .duvi-hypothesis__card h4 {
+    font-size: 20px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [가설 카드 하단 한글 설명] 글씨·줄 간격. */
+  .duvi-hypothesis__card p {
+    font-size: 15px
+  }
+
+}
+
+/* ===== 모바일 / 767px 이하 전용 — 이 구간에서는 PC·태블릿 값을 다시 덮어씀 ===== */
+@media(max-width:767px) {
+
+  /* [모바일 ≤767px] [05 페이지 전체] 배경색, 위·좌우·아래 패딩, 최대폭. */
+  .duvi-hypothesis {
+    padding: 80px 20px 55px
+  }
+
+  /* [모바일 ≤767px] [좌상단 Core UX Hypothesis] top/left 위치와 24px 타이틀. */
+  .duvi-hypothesis__eyebrow {
+    font-size: 18px;
+    top: 28px;
+    left: 20px
+  }
+
+  /* [모바일 ≤767px] [맨 윗줄 3열] 왼쪽 직장인 / 가운데 공통문제 / 오른쪽 학부모의 너비 비율. */
+  .duvi-hypothesis__problem {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px
+  }
+
+  /* [모바일 ≤767px] [위 가운데 COMMON PROBLEM 전체] top 공간(padding-top)과 가운데 정렬. */
+  .duvi-hypothesis__common {
+    grid-column: 1/-1;
+    grid-row: 1;
+    padding: 0 0 15px
+  }
+
+  /* [모바일 ≤767px] [COMMON PROBLEM 파란 제목] 글씨 크기와 아래 여백. */
+  .duvi-hypothesis__common h3 {
+    font-size: 23px
+  }
+
+  /* [모바일 ≤767px] [공통문제 설명 3줄] 글씨 크기·줄 간격. */
+  .duvi-hypothesis__common p {
+    font-size: 14px
+  }
+
+  /* [모바일 ≤767px] [양쪽 페르소나 공통] 일러스트 위쪽 공간(padding-top) 및 설명 카드 기준점. */
+  .duvi-hypothesis__person {
+    padding-top: 70px
+  }
+
+  /* [모바일 ≤767px] [직장인/가족 캐릭터 이미지] 위·왼쪽 위치, 너비·높이, 비율 보존. */
+  .duvi-hypothesis__person img {
+    height: 75px
+  }
+
+  /* [모바일 ≤767px] [PERSONA 01/02 흰색 설명 말풍선] min-height, 패딩, 모서리 둥글기, 글씨. */
+  .duvi-hypothesis__person p {
+    min-height: 122px;
+    font-size: 12px;
+    border-radius: 16px;
+    padding: 12px
+  }
+
+  /* [모바일 ≤767px] [COMMON PROBLEM 아래 점선 연결선] height가 점선 길이, border-left가 색과 굵기. */
+  .duvi-hypothesis__stem {
+    height: 65px
+  }
+
+  /* [모바일 ≤767px] [중앙 큰 진파란 CORE HYPOTHESIS 박스] width 최대폭, 내부 패딩, 모서리·아래 카드와 간격. */
+  .duvi-hypothesis__thesis {
+    padding: 27px 18px;
+    border-radius: 25px;
+    margin-bottom: 25px
+  }
+
+  /* [모바일 ≤767px] [파란 박스 안 CORE HYPOTHESIS 제목] 글씨 크기·아래 여백. */
+  .duvi-hypothesis__thesis h3 {
+    font-size: 21px
+  }
+
+  /* [모바일 ≤767px] [파란 박스 안 가설 4줄 본문] 글씨 크기·행간·글씨 굵기. */
+  .duvi-hypothesis__thesis p {
+    font-size: 15px
+  }
+
+  /* [모바일 ≤767px] [모바일에서 가설 강제 줄바꿈 숨김] 원래 JSX br 태그만 숨기는 설정. */
+  .duvi-hypothesis__thesis p br {
+    display: none
+  }
+
+  /* [모바일 ≤767px] [하단 가설 카드 3장 묶음] 카드 열 개수, 세 카드 사이 간격(gap). */
+  .duvi-hypothesis__cards {
+    grid-template-columns: 1fr;
+    gap: 15px
+  }
+
+  /* [모바일 ≤767px] [01/02/03 흰색 카드 각각] 내부 패딩, 모서리, Hover 움직임 준비. */
+  .duvi-hypothesis__card {
+    display: grid;
+    grid-template-columns: 115px 1fr;
+    gap: 5px 15px;
+    padding: 16px;
+    border-radius: 20px
+  }
+
+  /* [모바일 ≤767px] [가설 이미지 네모 프레임] aspect-ratio:1 정사각형, 둥근 모서리 및 넘친 이미지 잘라내기. */
+  .duvi-hypothesis__image {
+    grid-row: span 2
+  }
+
+  /* [모바일 ≤767px] [01 빠른 현황/02 선택/03 비교 카드 제목] 글씨 크기, 이미지와 거리(margin-top). */
+  .duvi-hypothesis__card h4 {
+    margin: 0;
+    text-align: left;
+    font-size: 17px
+  }
+
+  /* [모바일 ≤767px] [가설 카드 하단 한글 설명] 글씨·줄 간격. */
+  .duvi-hypothesis__card p {
+    font-size: 13px
+  }
+
+}

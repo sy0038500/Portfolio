@@ -1,0 +1,335 @@
+/* DUVI 03 & 04 / Persona — Figma 362:1201, 362:1216 */
+
+/*
+============================================================
+[03·04페이지] PERSONA / USER CONTEXT — 한국어 수정 안내
+============================================================
+두 페이지가 이 CSS 하나를 공유함! 03(28세 직장인)과 04(40세 학부모)를 따로 고치려면
+  .duvi-persona--second = 04 페이지만 (현재는 배경색만 별도 적용).
+구성: 큰 둥근 카드 → 상단 프로필/설명 → 중앙 Key Question → 하단 Needs/Pain Point/Goal → 일러스트
+  ① 섹션 전체 공백: .duvi-persona
+  ② PC 24/태블릿 20/모바일 18 타이틀: .duvi-persona__eyebrow
+  ③ 큰 카드 폭·높이·내부 여백: .duvi-persona__panel
+  ④ 상단 두 문단 좌우 비율: .duvi-persona__top
+  ⑤ 큰 Key Question 위치·글씨: .duvi-persona__question
+  ⑥ 하단 3열/1열 구성: .duvi-persona__bottom
+  ⑦ 일러스트 크기·우하단 위치: .duvi-persona__image
+
+margin=바깥 공백, padding=안쪽 공백, gap=요소 간격, border-radius=모서리 곡률
+font-size=폰트 크기, line-height=줄 간격, grid-template-columns=열 너비
+max-width: 이미지/카드의 최대폭, object-fit:contain=비율 유지하며 전체 표시
+맨 아래 1100px/767px 구간에서는 같은 요소의 규칙이 다시 설정됨.
+CSS 디자인 속성은 그대로 두고 주석만 추가한 파일.
+============================================================
+*/
+
+/* 두 페르소나 페이지 전체 요소 box-sizing 규칙. */
+.duvi-persona,
+.duvi-persona * {
+  box-sizing: border-box
+}
+
+/* [03·04 공통 섹션] 카드 바깥 여백(padding), 페이지 배경색 및 최대 너비. */
+.duvi-persona {
+  position: relative;
+  max-width: 1920px;
+  margin: auto;
+  padding: 125px 3.3% 100px;
+  background: #f4f7fb;
+  font-family: Pretendard, sans-serif;
+  color: #0f0f0f
+}
+
+/* [04: 학부모 페이지에만 적용] 전체 배경을 흰색으로 변경. 03과 구분. */
+.duvi-persona--second {
+  background: #fff
+}
+
+/* [좌상단 Persona / User Context] top/left 및 글씨 크기(PC 24). */
+.duvi-persona__eyebrow {
+  position: absolute;
+  left: 31px;
+  top: 35px;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 400
+}
+
+/* [큰 둥근 배경 카드] 카드 최소 높이, padding 위/좌우/아래 내부 여백, 둥근 모서리. */
+.duvi-persona__panel {
+  position: relative;
+  min-height: 780px;
+  padding: 86px 6.3% 110px;
+  border-radius: 60px;
+  background: #fff;
+  overflow: hidden;
+}
+
+/* [04: 학부모 페르소나 전용 카드색] #f4f7fb 연한 회청색 배경. */
+.duvi-persona--second .duvi-persona__panel {
+  background: #f4f7fb
+}
+
+/* [카드 상단 프로필/상황 설명을 나누는 2열] 각 열 비율과 gap. */
+.duvi-persona__top {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 65px;
+  align-items: start
+}
+
+/* [좌상단 28세 직장인 / 40세 학부모 및 소개 문장] 글씨 크기·파란색. */
+.duvi-persona__top h3 {
+  margin: 0;
+  color: #08519c;
+  font-size: clamp(22px, 1.7vw, 32px);
+  line-height: 1.35;
+  font-weight: 700;
+  word-break: keep-all
+}
+
+/* [프로필 타이틀 밑 줄바꿈] span을 새 줄로 떨어뜨림. */
+.duvi-persona__top h3 span {
+  display: block
+}
+
+/* [우상단 인물 상황 설명 문장] 글씨 크기, 왼쪽 제목과 높이 정렬하는 margin. */
+.duvi-persona__top>p {
+  margin: 15px 0 0;
+  font-size: clamp(18px, 1.45vw, 28px);
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+/* [Key Question + 큰 질문을 감싸는 중앙 영역] 위·아래 간격(margin), 최대 폭, 가운데 정렬. */
+.duvi-persona__question {
+  position: relative;
+  z-index: 1;
+  max-width: 1515px;
+  margin: 95px auto 80px;
+  text-align: center;
+}
+
+/* [Key Question 영문 소제목] 위치·파란색·글씨 크기. */
+.duvi-persona__question h4 {
+  margin: 0;
+  text-align: left;
+  color: #3182bd;
+  font-size: clamp(25px, 2.4vw, 46px);
+  font-weight: 600;
+}
+
+/* [인용부호 안 큰 파란 핵심 질문] font-size, line-height, 굵기. 너무 크면 여기! */
+.duvi-persona__question blockquote {
+  margin: 0;
+  color: #08519c;
+  font-size: clamp(28px, 3.05vw, 58px);
+  font-weight: 800;
+  line-height: 1.25;
+  word-break: keep-all;
+}
+
+/* [하단 Needs / Pain Point / Goal 3열] 전체 폭(width), 세 칸 간격(gap), 열 개수(grid-template-columns). */
+.duvi-persona__bottom {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 35px;
+  width: calc(100% - 320px);
+  margin: 0 0 0 0;
+}
+
+/* [Needs, Pain Point, Goal 파란 소제목] 폰트 크기. */
+.duvi-persona__bottom strong {
+  color: #3182bd;
+  font-size: clamp(20px, 1.7vw, 32px)
+}
+
+/* [Needs·Pain Point·Goal 아래 설명글] 글씨·줄 간격. */
+.duvi-persona__bottom p {
+  margin: 3px 0;
+  font-size: clamp(18px, 1.45vw, 28px);
+  line-height: 1.35;
+  word-break: keep-all
+}
+
+/* [카드 우하단 일러스트: persona1.png / persona2.png] width 크기, right/bottom 위치, object-fit:contain 원본비율. */
+.duvi-persona__image {
+  position: absolute;
+  right: 24px;
+  bottom: 0;
+  width: min(26%, 340px);
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+  transform: scaleX(-1);
+  transform-origin: center;
+}
+
+/* ===== 태블릿 / 1100px 이하 전용 — 이 아래 선택자들은 PC 기본 스타일보다 우선 적용됨 ===== */
+@media(max-width:1100px) {
+
+  /* [태블릿/좁은 PC ≤1100px] [03·04 공통 섹션] 카드 바깥 여백(padding), 페이지 배경색 및 최대 너비. */
+  .duvi-persona {
+    padding: 104px 5% 65px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [좌상단 Persona / User Context] top/left 및 글씨 크기(PC 24). */
+  .duvi-persona__eyebrow {
+    font-size: 20px;
+    top: 32px;
+    left: 5%
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [큰 둥근 배경 카드] 카드 최소 높이, padding 위/좌우/아래 내부 여백, 둥근 모서리. */
+  .duvi-persona__panel {
+    min-height: 0;
+    padding: 45px 5% 190px;
+    border-radius: 35px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [카드 상단 프로필/상황 설명을 나누는 2열] 각 열 비율과 gap. */
+  .duvi-persona__top {
+    gap: 25px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [좌상단 28세 직장인 / 40세 학부모 및 소개 문장] 글씨 크기·파란색. */
+  .duvi-persona__top h3 {
+    font-size: 22px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [태블릿·모바일의 우상단 상황 설명] 글씨 크기. PC는 >p, 반응형에서는 p 선택자. */
+  .duvi-persona__top p {
+    font-size: 17px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [Key Question + 큰 질문을 감싸는 중앙 영역] 위·아래 간격(margin), 최대 폭, 가운데 정렬. */
+  .duvi-persona__question {
+    margin: 70px auto 60px;
+    max-width: 100%;
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [Key Question 영문 소제목] 위치·파란색·글씨 크기. */
+  .duvi-persona__question h4 {
+    font-size: 28px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [인용부호 안 큰 파란 핵심 질문] font-size, line-height, 굵기. 너무 크면 여기! */
+  .duvi-persona__question blockquote {
+    font-size: 32px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [하단 Needs / Pain Point / Goal 3열] 전체 폭(width), 세 칸 간격(gap), 열 개수(grid-template-columns). */
+  .duvi-persona__bottom {
+    width: calc(100% - 230px);
+    gap: 15px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [Needs, Pain Point, Goal 파란 소제목] 폰트 크기. */
+  .duvi-persona__bottom strong {
+    font-size: 19px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [Needs·Pain Point·Goal 아래 설명글] 글씨·줄 간격. */
+  .duvi-persona__bottom p {
+    font-size: 16px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [카드 우하단 일러스트: persona1.png / persona2.png] width 크기, right/bottom 위치, object-fit:contain 원본비율. */
+  .duvi-persona__image {
+    max-width: 210px;
+    width: 210px;
+    right: 18px;
+    bottom: 0;
+  }
+
+}
+
+/* ===== 모바일 / 767px 이하 전용 — 이 구간에서는 PC·태블릿 값을 다시 덮어씀 ===== */
+@media(max-width:767px) {
+
+  /* [모바일 ≤767px] [03·04 공통 섹션] 카드 바깥 여백(padding), 페이지 배경색 및 최대 너비. */
+  .duvi-persona {
+    padding: 80px 20px 35px
+  }
+
+  /* [모바일 ≤767px] [좌상단 Persona / User Context] top/left 및 글씨 크기(PC 24). */
+  .duvi-persona__eyebrow {
+    font-size: 18px;
+    left: 20px;
+    top: 28px
+  }
+
+  /* [모바일 ≤767px] [큰 둥근 배경 카드] 카드 최소 높이, padding 위/좌우/아래 내부 여백, 둥근 모서리. */
+  .duvi-persona__panel {
+    border-radius: 24px;
+    padding: 28px 20px 170px
+  }
+
+  /* [모바일 ≤767px] [카드 상단 프로필/상황 설명을 나누는 2열] 각 열 비율과 gap. */
+  .duvi-persona__top {
+    grid-template-columns: 1fr;
+    gap: 12px
+  }
+
+  /* [모바일 ≤767px] [좌상단 28세 직장인 / 40세 학부모 및 소개 문장] 글씨 크기·파란색. */
+  .duvi-persona__top h3 {
+    font-size: 19px
+  }
+
+  /* [모바일 ≤767px] [태블릿·모바일의 우상단 상황 설명] 글씨 크기. PC는 >p, 반응형에서는 p 선택자. */
+  .duvi-persona__top p {
+    font-size: 14px;
+    margin: 0
+  }
+
+  /* [모바일 ≤767px] [Key Question + 큰 질문을 감싸는 중앙 영역] 위·아래 간격(margin), 최대 폭, 가운데 정렬. */
+  .duvi-persona__question {
+    width: 100%;
+    max-width: none;
+    margin: 38px 0 32px;
+    text-align: center;
+  }
+
+  /* [모바일 ≤767px] [Key Question 영문 소제목] 위치·파란색·글씨 크기. */
+  .duvi-persona__question h4 {
+    font-size: 21px
+  }
+
+  /* [모바일 ≤767px] [인용부호 안 큰 파란 핵심 질문] font-size, line-height, 굵기. 너무 크면 여기! */
+  .duvi-persona__question blockquote {
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 0;
+    overflow-wrap: break-word;
+    
+  }
+
+  /* [모바일 ≤767px] [하단 Needs / Pain Point / Goal 3열] 전체 폭(width), 세 칸 간격(gap), 열 개수(grid-template-columns). */
+  .duvi-persona__bottom {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    width: 100%
+  }
+
+  /* [모바일 ≤767px] [Needs, Pain Point, Goal 파란 소제목] 폰트 크기. */
+  .duvi-persona__bottom strong {
+    font-size: 17px
+  }
+
+  /* [모바일 ≤767px] [Needs·Pain Point·Goal 아래 설명글] 글씨·줄 간격. */
+  .duvi-persona__bottom p {
+    font-size: 14px
+  }
+
+  /* [모바일 ≤767px] [카드 우하단 일러스트: persona1.png / persona2.png] width 크기, right/bottom 위치, object-fit:contain 원본비율. */
+  .duvi-persona__image {
+    width: 170px;
+    max-width: 55%;
+    bottom: 0;
+    right: 10px;
+    transform: scaleX(-1);
+  }
+
+}

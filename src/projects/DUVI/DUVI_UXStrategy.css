@@ -1,0 +1,614 @@
+/* DUVI 06 / UX Strategy — Figma 362:1257 */
+
+/*
+============================================================
+[06페이지] UX STRATEGY / INTERACTION DESIGN — 한국어 수정 안내
+============================================================
+상단: 왼쪽 3가지 전략 설명 + 오른쪽 노트북 목업/파란 테두리/01·02·03 마커
+하단: Interaction Design 소개 + 상태 4개(Default/Hover/Select/Update) 카드
+  ① 페이지 공백·배경: .duvi-ux
+  ② 24/20/18 좌상단 타이틀: .duvi-ux__eyebrow
+  ③ 왼쪽 전략/오른쪽 노트북 비율: .duvi-ux__hero
+  ④ Overview / Details / Context 글씨: .duvi-ux__principles
+  ⑤ 노트북 이미지 비율: .duvi-ux__laptop > img
+  ⑥ 노트북 위 파란 테두리 3개: .duvi-ux__outline--all/map/detail
+  ⑦ 노트북 위 동그란 번호: .duvi-ux__marker--first/second/third
+  ⑧ Interaction Design 제목·설명: .duvi-ux__interaction-heading
+  ⑨ 하단 4카드 열 구성·간격: .duvi-ux__states
+  ⑩ 4카드 크기/각각의 파란 배경 단계: .duvi-ux__state, --02/--03/--04
+  ⑪ 카드 이미지의 비율·잘림: .duvi-ux__state-image / img
+
+top/left/width/height는 노트북 위 '파란 표시 상자'의 위치·크기를 조절.
+지도 이미지 자체를 왜곡시키지 말 것: width:100%; height:auto; object-fit:contain
+card image에는 object-fit:cover가 설정되어 있어 일부 크롭될 수 있음.
+1100px/767px @media에는 화면별 배치·글씨 오버라이드가 있음.
+이 파일은 기존 동작·수치 변경 없이 주석만 추가한 수정용 설명본.
+============================================================
+*/
+
+/* 페이지 전체 요소 box-sizing. */
+.duvi-ux,
+.duvi-ux * {
+  box-sizing: border-box
+}
+
+/* [06페이지 전체] 배경 흰색, 바깥 padding, 섹션 최대폭. */
+.duvi-ux {
+  position: relative;
+  max-width: 1920px;
+  margin: auto;
+  background: #fff;
+  color: #0f0f0f;
+  padding: 95px 3% 75px;
+  font-family: Pretendard, sans-serif
+}
+
+/* [좌상단 UX Strategy] 타이틀 위치 top/left, 글씨 24. */
+.duvi-ux__eyebrow {
+  position: absolute;
+  top: 35px;
+  left: 31px;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 400
+}
+
+/* [상단 왼쪽 전략 설명 / 오른쪽 노트북 목업 2열] 열 너비 비율·높이·gap. */
+.duvi-ux__hero {
+  display: grid;
+  grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
+  gap: 22px;
+  align-items: center;
+  min-height: 0;
+}
+
+/* [Overview / Details / Context 세 문단 묶음] 세로/가로 배치, 항목 간격. */
+.duvi-ux__principles {
+  display: flex;
+  flex-direction: column;
+  gap: 28px
+}
+
+/* [01/02/03 전략명 영문 파란 글씨] 글씨 크기·굵기. */
+.duvi-ux__principles h3 {
+  margin: 0;
+  color: #08519c;
+  font-size: clamp(22px, 2vw, 38px);
+  font-weight: 700;
+  line-height: 1.25
+}
+
+/* [각 전략의 한글 설명] 글씨 크기·상단 간격. */
+.duvi-ux__principles p {
+  margin: 5px 0 0;
+  font-size: clamp(18px, 1.67vw, 32px)
+}
+
+/* [노트북 목업과 그 위 표시 테두리 전체 기준점] width:100%. */
+.duvi-ux__laptop {
+  position: relative;
+  min-width: 0;
+  width: 100%
+}
+
+/* [pf_pro4_uxhypomac@2x.png 노트북 원본] height:auto + object-fit:contain = 비율 유지. */
+.duvi-ux__laptop>img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain
+}
+
+/* [노트북 위 파란 영역 테두리 공통] 선 두께, 색, 둥근 모서리. position:absolute. */
+.duvi-ux__outline {
+  position: absolute;
+  border: clamp(2px, .26vw, 5px) solid #08519c;
+  border-radius: clamp(9px, 1.3vw, 25px);
+  pointer-events: none;
+  opacity: 0.25;
+  transition: opacity 220ms ease, box-shadow 220ms ease;
+}
+
+/* [큰 파란 테두리 전체 화면 영역, 03] top/left/width/height 좌표 수정. */
+.duvi-ux__outline--all {
+  top: 8%;
+  left: 14.7%;
+  width: 73.3%;
+  height: 75.6%
+}
+
+/* [지도 영역 파란 테두리, 01] top/left/width/height 좌표 수정. */
+.duvi-ux__outline--map {
+  top: 14%;
+  left: 31.4%;
+  width: 34.9%;
+  height: 59.6%
+}
+
+/* [오른쪽 상세 패널 파란 테두리, 02] top/left/width/height 수정. */
+.duvi-ux__outline--detail {
+  top: 14%;
+  left: 67%;
+  width: 16.2%;
+  height: 59.6%
+}
+
+/* [동그란 01·02·03 번호 공통] width 원 크기, font-size 숫자 크기, 배경색. */
+.duvi-ux__marker {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: clamp(30px, 2.3vw, 42px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #08519c;
+  color: #fff;
+  font-size: clamp(12px, 1.1vw, 19px);
+  font-weight: 700;
+  opacity: 0.25;
+  transform: translate(-50%, -50%);
+  transition: opacity 220ms ease, box-shadow 220ms ease;
+
+}
+
+/* 지도 영역 01 */
+.duvi-ux__marker--first {
+  top: 14%;
+  left: 66.3%;
+}
+
+/* 상세정보 영역 02 */
+.duvi-ux__marker--second {
+  top: 14%;
+  left: 83.2%;
+}
+
+/* 전체 화면 영역 03 */
+.duvi-ux__marker--third {
+  top: 8%;
+  left: 88%;
+}
+
+
+/* =========================================
+   데스크탑 UX 전략 선택 버튼
+========================================= */
+
+.duvi-ux__principle-button {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  margin-left: -12px;
+
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: transparent;
+
+  color: inherit;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+
+  transition:
+    background-color 220ms ease,
+    border-color 220ms ease;
+}
+
+/* 클릭해서 선택된 전략 */
+.duvi-ux__principle-button.is-selected {
+  background: rgba(8, 81, 156, 0.05);
+  border-color: rgba(8, 81, 156, 0.16);
+}
+
+/* [UX 전략] 인터랙션 안내 문구 */
+.duvi-ux__principles .duvi-ux__hint {
+  margin: 14px 0 0;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+/* 마우스를 올린 전략 */
+@media (min-width: 1101px) and (hover: hover) and (pointer: fine) {
+  .duvi-ux__principle-button:hover {
+    background: rgba(8, 81, 156, 0.08);
+    border-color: rgba(8, 81, 156, 0.22);
+  }
+}
+
+/* 키보드로 선택 */
+.duvi-ux__principle-button:focus-visible {
+  outline: 2px solid #08519c;
+  outline-offset: 3px;
+}
+
+/* =========================================
+   목업 라인과 번호 강조
+   01 지도 / 02 상세 / 03 전체
+========================================= */
+
+.duvi-ux__laptop[data-active="1"] .duvi-ux__outline--map,
+.duvi-ux__laptop[data-active="1"] .duvi-ux__marker--first,
+.duvi-ux__laptop[data-active="2"] .duvi-ux__outline--detail,
+.duvi-ux__laptop[data-active="2"] .duvi-ux__marker--second,
+.duvi-ux__laptop[data-active="3"] .duvi-ux__outline--all,
+.duvi-ux__laptop[data-active="3"] .duvi-ux__marker--third {
+  opacity: 1;
+}
+
+/* 강조된 테두리 */
+.duvi-ux__laptop[data-active="1"] .duvi-ux__outline--map,
+.duvi-ux__laptop[data-active="2"] .duvi-ux__outline--detail,
+.duvi-ux__laptop[data-active="3"] .duvi-ux__outline--all {
+  box-shadow: 0 0 0 2px rgba(8, 81, 156, 0.12);
+}
+
+
+/* [노트북 아래 Interaction Design 시작] 상단 여백(margin-top). */
+.duvi-ux__interaction-heading {
+  margin-top: 25px
+}
+
+/* [Interaction Design 영문 타이틀] 글씨 크기·아래 여백. 페이지 두 번째 제목. */
+.duvi-ux__interaction-heading h2 {
+  margin: 0 0 25px;
+  font-size: 24px;
+  font-weight: 400
+}
+
+/* [Interaction Design 안내 한글 설명] 글씨·줄 간격. */
+.duvi-ux__interaction-heading p {
+  margin: 0;
+  font-size: clamp(16px, 1.25vw, 24px);
+  line-height: 1.5;
+  word-break: keep-all
+}
+
+/* [하단 상태 카드 Default/Hover/Select/Update 4개] 열 수/카드 사이 간격/상단 여백. */
+.duvi-ux__states {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 1.46vw, 28px);
+  margin-top: 65px
+}
+
+/* [하단 상태 카드 공통] 카드 높이·안쪽 패딩·모서리·그림자·기본 연파랑 배경. */
+.duvi-ux__state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 0;
+  padding: 28px 24px 24px;
+  border-radius: clamp(22px, 3.12vw, 60px);
+  box-shadow: 0 4px 28px rgba(31, 41, 55, .05), 3px 10px 30px rgba(31, 41, 55, .2);
+  background: rgba(8, 81, 156, .1);
+  text-align: center;
+  transition: transform .24s ease;
+  aspect-ratio: 434 / 568;
+}
+
+/* [02 Hover 카드] 파란색 불투명도 35% 배경. */
+.duvi-ux__state--02 {
+  background: rgba(8, 81, 156, .35)
+}
+
+/* [03 Select 카드] 파란색 불투명도 75% 배경. */
+.duvi-ux__state--03 {
+  background: rgba(8, 81, 156, .75)
+}
+
+/* [04 Update 카드] 진파랑 #08519c 배경. */
+.duvi-ux__state--04 {
+  background: #08519c
+}
+
+/* [01 Default/02 Hover/03 Select/04 Update 카드 제목] 숫자·영문 글씨 크기. */
+.duvi-ux__state h3 {
+  margin: 0;
+  color: #08519c;
+  font-size: clamp(20px, 1.8vw, 32px);
+  line-height: 1.2
+}
+
+/* [각 카드 한글 상태 설명] 글씨 크기·위아래 여백. */
+.duvi-ux__state p {
+  margin: 2px 0 16px;
+  font-size: clamp(12px, 1.2vw, 24px)
+}
+
+/* [진한 배경 카드의 밝은 파랑 글씨] #bdd7e7. */
+.duvi-ux__state--03 h3,
+.duvi-ux__state--04>p {
+  color: #bdd7e7
+}
+
+/* [진한 배경 카드의 흰색 글씨]. */
+.duvi-ux__state--03>p,
+.duvi-ux__state--04 h3 {
+  color: #fff
+}
+
+/* [공통] 네 카드의 정사각형 이미지 프레임 */
+.duvi-ux__state-image {
+  position: relative;
+  width: min(100%, 300px);
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* [공통] 원본 크롭 위치를 개별 지정 */
+.duvi-ux__state-image img {
+  position: absolute;
+  display: block;
+  max-width: none;
+  object-fit: fill;
+}
+
+/* 01 Default
+   서울 전체 지도 - Figma 원본 크롭 */
+.duvi-ux__state--01 .duvi-ux__state-image img {
+  width: 126.41%;
+  height: 154%;
+  left: -8.96%;
+  top: -27%;
+}
+
+/* 02 Hover
+   논현1동 말풍선 중심 확대 */
+.duvi-ux__state--02 .duvi-ux__state-image img {
+  width: 209.32%;
+  height: 255%;
+  left: -50.41%;
+  top: -77.5%;
+}
+
+/* 03 Select
+   선택된 파란색 행정동 확대 */
+.duvi-ux__state--03 .duvi-ux__state-image img {
+  width: 209.32%;
+  height: 255%;
+  left: -47.86%;
+  top: -72.4%;
+}
+
+/* 04 Update
+   DUVI 상세 패널의 상단 정보 */
+.duvi-ux__state--04 .duvi-ux__state-image img {
+  width: 126.41%;
+  height: 154%;
+  left: -8.96%;
+  top: -9.15%;
+}
+
+/* ===== 마우스 Hover 기능 — PC에서만 카드/말풍선에 마우스를 올렸을 때 움직임 ===== */
+@media(hover:hover) and (pointer:fine) {
+
+  /* [마우스 Hover 가능한 PC만] [마우스 Hover] 해당 카드가 7px 위로 올라감. */
+  .duvi-ux__state:hover {
+    transform: translateY(-7px)
+  }
+
+}
+
+/* ===== 태블릿 / 1100px 이하 전용 — 이 아래 선택자들은 PC 기본 스타일보다 우선 적용됨 ===== */
+@media(max-width:1100px) {
+
+  /* [태블릿·모바일] 인터랙션 안내 문구 숨김 */
+  .duvi-ux__hint {
+    display: none;
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [06페이지 전체] 배경 흰색, 바깥 padding, 섹션 최대폭. */
+  .duvi-ux {
+    padding: 82px 5% 55px;
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [좌상단 UX Strategy] 타이틀 위치 top/left, 글씨 24. */
+  .duvi-ux__eyebrow {
+    font-size: 20px;
+    top: 32px;
+    left: 5%
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [상단 왼쪽 전략 설명 / 오른쪽 노트북 목업 2열] 열 너비 비율·높이·gap. */
+  .duvi-ux__hero {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 18px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [Overview / Details / Context 세 문단 묶음] 세로/가로 배치, 항목 간격. */
+  .duvi-ux__principles {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [01/02/03 전략명 영문 파란 글씨] 글씨 크기·굵기. */
+  .duvi-ux__principles h3 {
+    font-size: 20px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [각 전략의 한글 설명] 글씨 크기·상단 간격. */
+  .duvi-ux__principles p {
+    font-size: 16px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [노트북 아래 Interaction Design 시작] 상단 여백(margin-top). */
+  .duvi-ux__interaction-heading {
+    margin-top: 30px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [Interaction Design 영문 타이틀] 글씨 크기·아래 여백. 페이지 두 번째 제목. */
+  .duvi-ux__interaction-heading h2 {
+    font-size: 20px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [하단 상태 카드 Default/Hover/Select/Update 4개] 열 수/카드 사이 간격/상단 여백. */
+  .duvi-ux__states {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [하단 상태 카드 공통] 카드 높이·안쪽 패딩·모서리·그림자·기본 연파랑 배경. */
+  .duvi-ux__state {
+    min-height: 0;
+    padding: 30px 24px;
+    aspect-ratio: auto;
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [01 Default/02 Hover/03 Select/04 Update 카드 제목] 숫자·영문 글씨 크기. */
+  .duvi-ux__state h3 {
+    font-size: 23px
+  }
+
+  /* [태블릿/좁은 PC ≤1100px] [각 카드 한글 상태 설명] 글씨 크기·위아래 여백. */
+  .duvi-ux__state>p {
+    font-size: 18px
+  }
+
+
+  /* [태블릿] 전략 버튼의 선택 배경 제거 */
+  .duvi-ux__principle-button,
+  .duvi-ux__principle-button.is-selected {
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border-color: transparent;
+  }
+
+  /* [태블릿] 01, 02, 03 라인과 번호 항상 표시 */
+  .duvi-ux__outline,
+  .duvi-ux__marker {
+    opacity: 1 !important;
+    box-shadow: none !important;
+    transition: none;
+  }
+
+  /* 파란색 테두리 축소 */
+  .duvi-ux__outline {
+    border-width: 2px;
+    border-radius: 8px;
+  }
+
+  /* 동그라미 크기 축소 */
+  .duvi-ux__marker {
+    width: clamp(24px, 3.1vw, 34px);
+    font-size: clamp(11px, 1.4vw, 15px);
+  }
+
+
+}
+
+/* ===== 모바일 / 767px 이하 전용 — 이 구간에서는 PC·태블릿 값을 다시 덮어씀 ===== */
+@media(max-width:767px) {
+
+  /* [모바일 ≤767px] [06페이지 전체] 배경 흰색, 바깥 padding, 섹션 최대폭. */
+  .duvi-ux {
+    padding: 85px 20px 55px
+  }
+
+  /* [모바일 ≤767px] [좌상단 UX Strategy] 타이틀 위치 top/left, 글씨 24. */
+  .duvi-ux__eyebrow {
+    font-size: 18px;
+    top: 28px;
+    left: 20px
+  }
+
+  /* [모바일 ≤767px] [Overview / Details / Context 세 문단 묶음] 세로/가로 배치, 항목 간격. */
+  .duvi-ux__principles {
+    grid-template-columns: 1fr;
+    gap: 14px
+  }
+
+  /* [모바일 ≤767px] [01/02/03 전략명 영문 파란 글씨] 글씨 크기·굵기. */
+  .duvi-ux__principles h3 {
+    font-size: 19px
+  }
+
+  /* [모바일 ≤767px] [각 전략의 한글 설명] 글씨 크기·상단 간격. */
+  .duvi-ux__principles p {
+    font-size: 15px
+  }
+
+  /* [모바일] UX Strategy 페이지 여백 */
+  .duvi-ux {
+    padding: 72px 20px 50px;
+  }
+
+  /* 전략 설명과 목업 사이 */
+  .duvi-ux__hero {
+    gap: 12px;
+  }
+
+  /* [모바일] 테두리 3개 모두 표시 */
+  .duvi-ux__outline {
+    border-width: 1.5px;
+    border-radius: 5px;
+  }
+
+  /* 01, 02, 03 원형 번호 */
+  .duvi-ux__marker {
+    width: 22px;
+    font-size: 10px;
+  }
+
+  /* 03 번호가 02와 겹치지 않도록 */
+  .duvi-ux__marker--third {
+    top: 3%;
+    left: 90%;
+  }
+
+  /* Interaction Design 시작 간격 */
+  .duvi-ux__interaction-heading {
+    margin-top: 25px;
+  }
+
+
+  /* [모바일 ≤767px] [노트북 아래 Interaction Design 시작] 상단 여백(margin-top). */
+  .duvi-ux__interaction-heading {
+    margin-top: 40px
+  }
+
+  /* [모바일 ≤767px] [Interaction Design 영문 타이틀] 글씨 크기·아래 여백. 페이지 두 번째 제목. */
+  .duvi-ux__interaction-heading h2 {
+    font-size: 18px
+  }
+
+  /* [모바일 ≤767px] [Interaction Design 안내 한글 설명] 글씨·줄 간격. */
+  .duvi-ux__interaction-heading p {
+    font-size: 14px
+  }
+
+  /* [모바일 ≤767px] [하단 상태 카드 Default/Hover/Select/Update 4개] 열 수/카드 사이 간격/상단 여백. */
+  .duvi-ux__states {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 30px
+  }
+
+  /* [모바일 ≤767px] [하단 상태 카드 공통] 카드 높이·안쪽 패딩·모서리·그림자·기본 연파랑 배경. */
+  .duvi-ux__state {
+    border-radius: 22px;
+    padding: 18px 12px;
+    min-height: 0
+  }
+
+  /* [모바일 ≤767px] [01 Default/02 Hover/03 Select/04 Update 카드 제목] 숫자·영문 글씨 크기. */
+  .duvi-ux__state h3 {
+    font-size: 16px
+  }
+
+  /* [모바일 ≤767px] [각 카드 한글 상태 설명] 글씨 크기·위아래 여백. */
+  .duvi-ux__state>p {
+    font-size: 13px;
+    margin: 6px 0 15px
+  }
+
+}

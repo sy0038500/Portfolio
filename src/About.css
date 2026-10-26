@@ -1,0 +1,218 @@
+/* About - Typo */
+
+.about {
+  --about-h1: 80px;
+  --about-h4: 28px;
+  --about-body: 20px;
+}
+
+/* About - Layout */
+.about {
+  width: 100%;
+  min-height: 1080px;
+  padding: 63px clamp(32px, 5.32vw, 110px) 90px;
+  background-color: #f9f6ec;
+  color: #37251b;
+
+  scroll-margin-top: 80px;
+}
+
+.about__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.195fr) minmax(0, 1fr);
+  column-gap: clamp(40px, 8vw, 154px);
+
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+.about__content {
+  min-width: 0;
+}
+
+/* About - Text */
+.about__eyebrow {
+  margin: 0;
+  font-family: "Pretendard", sans-serif;
+  font-size: var(--about-h4);
+  font-weight: 500;
+  line-height: 38px;
+}
+
+.about__title {
+  margin: 108px 0 0;
+  font-family: "GangwonEdu Power", "GangwonEduPower", sans-serif;
+  font-size: var(--about-h1);
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  word-break: keep-all;
+}
+
+.about__accent {
+  display: block;
+  width: 85px;
+  height: 10px;
+  margin-top: 80px;
+}
+
+.about__intro,
+.about__closing {
+  margin-bottom: 0;
+  font-family: "Pretendard", sans-serif;
+  font-size: var(--about-body);
+  font-weight: 400;
+  line-height: 1.75;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.about__intro {
+  min-height: 210px;
+  margin-top: 25px;
+}
+
+.about__divider {
+  display: block;
+  width: 85px;
+  height: 2px;
+  margin-top: 29px;
+}
+
+.about__closing {
+  margin-top: 18px;
+}
+
+/* About - Illst */
+.about__visual {
+  width: 100%;
+  min-width: 0;
+  margin-top: 107px;
+}
+
+.about__visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 704 / 705;
+}
+
+/* Tablet - 1024px */
+@media (max-width: 1024px) {
+  .about {
+    --about-h1: 56px;
+    --about-h4: 24px;
+    --about-body: 18px;
+    min-height: auto;
+    padding: 110px 48px 90px;
+  }
+
+  .about__layout {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    column-gap: 28px;
+    row-gap: 0;
+    align-items: start;
+  }
+
+  .about__title {
+    margin-top: 48px;
+  }
+
+  .about__accent {
+    margin-top: 48px;
+  }
+
+  .about__intro {
+    min-height: 0;
+    margin-top: 24px;
+  }
+
+  .about__divider {
+    margin-top: 32px;
+  }
+
+  .about__visual {
+    width: 100%;
+    margin-top: 65px;
+  }
+}
+
+/* Mobile - 767px */
+@media (max-width: 767px) {
+  .about {
+    --about-h1: 38px;
+    --about-h4: 20px;
+    --about-body: 16px;
+    padding: 104px 24px 72px;
+  }
+
+  .about__layout {
+    row-gap: 36px;
+  }
+
+  .about__eyebrow {
+    line-height: 1.4;
+  }
+
+  .about__title {
+    margin-top: 32px;
+    line-height: 1.18;
+  }
+
+  .about__accent {
+    margin-top: 36px;
+  }
+
+  .about__intro,
+  .about__closing {
+    line-height: 1.7;
+  }
+
+  .about__intro {
+    margin-top: 24px;
+  }
+
+  .about__divider {
+    margin-top: 28px;
+  }
+
+  .about__closing {
+    margin-top: 20px;
+  }
+
+
+/* Mobile - About Illustration Overlay */
+
+.about__layout {
+  display: block;
+  position: relative;
+}
+
+.about__content {
+  position: relative;
+  z-index: 1;
+}
+
+.about__visual {
+  position: absolute;
+  top: 520px;
+  right: 0;
+  left: auto;
+
+  width: 48%;
+  max-width: 200px;
+  margin: 0;
+
+  transform: none;
+  opacity: 0.35;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.about__visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+}

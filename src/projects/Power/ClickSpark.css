@@ -1,0 +1,82 @@
+.click-spark-area {
+  min-height: 100vh;
+}
+
+.click-spark {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  pointer-events: none;
+  z-index: 9997;
+  transform: translate(-50%, -50%);
+}
+
+.click-spark span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  background: var(--retro-yellow);
+  border: 1px solid var(--retro-brown);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: sparkBurst 0.65s ease-out forwards;
+}
+
+.click-spark span:nth-child(1) {
+  --x: 0px;
+  --y: -42px;
+}
+
+.click-spark span:nth-child(2) {
+  --x: 30px;
+  --y: -30px;
+}
+
+.click-spark span:nth-child(3) {
+  --x: 42px;
+  --y: 0px;
+}
+
+.click-spark span:nth-child(4) {
+  --x: 30px;
+  --y: 30px;
+}
+
+.click-spark span:nth-child(5) {
+  --x: 0px;
+  --y: 42px;
+}
+
+.click-spark span:nth-child(6) {
+  --x: -30px;
+  --y: 30px;
+}
+
+.click-spark span:nth-child(7) {
+  --x: -42px;
+  --y: 0px;
+}
+
+.click-spark span:nth-child(8) {
+  --x: -30px;
+  --y: -30px;
+}
+
+@keyframes sparkBurst {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y))) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y))) scale(0);
+  }
+}

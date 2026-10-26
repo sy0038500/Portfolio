@@ -1,0 +1,562 @@
+/* ======================================================
+   DUVI Design System / Figma 362:1298
+   수정 기준: 원본 이미지/배치/폰트 굵기 유지
+   좌상단 타이틀: PC 24 / 태블릿 20 / 모바일 18px
+   선택자 역할을 한국어로 표기해 둠
+====================================================== */
+
+.duvi-design,
+.duvi-design * {
+  box-sizing: border-box;
+}
+
+/* [전체 페이지] 공통 배경과 콘텐츠 폭 */
+.duvi-design {
+  --duvi-blue: #08519c;
+  --duvi-light: #bdd7e7;
+  --duvi-shadow: 0 4px 28px rgba(31, 41, 55, 0.05),
+    3px 10px 30px rgba(31, 41, 55, 0.04);
+
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 35px 2.55% 100px;
+  background: #fff;
+  color: #0f0f0f;
+  font-family: Pretendard, sans-serif;
+}
+
+/* [좌측 상단 페이지 제목] */
+.duvi-design__eyebrow {
+  margin: 0 0 92px -1%;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+/* [섹션 제목] 피그마 원본 Bold = 700, 임의 변경 금지 */
+.duvi-design h3 {
+  margin: 0 0 28px;
+  font-size: clamp(22px, 1.875vw, 36px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* ======================================================
+   01. 상단 색상 시스템
+====================================================== */
+
+/* [왼쪽 색상표]와 [오른쪽 7등급·10분야 색상표] 가로 배치 */
+.duvi-design__top {
+  display: grid;
+  grid-template-columns: minmax(0, 732fr) minmax(0, 1002fr);
+  gap: clamp(28px, 3.65vw, 70px);
+  align-items: start;
+}
+
+.duvi-design__core,
+.duvi-design__right {
+  min-width: 0;
+}
+
+/* [Core Color] 역할 / 색상 / 실제 사용 열 */
+.duvi-design__colors {
+  width: 100%;
+  font-size: clamp(12px, 1.25vw, 24px);
+  font-weight: 400;
+}
+
+.duvi-design__color-head,
+.duvi-design__color-row {
+  display: grid;
+  grid-template-columns: minmax(0, 197fr) minmax(0, 115fr) minmax(0, 408fr);
+  align-items: center;
+  gap: 0;
+}
+
+/* [표 헤더] 아래 구분선 */
+.duvi-design__color-head {
+  min-height: 49px;
+  border-bottom: 1px solid #0f0f0f;
+}
+
+/* [Core Color] 각 색상 행 높이 */
+.duvi-design__color-row {
+  min-height: clamp(48px, 3.75vw, 72px);
+}
+
+.duvi-design__color-head span,
+.duvi-design__color-row>span {
+  min-width: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* [Core Color] 색상 스와치 */
+.duvi-design__color-swatch {
+  display: block;
+  width: clamp(29px, 3vw, 57px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(15, 15, 15, 0.18);
+  box-shadow: var(--duvi-shadow);
+}
+
+/* [DUVI Grade] 높은 도시활력 ↔ 낮은 도시활력 */
+.duvi-design__grade-labels {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: clamp(12px, 1.25vw, 24px);
+  font-weight: 400;
+}
+
+/* [7등급] 진행 방향 화살표 */
+.duvi-design__grade-arrow {
+  position: relative;
+  height: 1px;
+  margin: 25px 4px 28px;
+  background: #0f0f0f;
+}
+
+.duvi-design__grade-arrow::before,
+.duvi-design__grade-arrow::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid #0f0f0f;
+}
+
+.duvi-design__grade-arrow::before {
+  left: 0;
+  border-left: 1px solid #0f0f0f;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.duvi-design__grade-arrow::after {
+  right: 0;
+  border-right: 1px solid #0f0f0f;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/* [DUVI 7등급 색상칩] 원본에서 한 줄로 7개 */
+.duvi-design__grade-swatches {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: clamp(8px, 2.6vw, 50px);
+}
+
+.duvi-design__grade-swatches span {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  box-shadow: var(--duvi-shadow);
+}
+
+/* [Domain Color] 원본과 같은 3열 순서 */
+.duvi-design__domains {
+  margin-top: clamp(42px, 3.33vw, 64px);
+}
+
+.duvi-design__domain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 176px));
+  gap: clamp(18px, 4.4vw, 84px);
+  align-items: start;
+}
+
+.duvi-design__domain-column {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(13px, 1.46vw, 28px);
+}
+
+.duvi-design__domain {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(32px, 3vw, 57px);
+  align-items: center;
+  gap: clamp(6px, 1.9vw, 36px);
+  min-width: 0;
+  font-size: clamp(12px, 1.25vw, 24px);
+  font-weight: 400;
+}
+
+.duvi-design__domain>span:first-child {
+  word-break: keep-all;
+}
+
+.duvi-design__domain-swatch {
+  width: 100%;
+  aspect-ratio: 1;
+  box-shadow: var(--duvi-shadow);
+}
+
+/* ======================================================
+   02. UI Components - Figma에 들어간 사진 5장을 그대로 사용
+====================================================== */
+
+/* [UI Components 전체] 상단 색상표와의 간격 */
+.duvi-design__ui {
+  margin-top: clamp(80px, 8vw, 154px);
+}
+
+/* [Years Button 이미지] Figma 650×83 */
+.duvi-design__year-demo {
+  width: min(650px, 100%);
+  margin: 42px 0 0 clamp(0px, 3.6vw, 69px);
+}
+
+/* [Domain Filter 이미지] Figma 1684×85 */
+.duvi-design__filter-demo {
+  width: min(1684px, 100%);
+  margin: 48px auto 0;
+}
+
+.duvi-design__filter-viewport {
+  width: 100%;
+}
+
+/* [공통 사진] 원본 이미지 잘림·늘어남 방지 */
+.duvi-design__year-demo img,
+.duvi-design__filter-demo img,
+.duvi-design__preview-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.duvi-design figure {
+  min-width: 0;
+}
+
+/* [사진 아래 ▲ 안내 캡션] */
+.duvi-design figcaption {
+  margin-top: 16px;
+  text-align: center;
+  font-size: clamp(13px, 1.25vw, 24px);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+/* [Detail Panel + Ranking Item] Figma: 377 / 212 간격 / 886 */
+.duvi-design__panel-demo {
+  display: grid;
+  grid-template-columns: minmax(0, 377fr) minmax(0, 886fr);
+  align-items: start;
+  gap: clamp(28px, 11vw, 212px);
+  max-width: 1475px;
+  margin: 48px auto 0;
+}
+
+.duvi-design__preview-figure {
+  margin: 0;
+}
+
+/* [Rankings] 원본 사진 2장을 나란히 */
+.duvi-design__rankings {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 5.15vw, 99px);
+}
+
+/* [패널/순위 이미지] 피그마 원본 가는 테두리 */
+.duvi-design__preview-figure--detail img,
+.duvi-design__rankings img {
+  border: 1px solid #bdd7e7;
+  border-radius: clamp(9px, 1.04vw, 20px);
+  box-shadow: var(--duvi-shadow);
+}
+
+/* ======================================================
+   03. Interactions - 폭이 너무 커지지 않게 Figma 기준으로 제한
+====================================================== */
+
+.duvi-design__interactions {
+  margin-top: clamp(70px, 5vw, 96px);
+}
+
+/* [하단 지도 사진 세 장]
+   Figma 1920px 기준 이미지 각각 462px / 전체 1586px
+   좁아지는 화면에서는 전체 크기를 함께 비례 축소 */
+.duvi-design__interaction-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 5.2vw, 100px);
+  width: min(82.6vw, 1586px, 100%);
+  margin: 52px auto 0;
+}
+
+.duvi-design__interaction {
+  min-width: 0;
+  margin: 0;
+}
+
+.duvi-design__interaction img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  border-radius: clamp(9px, 1.04vw, 20px);
+  box-shadow: var(--duvi-shadow);
+}
+
+/* ======================================================
+   04. Tablet (1100px 이하)
+====================================================== */
+@media (max-width: 1100px) {
+  .duvi-design {
+    padding: 32px 5% 70px;
+  }
+
+  .duvi-design__eyebrow {
+    margin: 0 0 55px;
+    font-size: 20px;
+  }
+
+  .duvi-design h3 {
+    font-size: 27px;
+  }
+
+
+  /* [태블릿] Core Color 왼쪽 / Grade + Domain 오른쪽 */
+  .duvi-design__top {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: 24px;
+    align-items: start;
+  }
+
+  /* [태블릿] Core Color 표 글씨 */
+  .duvi-design__colors {
+    font-size: 13px;
+  }
+
+  /* [태블릿] 역할 / 색상 / 실제 사용 열 너비 */
+  .duvi-design__color-head,
+  .duvi-design__color-row {
+    grid-template-columns: 28% 15% 57%;
+  }
+
+  /* [태블릿] 색상표 행 높이 */
+  .duvi-design__color-row {
+    min-height: 54px;
+  }
+
+  /* [태블릿] 활력도 7등급 한 줄 유지 */
+  .duvi-design__grade-swatches {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  /* [태블릿] 분야별 색상 3열 유지 */
+  .duvi-design__domain-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  /* [태블릿] 분야명과 색상칩 */
+  .duvi-design__domain {
+    grid-template-columns: minmax(0, 1fr) 25px;
+    gap: 6px;
+    font-size: 12px;
+  }
+
+
+  .duvi-design__colors {
+    font-size: 16px;
+  }
+
+  .duvi-design__color-row {
+    min-height: 62px;
+  }
+
+  .duvi-design__domain-grid {
+    grid-template-columns: repeat(3, minmax(0, 176px));
+  }
+
+  .duvi-design__year-demo {
+    margin-left: 0;
+  }
+
+  .duvi-design__ui {
+    margin-top: 75px;
+  }
+
+  /* [태블릿] 인위적인 패널 높이는 지정하지 않음 */
+  .duvi-design__panel-demo {
+    gap: 28px;
+  }
+
+  .duvi-design__rankings {
+    gap: 20px;
+  }
+
+  .duvi-design__interaction-grid {
+    gap: 18px;
+    width: 100%;
+  }
+}
+
+/* ======================================================
+   05. Mobile (767px 이하) - 작은 모바일 전용 쿼리 추가 X
+====================================================== */
+@media (max-width: 767px) {
+  .duvi-design {
+    padding: 28px 20px 55px;
+  }
+
+  .duvi-design__eyebrow {
+    margin-bottom: 40px;
+    font-size: 18px;
+  }
+
+  .duvi-design h3 {
+    font-size: 22px;
+    margin-bottom: 22px;
+  }
+
+  /* [모바일] Core Color 표 열 너비 */
+  .duvi-design__colors {
+    font-size: 12px;
+  }
+
+  .duvi-design__color-head,
+  .duvi-design__color-row {
+    grid-template-columns: minmax(0, 108fr) minmax(0, 58fr) minmax(0, 180fr);
+  }
+
+  .duvi-design__color-row {
+    min-height: 60px;
+  }
+
+  .duvi-design__color-swatch {
+    width: 30px;
+  }
+
+  .duvi-design__grade-labels {
+    font-size: 12px;
+  }
+
+  .duvi-design__grade-arrow {
+    margin: 16px 4px 22px;
+  }
+
+  .duvi-design__grade-swatches {
+    gap: 7px;
+  }
+
+  /* [모바일] 10개 Domain Color는 Figma의 열 순서 유지 */
+  .duvi-design__domain-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .duvi-design__domain-column {
+    gap: 14px;
+  }
+
+  .duvi-design__domain {
+    grid-template-columns: minmax(0, 1fr) 25px;
+    gap: 4px;
+    font-size: 11px;
+  }
+
+  .duvi-design__ui {
+    margin-top: 56px;
+  }
+
+  .duvi-design__year-demo {
+    width: 100%;
+    margin-top: 25px;
+  }
+
+  .duvi-design__filter-demo {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  /* [모바일] 긴 Domain Filter 원본 이미지는 잘리지 않게 가로 스크롤 */
+  .duvi-design__filter-viewport {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .duvi-design__filter-viewport img {
+    width: max(770px, 100%);
+    max-width: none;
+  }
+
+  .duvi-design figcaption {
+    font-size: 13px;
+    margin-top: 12px;
+  }
+
+  /* [모바일] Detail Panel 아래에 Ranking Item 배치 */
+  .duvi-design__panel-demo {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 420px;
+    gap: 32px;
+    margin-top: 40px;
+  }
+
+  .duvi-design__preview-figure--detail {
+    width: min(100%, 270px);
+    margin: 0 auto;
+  }
+
+  .duvi-design__rankings {
+    gap: 12px;
+  }
+
+
+  /* [모바일] Interactions 영역 */
+  .duvi-design__interactions {
+    margin-top: 55px;
+  }
+
+  /* [모바일] Interactions 이미지 3장 가로 배열 */
+  .duvi-design__interaction-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-flow: row;
+    gap: 10px;
+
+    width: 100%;
+    max-width: 100%;
+    margin: 25px auto 0;
+
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+
+  /* [모바일] 개별 이미지 카드 */
+  .duvi-design__interaction {
+    min-width: 0;
+    width: 100%;
+  }
+
+  /* [모바일] 원본 사진 비율 유지 */
+  .duvi-design__interaction img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  /* [모바일] 사진 아래 캡션 */
+  .duvi-design__interaction figcaption {
+    font-size: 11px;
+    text-align: center;
+  }
+
+  /* [모바일] 색상 시스템은 다시 세로 배치 */
+  .duvi-design__top {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+
+}

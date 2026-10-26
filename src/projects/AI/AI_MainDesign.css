@@ -1,0 +1,168 @@
+/* =========================================
+05. Main Design
+========================================= */
+
+.ai-main-design,
+.ai-main-design * {
+  box-sizing: border-box;
+}
+
+.ai-main-design {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  width: 100%;
+  max-width: 1920px;
+  min-height: 1080px;
+  margin: 0 auto;
+
+  background: #ffffff;
+  color: #0f0f0f;
+  font-family: "Pretendard", sans-serif;
+}
+
+/* =========================================
+    01. 하단 주황색 그라데이션
+========================================= */
+
+.ai-main-design::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 43.6%;
+
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0),
+      rgba(255, 165, 0, 0.25));
+
+  pointer-events: none;
+}
+
+/* =========================================
+    02. 좌측 상단 페이지 타이틀
+========================================= */
+
+.ai-main-design__eyebrow {
+  position: absolute;
+  z-index: 2;
+
+  top: 35px;
+  left: 1.615%;
+  margin: 0;
+
+  color: #4b5563;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* =========================================
+    03. 메인 목업 이미지
+========================================= */
+
+.ai-main-design__visual {
+  position: absolute;
+  z-index: 1;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 91.823%;
+  aspect-ratio: 1763 / 984;
+  pointer-events: none;
+
+  opacity: 0;
+  translate: 0 32px;
+}
+
+.ai-main-design__visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* =========================================
+    04. 스크롤 진입 애니메이션
+========================================= */
+
+.ai-main-design.is-visible .ai-main-design__visual {
+  animation: ai-main-design-rise 850ms ease-out both;
+}
+
+@keyframes ai-main-design-rise {
+  from {
+    opacity: 0;
+    translate: 0 32px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+/* =========================================
+    05. 태블릿
+========================================= */
+
+@media (max-width: 1100px) {
+  .ai-main-design {
+    min-height: 0;
+    padding: 100px 0 65px;
+  }
+
+  .ai-main-design__eyebrow {
+    top: 32px;
+    left: 5%;
+    font-size: 20px;
+  }
+
+  .ai-main-design__visual {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+
+    width: 92%;
+    margin: 0 auto;
+  }
+}
+
+/* =========================================
+    06. 모바일
+========================================= */
+
+@media (max-width: 767px) {
+  .ai-main-design {
+    padding: 85px 0 60px;
+  }
+
+  .ai-main-design__eyebrow {
+    top: 28px;
+    left: 20px;
+    font-size: 16px;
+  }
+
+  .ai-main-design__visual {
+    width: 100%;
+  }
+}
+
+/* =========================================
+    07. Accessibility
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-main-design__visual {
+    opacity: 1 !important;
+    translate: none !important;
+    animation: none !important;
+  }
+}

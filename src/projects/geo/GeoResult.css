@@ -1,0 +1,488 @@
+
+/* =====================================
+   01. Result & Review - Basic
+===================================== */
+
+.geo-result {
+  width: 100%;
+  padding: 35px 0 90px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #fdfdfd 0%,
+      #fdfdfd 80%,
+      #f5fbf5 100%
+    );
+
+  color: #0f0f0f;
+  font-family: "Pretendard", sans-serif;
+}
+
+.geo-result,
+.geo-result * {
+  box-sizing: border-box;
+}
+
+.geo-result__heading {
+  margin: 0 0 0 33px;
+
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.geo-result__inner {
+  width: calc(100% - 104px);
+  max-width: 1804px;
+
+  margin: 30px auto 0;
+}
+
+.geo-result__section-title {
+  margin: 0;
+
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.4;
+
+  word-break: keep-all;
+}
+
+/* =====================================
+   02. Lighthouse Result
+===================================== */
+
+.geo-result__metrics {
+  display: grid;
+  grid-template-columns: 28% minmax(0, 1fr);
+  align-items: start;
+
+  gap: 40px;
+}
+
+.geo-result__metrics .geo-result__section-title span {
+  display: block;
+}
+
+.geo-result__metric-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 19px;
+  min-width: 0;
+}
+
+/* 피그마와 동일하게 3개 지표 노출 */
+.geo-result__score-image {
+  position: relative;
+
+  width: 60%;
+  max-width: 600px;
+  aspect-ratio: 816 / 369;
+
+  overflow: hidden;
+}
+
+.geo-result__score-image img {
+  position: absolute;
+
+  top: -29.43%;
+  left: -60.59%;
+
+  display: block;
+
+  width: 180.15%;
+  height: 142.72%;
+  max-width: none;
+}
+
+.geo-result__metric-caption {
+  margin: 0;
+
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+
+  text-align: center;
+  word-break: keep-all;
+}
+
+/* =====================================
+   03. UX Expected Effects
+===================================== */
+
+.geo-result__ux {
+  margin-top: 65px;
+}
+
+.geo-result__ux-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  align-items: stretch;
+  gap: 74px;
+
+  margin-top: 55px;
+}
+
+.geo-result__ux-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 24px;
+
+  min-width: 0;
+  min-height: 232px;
+
+  padding: 30px 25px 24px;
+
+  border: 1px solid #ffffff;
+  border-right-color: #bbbbbb;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.65);
+
+  box-shadow:
+    0 4px 28px rgba(31, 41, 55, 0.05),
+    3px 10px 30px rgba(31, 41, 55, 0.04);
+}
+
+.geo-result__ux-card h4 {
+  margin: 0;
+
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.3;
+
+  text-align: center;
+}
+
+.geo-result__ux-card p {
+  margin: 0;
+
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.55;
+
+  text-align: center;
+  word-break: keep-all;
+}
+
+.geo-result__ux-conclusion {
+  margin: 38px 0 0;
+
+  color: #1f5a22;
+
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+
+  text-align: center;
+  word-break: keep-all;
+}
+
+/* =====================================
+   04. Project Review
+===================================== */
+
+.geo-result__review {
+  margin-top: 80px;
+}
+
+.geo-result__review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  align-items: stretch;
+  gap: 32px;
+
+  margin-top: 45px;
+}
+
+.geo-result__review-card {
+  min-width: 0;
+  min-height: 450px;
+
+  padding: 55px 24px 35px;
+
+  border-top: 8px solid;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.76);
+
+  box-shadow:
+    0 4px 28px rgba(31, 41, 55, 0.05),
+    3px 10px 30px rgba(31, 41, 55, 0.04);
+}
+
+.geo-result__review-card h4 {
+  margin: 0 0 15px;
+
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.3;
+
+  text-align: center;
+}
+
+.geo-result__review-card h5 {
+  margin: 0 0 22px;
+
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.4;
+
+  text-align: center;
+  word-break: keep-all;
+}
+
+.geo-result__review-card p {
+  margin: 0;
+
+  color: #0f0f0f;
+
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.6;
+
+  word-break: keep-all;
+}
+
+.geo-result__review-card strong {
+  font-weight: 700;
+}
+
+/* Achievements - Green */
+.geo-result__review-card--achievement {
+  border-top-color: #1f5a22;
+}
+
+.geo-result__review-card--achievement h4,
+.geo-result__review-card--achievement h5 {
+  color: #1f5a22;
+}
+
+/* Limitations - Yellow / Orange */
+.geo-result__review-card--limitation {
+  border-top-color: #f5c400;
+}
+
+.geo-result__review-card--limitation h4,
+.geo-result__review-card--limitation h5 {
+  color: #f58b00;
+}
+
+/* Next Steps - Blue */
+.geo-result__review-card--next {
+  border-top-color: #1f5cff;
+}
+
+.geo-result__review-card--next h4,
+.geo-result__review-card--next h5 {
+  color: #1f5cff;
+}
+
+/* =====================================
+   05. Tablet
+===================================== */
+
+@media (max-width: 1200px) {
+  .geo-result {
+    padding: 25px 0 65px;
+  }
+
+  .geo-result__heading {
+    margin-left: 25px;
+    font-size: 20px;
+  }
+
+  .geo-result__inner {
+    width: calc(100% - 60px);
+    margin-top: 30px;
+  }
+
+  .geo-result__section-title {
+    font-size: 23px;
+  }
+
+  .geo-result__metrics {
+    grid-template-columns: 30% minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .geo-result__metric-content {
+    gap: 15px;
+  }
+
+  .geo-result__metric-caption {
+    font-size: 15px;
+  }
+
+  .geo-result__ux {
+    margin-top: 55px;
+  }
+
+  .geo-result__ux-grid {
+    gap: 20px;
+    margin-top: 35px;
+  }
+
+  .geo-result__ux-card {
+    min-height: 180px;
+    gap: 15px;
+    padding: 22px 16px;
+  }
+
+  .geo-result__ux-card h4 {
+    font-size: 21px;
+  }
+
+  .geo-result__ux-card p {
+    font-size: 15px;
+  }
+
+  .geo-result__ux-conclusion {
+    margin-top: 30px;
+    font-size: 17px;
+  }
+
+  .geo-result__review {
+    margin-top: 65px;
+  }
+
+  .geo-result__review-grid {
+    gap: 18px;
+    margin-top: 35px;
+  }
+
+  .geo-result__review-card {
+    min-height: 0;
+    padding: 32px 17px 28px;
+
+    border-top-width: 7px;
+    border-radius: 17px;
+  }
+
+  .geo-result__review-card h4 {
+    font-size: 22px;
+  }
+
+  .geo-result__review-card h5 {
+    margin-bottom: 17px;
+    font-size: 17px;
+  }
+
+  .geo-result__review-card p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+}
+
+/* =====================================
+   06. Mobile
+===================================== */
+
+@media (max-width: 767px) {
+  .geo-result {
+    padding: 20px 0 45px;
+  }
+
+  .geo-result__heading {
+    margin-left: 20px;
+    font-size: 16px;
+  }
+
+  .geo-result__inner {
+    width: calc(100% - 40px);
+    margin-top: 25px;
+  }
+
+  .geo-result__section-title {
+    font-size: 20px;
+  }
+
+  /* Lighthouse */
+  .geo-result__metrics {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .geo-result__metric-content {
+    gap: 12px;
+  }
+
+  .geo-result__metric-caption {
+    font-size: 14px;
+  }
+
+  /* UX Expected Effects */
+  .geo-result__ux {
+    margin-top: 50px;
+  }
+
+  .geo-result__ux-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+
+    margin-top: 25px;
+  }
+
+  .geo-result__ux-card {
+    min-height: 0;
+    gap: 12px;
+
+    padding: 22px 18px;
+    border-radius: 16px;
+  }
+
+  .geo-result__ux-card h4 {
+    font-size: 19px;
+  }
+
+  .geo-result__ux-card p {
+    font-size: 15px;
+  }
+
+  .geo-result__ux-conclusion {
+    margin-top: 22px;
+    font-size: 15px;
+  }
+
+  /* Project Review */
+  .geo-result__review {
+    margin-top: 55px;
+  }
+
+  .geo-result__review-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    margin-top: 25px;
+  }
+
+  .geo-result__review-card {
+    min-height: 0;
+    padding: 28px 20px;
+
+    border-top-width: 6px;
+    border-radius: 16px;
+  }
+
+  .geo-result__review-card h4 {
+    margin-bottom: 12px;
+    font-size: 23px;
+  }
+
+  .geo-result__review-card h5 {
+    font-size: 17px;
+  }
+
+  .geo-result__review-card p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}

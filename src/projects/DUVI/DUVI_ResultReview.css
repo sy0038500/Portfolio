@@ -1,0 +1,757 @@
+/* =======================================================
+   DUVI 11 — Result & Review | Figma 362:1444
+   폰트 굵기: Figma Regular 400 / Medium 500 /
+   Bold 700 / ExtraBold 800 / Black 900.
+   페이지 타이틀: 기존 프로젝트 규격 24 / 20 / 18px.
+======================================================= */
+
+.duvi-result,
+.duvi-result * {
+  box-sizing: border-box;
+}
+
+/* 01. 배경은 전체 너비, 실제 콘텐츠 최대 1400px */
+.duvi-result {
+  width: 100%;
+  padding: 34px 24px 100px;
+  color: #0f0f0f;
+  font-family: "Pretendard", sans-serif;
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 42%, #f4f7fb 100%);
+}
+
+.duvi-result__inner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* 02. 왼쪽 위 페이지 타이틀 */
+.duvi-result__eyebrow {
+  margin: 0 0 64px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+/* 03. 01/02/03 섹션 공통 제목 및 설명 */
+.duvi-result__section+.duvi-result__section {
+  margin-top: 120px;
+}
+
+.duvi-result__section-heading {
+  margin-bottom: 34px;
+}
+
+.duvi-result__section-heading h3 {
+  margin: 0;
+  font-size: clamp(24px, 1.875vw, 36px);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.duvi-result__section-heading p {
+  margin: 4px 0 0;
+  font-size: clamp(14px, 1.25vw, 20px);
+  font-weight: 500;
+  line-height: 1.55;
+  word-break: keep-all;
+}
+
+/* =======================================================
+   01. 정량적 기술 성과
+======================================================= */
+
+/* 04. 큰 426 카드 + 오른쪽 2×2 카드 */
+.duvi-result__stats {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.03fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.duvi-result__stat-large,
+.duvi-result__stat-small {
+  min-width: 0;
+  border-radius: 38px;
+  box-shadow: 0 4px 14px rgba(31, 41, 55, 0.05), 3px 10px 15px rgba(31, 41, 55, 0.04);
+}
+
+/* 05. 426개 메인 카드 */
+.duvi-result__stat-large {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+  padding: 30px 24px;
+  background: #08519c;
+  color: #f4f7fb;
+  text-align: center;
+}
+
+.duvi-result__stat-big-number {
+  display: block;
+  font-size: clamp(66px, 7vw, 104px);
+  font-weight: 900;
+  line-height: 1.03;
+  white-space: nowrap;
+}
+
+.duvi-result__stat-large-label {
+  display: block;
+  margin-top: 12px;
+  color: #ffffff;
+  font-size: clamp(19px, 1.45vw, 28px);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.duvi-result__stat-large p {
+  margin: 10px 0 0;
+  font-size: clamp(13px, 1.04vw, 20px);
+  font-weight: 400;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+/* 06. 오른쪽 5/11/7/3 카드 2×2 */
+.duvi-result__stats-small {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.duvi-result__stat-small {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 14px;
+  text-align: center;
+}
+
+.duvi-result__stat-small--medium {
+  background: #3182bd;
+  color: #f4f7fb;
+}
+
+.duvi-result__stat-small--light {
+  background: #bdd7e7;
+  color: #08519c;
+}
+
+.duvi-result__stat-number {
+  display: block;
+  font-size: clamp(45px, 4.2vw, 80px);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.duvi-result__stat-unit {
+  display: block;
+  margin-top: 3px;
+  font-size: clamp(17px, 1.46vw, 28px);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.duvi-result__stat-small p {
+  max-width: 340px;
+  margin: 8px 0 0;
+  font-size: clamp(12px, 1.04vw, 18px);
+  font-weight: 500;
+  line-height: 1.45;
+  word-break: keep-all;
+}
+
+/* =======================================================
+   02. UX 기대 효과
+======================================================= */
+
+/* 07. Figma보다 과도하게 넓어지지 않도록 가운데 제한 */
+.duvi-result__ux-matrix {
+  width: 100%;
+  max-width: 1140px;
+  margin: 60px auto 0;
+}
+
+.duvi-result__ux-labels,
+.duvi-result__ux-row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) 54px minmax(0, 1.58fr);
+  column-gap: 28px;
+  align-items: center;
+}
+
+/* 08. 좌우 열 이름 */
+.duvi-result__ux-labels {
+  margin-bottom: 22px;
+  font-size: clamp(18px, 1.46vw, 25px);
+  font-weight: 700;
+  text-align: center;
+}
+
+.duvi-result__ux-labels span:first-child {
+  grid-column: 1;
+}
+
+.duvi-result__ux-labels span:last-child {
+  grid-column: 3;
+}
+
+.duvi-result__ux-rows {
+  display: grid;
+  gap: 42px;
+}
+
+/* 09. 왼쪽 설계 방식 카드 — Figma 흰색 글래스 그라데이션 */
+.duvi-result__method,
+.duvi-result__effect {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  min-height: 125px;
+  padding: 24px;
+  border-radius: 20px;
+  backdrop-filter: blur(12.5px);
+  -webkit-backdrop-filter: blur(12.5px);
+  box-shadow: 0 4px 28px rgba(31, 41, 55, 0.05), 3px 10px 30px rgba(31, 41, 55, 0.04);
+}
+
+.duvi-result__method {
+  border-right: 1px solid #ffffff;
+  background: linear-gradient(99.4deg, rgba(255, 255, 255, 0.06) 23.22%, rgba(255, 255, 255, 0.03) 88.29%);
+  text-align: center;
+}
+
+.duvi-result__method p {
+  margin: 0;
+  font-size: clamp(15px, 1.32vw, 24px);
+  font-weight: 400;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+/* 10. 가운데 파란색 오른쪽 화살표 */
+.duvi-result__arrow {
+  position: relative;
+  width: 38px;
+  height: 34px;
+  justify-self: center;
+}
+
+.duvi-result__arrow-shaft {
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  width: 27px;
+  height: 4px;
+  border-radius: 4px;
+  background: #08519c;
+  transform: translateY(-50%);
+}
+
+.duvi-result__arrow-shaft::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -1px;
+  width: 13px;
+  height: 13px;
+  border-top: 4px solid #08519c;
+  border-right: 4px solid #08519c;
+  border-radius: 1px;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/* 11. 오른쪽 기대 효과 카드 — Figma 각 행 별 그라데이션/테두리 */
+.duvi-result__effect {
+  align-items: flex-start;
+  border: 1px solid #08519c;
+  background: linear-gradient(98.34deg, rgba(255, 255, 255, 0.03) 8%, rgba(8, 81, 156, 0.06) 100%);
+}
+
+.duvi-result__effect--2 {
+  border-color: #bdd7e7;
+  background: linear-gradient(100.36deg, rgba(255, 255, 255, 0.05) 10%, rgba(49, 130, 189, 0.2) 95%);
+}
+
+.duvi-result__effect--3 {
+  background: linear-gradient(100.36deg, rgba(255, 255, 255, 0.03) 10%, rgba(8, 81, 156, 0.06) 95%);
+}
+
+.duvi-result__effect h4 {
+  margin: 0 0 8px;
+  color: #08519c;
+  font-size: clamp(17px, 1.35vw, 25px);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.duvi-result__effect p {
+  margin: 0;
+  font-size: clamp(14px, 1.18vw, 22px);
+  font-weight: 400;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+/* =======================================================
+   03. Project Review — 3개 지점 타임라인
+======================================================= */
+
+/* 12. 리뷰 제목 아래 타임라인 전체 너비 제한 */
+.duvi-result__section--review {
+  padding-bottom: 14px;
+}
+
+.duvi-result__timeline {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: minmax(270px, auto) 28px auto;
+  column-gap: 45px;
+  width: 100%;
+  max-width: 1220px;
+  margin: 64px auto 0;
+}
+
+.duvi-result__reflection {
+  position: relative;
+  min-width: 0;
+  word-break: keep-all;
+}
+
+/* 13. 리뷰 01 왼쪽 위 */
+.duvi-result__reflection--achievement {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* 14. 리뷰 03 오른쪽 위 */
+.duvi-result__reflection--next {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+/* 15. 리뷰 02 가운데 아래 */
+.duvi-result__reflection--limitation {
+  grid-column: 2;
+  grid-row: 3;
+  margin-top: 32px;
+}
+
+/* 16. 소제목: Figma 700, 파란색 */
+.duvi-result__reflection h4 {
+  margin: 0;
+  color: #08519c;
+  font-size: clamp(18px, 1.46vw, 26px);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.duvi-result__reflection h5 {
+  margin: 0 0 18px;
+  color: #08519c;
+  font-size: clamp(15px, 1.27vw, 23px);
+  font-weight: 700;
+  line-height: 1.38;
+}
+
+/* 17. 본문: Regular 400, 강조 문장만 Bold 700 */
+.duvi-result__reflection p {
+  margin: 0;
+  font-size: clamp(14px, 1.04vw, 19px);
+  font-weight: 400;
+  line-height: 1.58;
+}
+
+.duvi-result__reflection p+p {
+  margin-top: 12px;
+}
+
+.duvi-result__reflection strong {
+  font-weight: 700;
+}
+
+.duvi-result__reflection-emphasis {
+  font-size: clamp(15px, 1.16vw, 21px) !important;
+}
+
+/* 18. Figma의 선, 점 3개, 오른쪽 화살촉 */
+.duvi-result__timeline-rail {
+  position: relative;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  justify-items: center;
+  column-gap: 45px;
+}
+
+
+/* =========================================
+   [데스크탑] Project Review 세로 연결선
+   Figma의 01·02·03 타임라인 재현
+========================================= */
+
+@media (min-width: 1101px) {
+
+  /* 01, 03 텍스트 아래 연결선 공간 확보 */
+  .duvi-result__reflection--achievement,
+  .duvi-result__reflection--next {
+    padding-bottom: 62px;
+  }
+
+  /* 01 Achievement / 03 Next Steps
+     텍스트 아래에서 동그라미까지 연결 */
+  .duvi-result__reflection--achievement::after,
+  .duvi-result__reflection--next::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -14px;
+
+    width: 2px;
+    height: 72px;
+
+    background: #bdd7e7;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  /* 02 Limitation
+     가운데 동그라미에서 아래 텍스트까지 연결 */
+  .duvi-result__reflection--limitation::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -46px;
+
+    width: 2px;
+    height: 46px;
+
+    background: #bdd7e7;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+}
+
+
+.duvi-result__timeline-rail::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1px);
+  left: -20px;
+  right: -20px;
+  height: 2px;
+  background: #bdd7e7;
+}
+
+.duvi-result__timeline-rail::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -22px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 9px solid #bdd7e7;
+  transform: translateY(-50%);
+}
+
+.duvi-result__timeline-rail i {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #08519c;
+}
+
+/* =======================================================
+   태블릿 / 모바일
+======================================================= */
+
+/* 19. 태블릿: 수치 카드는 2단 유지, UX 비교 영역 축소 */
+@media (max-width: 1100px) {
+  .duvi-result {
+    padding: 30px 5% 76px;
+  }
+
+  .duvi-result__eyebrow {
+    font-size: 20px;
+    margin-bottom: 48px;
+  }
+
+  .duvi-result__section+.duvi-result__section {
+    margin-top: 86px;
+  }
+
+  .duvi-result__section-heading h3 {
+    font-size: 28px;
+  }
+
+  .duvi-result__section-heading p {
+    font-size: 16px;
+  }
+
+  .duvi-result__stats {
+    gap: 14px;
+  }
+
+  .duvi-result__stat-large {
+    min-height: 340px;
+    border-radius: 28px;
+  }
+
+  .duvi-result__stat-large p {
+    font-size: 13px;
+  }
+
+  .duvi-result__stats-small {
+    gap: 12px;
+  }
+
+  .duvi-result__stat-small {
+    border-radius: 24px;
+    padding: 12px;
+  }
+
+  .duvi-result__stat-small p {
+    font-size: 12px;
+  }
+
+  .duvi-result__ux-matrix {
+    margin-top: 46px;
+  }
+
+  .duvi-result__ux-row,
+  .duvi-result__ux-labels {
+    grid-template-columns: minmax(0, 1fr) 38px minmax(0, 1.5fr);
+    column-gap: 14px;
+  }
+
+  .duvi-result__ux-rows {
+    gap: 24px;
+  }
+
+  .duvi-result__method,
+  .duvi-result__effect {
+    min-height: 116px;
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  /* 타임라인 텍스트를 억지로 3열에 쑤셔넣지 않고 세로 순서로 */
+  .duvi-result__timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 40px;
+    padding: 0 0 0 30px;
+    border-left: 2px solid #bdd7e7;
+  }
+
+  .duvi-result__reflection {
+    width: 100%;
+    max-width: 740px;
+    margin: 0;
+  }
+
+  .duvi-result__reflection::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: -39px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #08519c;
+  }
+
+  .duvi-result__reflection--achievement {
+    order: 1;
+  }
+
+  .duvi-result__reflection--limitation {
+    order: 2;
+  }
+
+  .duvi-result__reflection--next {
+    order: 3;
+  }
+
+  .duvi-result__timeline-rail {
+    display: none;
+  }
+}
+
+/* 20. 모바일: 수치 426 단독 + 4카드 2×2, UX 행 가로 흐름 유지 */
+@media (max-width: 767px) {
+  .duvi-result {
+    padding: 25px 18px 58px;
+  }
+
+  .duvi-result__eyebrow {
+    font-size: 18px;
+    margin-bottom: 36px;
+  }
+
+  .duvi-result__section+.duvi-result__section {
+    margin-top: 68px;
+  }
+
+  .duvi-result__section-heading {
+    margin-bottom: 22px;
+  }
+
+  .duvi-result__section-heading h3 {
+    font-size: 23px;
+  }
+
+  .duvi-result__section-heading p {
+    font-size: 14px;
+  }
+
+  .duvi-result__stats {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .duvi-result__stat-large {
+    min-height: 208px;
+    padding: 22px 14px;
+    border-radius: 24px;
+  }
+
+  .duvi-result__stat-big-number {
+    font-size: 64px;
+  }
+
+  .duvi-result__stat-large-label {
+    margin-top: 6px;
+    font-size: 17px;
+  }
+
+  .duvi-result__stat-large p {
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .duvi-result__break-wide {
+    display: none;
+  }
+
+  .duvi-result__stats-small {
+    gap: 10px;
+  }
+
+  .duvi-result__stat-small {
+    min-height: 154px;
+    padding: 14px 9px;
+    border-radius: 20px;
+  }
+
+  .duvi-result__stat-number {
+    font-size: 43px;
+  }
+
+  .duvi-result__stat-unit {
+    font-size: 15px;
+  }
+
+  .duvi-result__stat-small p {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .duvi-result__ux-matrix {
+    margin-top: 29px;
+  }
+
+  /* 모바일은 문장 가독성을 위해 위→아래 흐름으로 전환 */
+  .duvi-result__ux-labels {
+    display: none;
+  }
+
+  .duvi-result__ux-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 9px;
+  }
+
+  .duvi-result__ux-rows {
+    gap: 22px;
+  }
+
+  .duvi-result__method,
+  .duvi-result__effect {
+    min-height: 0;
+    padding: 17px 18px;
+    border-radius: 14px;
+  }
+
+  .duvi-result__method p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .duvi-result__effect {
+    border-width: 1px;
+  }
+
+  .duvi-result__effect h4 {
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
+
+  .duvi-result__effect p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .duvi-result__arrow {
+    width: 26px;
+    height: 26px;
+    transform: rotate(90deg);
+  }
+
+  .duvi-result__arrow-shaft {
+    left: 1px;
+    width: 19px;
+    height: 3px;
+  }
+
+  .duvi-result__arrow-shaft::after {
+    width: 9px;
+    height: 9px;
+    border-width: 3px;
+  }
+
+  .duvi-result__timeline {
+    gap: 27px;
+    margin-top: 27px;
+  }
+
+  .duvi-result__reflection h4 {
+    font-size: 18px;
+  }
+
+  .duvi-result__reflection h5 {
+    font-size: 15px;
+    margin-bottom: 11px;
+  }
+
+  .duvi-result__reflection p,
+  .duvi-result__reflection-emphasis {
+    font-size: 13px !important;
+    line-height: 1.57;
+  }
+}
+
+/* 21. 애니메이션을 임의로 추가하지 않았으므로 reduced-motion 별도 처리 없음 */

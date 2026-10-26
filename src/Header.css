@@ -1,0 +1,155 @@
+/* header - common */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  background-color: #f9f6ec;
+  transform: translateY(0);
+  transition: transform 0.3s ease-out;
+}
+
+.site-header--hidden {
+  transform: translateY(-100%);
+}
+
+/* Desktop - header */
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 80px;
+  padding: 0 100px;
+}
+
+.site-header__logo {
+  color: #37251b;
+  text-decoration: none;
+  font-family: "Pretendard", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 3.6px;
+  white-space: nowrap;
+}
+
+/* Desktop - menu */
+.site-header__desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
+
+.site-header__desktop-nav a {
+  color: #37251b;
+  text-decoration: none;
+  font-family: "Pretendard", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 2.7px;
+}
+
+/* Tab focus */
+.site-header a:focus-visible,
+.site-header button:focus-visible {
+  outline: 3px solid #f5c400;
+  outline-offset: 4px;
+}
+
+.site-header__menu-button {
+  display: none;
+}
+
+.site-header__mobile-nav {
+  display: none;
+}
+
+/* Tablet */
+@media (max-width: 1199px) {
+  .site-header__desktop-nav {
+    gap: 32px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .site-header__inner {
+    height: 60px;
+    padding: 0 16px 0 32px;
+  }
+
+  .site-header__desktop-nav {
+    display: none;
+  }
+
+  .site-header__menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+
+    cursor: pointer;
+  }
+
+  .site-header__menu-button img {
+    display: block;
+    width: 40px;
+    height: 20px;
+  }
+
+  .site-header--open .site-header__inner {
+    height: 60px;
+    background-color: #F2EBE0;
+  }
+
+  .site-header__mobile-nav {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f6ec;
+  }
+
+  .site-header__logo {
+    font-size: 18px;
+    letter-spacing: 2.7px;
+  }
+
+  .site-header__mobile-nav a {
+    display: flex;
+    align-items: center;
+    min-height: 52px;
+    padding: 16px 24px;
+    border-bottom: 0.5px solid #4a4a4a;
+    background-color: #f9f6ec;
+    color: #37251b;
+
+    font-family: "Pretendard", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 2.7px;
+    line-height: 18px;
+    text-decoration: none;
+
+    transition: background-color 0.2s ease;
+  }
+
+  .site-header__mobile-nav a:hover,
+  .site-header__mobile-nav a:focus-visible {
+    background-color: #f2ebe0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .site-header,
+  .site-header__mobile-nav a {
+    transition: none;
+  }
+}

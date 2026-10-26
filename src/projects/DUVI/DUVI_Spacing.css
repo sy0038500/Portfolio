@@ -1,0 +1,95 @@
+/* =========================================
+   DUVI-WEB 공통 가로 여백
+   Cover / Ending 제외
+========================================= */
+
+/* 01. 데스크탑 */
+@media (min-width: 1201px) {
+
+  .duvi-page> :is(.duvi-background,
+    .duvi-persona,
+    .duvi-hypothesis,
+    .duvi-ux,
+    .duvi-design,
+    .duvi-main-design,
+    .duvi-main-features,
+    .duvi-implementation,
+    .duvi-result) {
+    --duvi-content-gutter: min(240px,
+        max(5vw, calc((100vw - 1440px) / 2)));
+
+    padding-left: var(--duvi-content-gutter);
+    padding-right: var(--duvi-content-gutter);
+  }
+
+  /* 페이지 상단 제목 위치 통일 */
+  .duvi-page :is(.duvi-background__eyebrow,
+    .duvi-persona__eyebrow,
+    .duvi-hypothesis__eyebrow,
+    .duvi-ux__eyebrow,
+    .duvi-main-design__eyebrow,
+    .duvi-main-features__eyebrow) {
+    left: var(--duvi-content-gutter);
+  }
+
+  /* Design System 제목 들여쓰기 보정 */
+  .duvi-page .duvi-design__eyebrow {
+    margin-left: 0;
+  }
+
+  /* 콘텐츠 최대폭 1440px */
+  .duvi-page :is(.duvi-main-design__visual,
+    .duvi-main-features__grid,
+    .duvi-implementation__inner,
+    .duvi-result__inner) {
+    max-width: 1440px;
+  }
+}
+
+/* 02. 태블릿 */
+@media (min-width: 768px) and (max-width: 1200px) {
+
+  .duvi-page> :is(.duvi-background,
+    .duvi-persona,
+    .duvi-hypothesis,
+    .duvi-ux,
+    .duvi-design,
+    .duvi-main-design,
+    .duvi-main-features,
+    .duvi-implementation,
+    .duvi-result) {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .duvi-page :is(.duvi-background__eyebrow,
+    .duvi-persona__eyebrow,
+    .duvi-hypothesis__eyebrow,
+    .duvi-ux__eyebrow,
+    .duvi-main-design__eyebrow,
+    .duvi-main-features__eyebrow) {
+    left: 5%;
+  }
+
+  .duvi-page .duvi-design__eyebrow {
+    margin-left: 0;
+  }
+}
+
+/* 03. 모바일 */
+@media (max-width: 767px) {
+
+  /* 기존 16~18px 여백을 20px로 통일 */
+  .duvi-page> :is(.duvi-main-design,
+    .duvi-main-features,
+    .duvi-implementation,
+    .duvi-result) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .duvi-page :is(.duvi-main-design__eyebrow,
+    .duvi-main-features__eyebrow) {
+    left: 20px;
+  }
+}

@@ -1,0 +1,330 @@
+/* =========================================
+02. Background & Goal
+========================================= */
+
+.ai-background,
+.ai-background * {
+  box-sizing: border-box;
+}
+
+.ai-background {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  min-height: 1080px;
+  margin: 0 auto;
+  padding: 35px 0 150px;
+  color: #0f0f0f;
+  font-family: "Pretendard", sans-serif;
+
+  /* 마지막 색상이 다음 페이지 첫 색상과 같음 */
+  background:
+    linear-gradient(to bottom,
+      rgba(255, 226, 17, 0) 61.76%,
+      rgba(255, 226, 17, 0.25) 100%),
+    #ffffff;
+}
+
+/* 01. 좌측 상단 페이지 제목 - 다른 프로젝트와 동일 */
+.ai-background__eyebrow {
+  margin: 0 0 0 1.615%;
+  color: #4b5563;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* 02. 중앙 질문 */
+.ai-background__question {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: clamp(16px, 1.72vw, 33px);
+
+  width: calc(100% - 9%);
+  max-width: 1700px;
+  margin: 106px auto 0;
+
+  opacity: 0;
+  transform: translateY(45px);
+}
+
+.ai-background.is-visible .ai-background__question {
+  animation: ai-background-rise 850ms ease-out both;
+}
+
+.ai-background__question p {
+  flex: 0 1 auto;
+  margin: 0;
+  font-size: clamp(32px, 3.125vw, 60px);
+  font-weight: 400;
+  line-height: 1.23;
+  text-align: center;
+  letter-spacing: -0.035em;
+  word-break: keep-all;
+}
+
+.ai-background__question p>span {
+  display: block;
+}
+
+.ai-background__question strong {
+  color: #ffa500;
+  font-weight: 600;
+}
+
+.ai-background__quote-icon {
+  flex: 0 0 clamp(34px, 3.125vw, 60px);
+  width: clamp(34px, 3.125vw, 60px);
+  height: auto;
+}
+
+/* 03. 유리 질감 카드 3개 */
+.ai-background__cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 1.72vw, 33px);
+
+  width: 92.6%;
+  max-width: 1778px;
+  margin: clamp(80px, 7.1vw, 136px) auto 0;
+}
+
+.ai-background__card {
+  min-width: 0;
+  min-height: 350px;
+  padding: clamp(22px, 1.67vw, 32px);
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  background: linear-gradient(127.339deg,
+      rgba(255, 255, 255, 0.06) 17.49%,
+      rgba(255, 255, 255, 0.03) 83.932%);
+  backdrop-filter: blur(12.5px);
+  -webkit-backdrop-filter: blur(12.5px);
+  --figma-stroke: linear-gradient(102.3deg,
+      rgba(255, 255, 255, 0.5),
+      rgba(102, 102, 102, 0.5));
+  box-shadow:
+    0 4px 28px rgba(31, 41, 55, 0.05),
+    3px 10px 30px rgba(31, 41, 55, 0.04);
+
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+
+/* Figma Gradient Stroke */
+.ai-background__card::before {
+  content: "";
+  position: absolute;
+  inset: -0.5px;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--figma-stroke);
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Background 카드 - Figma 362:848 */
+.ai-background__card:nth-child(2) {
+  background: linear-gradient(103.356deg,
+      rgba(255, 255, 255, 0.06) 12.792%,
+      rgba(255, 255, 255, 0.03) 98.511%);
+
+  --figma-stroke: linear-gradient(100.3deg,
+      rgba(255, 255, 255, 0.5),
+      rgba(102, 102, 102, 0.5));
+}
+
+/* Goal 카드 - Figma 362:851 */
+.ai-background__card:nth-child(3) {
+  background: linear-gradient(110.272deg,
+      rgba(255, 255, 255, 0.06) 20.143%,
+      rgba(255, 255, 255, 0.03) 85.63%);
+
+  --figma-stroke: linear-gradient(99.3deg,
+      rgba(255, 255, 255, 0.5),
+      rgba(102, 102, 102, 0.5));
+}
+
+
+.ai-background__card h3 {
+  margin: 0;
+  font-size: clamp(22px, 1.67vw, 28px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.ai-background__card h3 span {
+  color: #ffa500;
+  font-weight: 900;
+}
+
+.ai-background__card-copy {
+  margin-top: clamp(19px, 1.67vw, 32px);
+  font-size: clamp(18px, 1.46vw, 24px);
+  font-weight: 400;
+  line-height: 1.36;
+  letter-spacing: -0.012em;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.ai-background__card-copy p {
+  margin: 0;
+}
+
+.ai-background__card-copy p+p {
+  margin-top: 8px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .ai-background__card:hover {
+    transform: translateY(-10px);
+    box-shadow:
+      0 12px 36px rgba(31, 41, 55, 0.13),
+      4px 18px 40px rgba(31, 41, 55, 0.1);
+  }
+}
+
+@keyframes ai-background-rise {
+  from {
+    opacity: 0;
+    transform: translateY(45px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 04. 태블릿 */
+@media (max-width: 1100px) {
+  .ai-background {
+    min-height: 0;
+    padding: 32px 0 95px;
+  }
+
+  .ai-background__eyebrow {
+    font-size: 20px;
+    margin-left: 5%;
+  }
+
+  .ai-background__question {
+    width: 90%;
+    gap: 12px;
+    margin-top: 80px;
+  }
+
+  .ai-background__question p {
+    font-size: clamp(28px, 3.5vw, 38px);
+    line-height: 1.4;
+  }
+
+  .ai-background__quote-icon {
+    flex-basis: 38px;
+    width: 38px;
+  }
+
+  .ai-background__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 90%;
+    gap: 22px;
+    margin-top: 80px;
+  }
+
+  .ai-background__card {
+    min-height: 0;
+    padding: 25px;
+  }
+
+  .ai-background__card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .ai-background__card h3 {
+    font-size: 20px;
+  }
+
+  .ai-background__card-copy {
+    font-size: 18px;
+    line-height: 1.55;
+  }
+}
+
+/* 05. 모바일 */
+@media (max-width: 767px) {
+  .ai-background {
+    padding: 28px 0 75px;
+  }
+
+  .ai-background__eyebrow {
+    margin-left: 20px;
+    font-size: 16px;
+  }
+
+  .ai-background__question {
+    width: calc(100% - 40px);
+    gap: 5px;
+    margin-top: 65px;
+  }
+
+  .ai-background__question p {
+    font-size: clamp(21px, 5.6vw, 28px);
+    line-height: 1.5;
+  }
+
+  .ai-background__quote-icon {
+    flex-basis: 24px;
+    width: 24px;
+  }
+
+  .ai-background__cards {
+    grid-template-columns: 1fr;
+    width: calc(100% - 40px);
+    gap: 18px;
+    margin-top: 65px;
+  }
+
+  .ai-background__card {
+    padding: 24px;
+    border-radius: 16px;
+  }
+
+  .ai-background__card:last-child {
+    grid-column: auto;
+  }
+
+  .ai-background__card h3 {
+    font-size: 18px;
+  }
+
+  .ai-background__card-copy {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-background__question {
+    opacity: 1;
+    transform: none;
+    animation: none !important;
+  }
+
+  .ai-background__card {
+    transition: none;
+  }
+}

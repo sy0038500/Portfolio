@@ -1,0 +1,560 @@
+/* =========================================
+Core UX Hypothesis
+========================================= */
+
+/* 01. Basic */
+.p-hypo,
+.p-hypo * {
+  box-sizing: border-box;
+}
+
+.p-hypo {
+  --p-hypo-navy: #172a52;
+  --p-hypo-red: #e23d28;
+  --p-hypo-yellow: #f4b720;
+  --p-hypo-card: #f8ebc8;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  width: 100%;
+  max-width: 1920px;
+  min-height: 850px;
+  aspect-ratio: 16 / 9;
+  margin-inline: auto;
+
+  background: #faf4e7;
+  color: var(--p-hypo-navy);
+  font-family: "Pretendard", sans-serif;
+}
+
+/* =========================================
+  02. Figma Background
+========================================= */
+
+.p-hypo__yellow-shape {
+  position: absolute;
+  z-index: 0;
+
+  left: 0;
+  bottom: 0;
+  width: 80%;
+  height: 67%;
+
+  background: var(--p-hypo-card);
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+  pointer-events: none;
+}
+
+/* =========================================
+  03. Section Title
+========================================= */
+
+.p-hypo__eyebrow {
+  position: absolute;
+  z-index: 2;
+
+  top: 3.24%;
+  left: 1.615%;
+
+  margin: 0;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+/* Main Hypothesis */
+
+.p-hypo__statement {
+  position: absolute;
+  z-index: 2;
+
+  top: 11.1%;
+  left: 15%;
+  width: 72%;
+
+  margin: 0;
+
+  font-size: clamp(23px, 1.5625vw, 30px);
+  font-weight: 600;
+  line-height: 1.48;
+  letter-spacing: -0.025em;
+
+  text-align: center;
+  word-break: keep-all;
+}
+
+/* =========================================
+  04. Desktop Zigzag Flow
+========================================= */
+
+.p-hypo__flow {
+  position: absolute;
+  z-index: 2;
+
+  inset: 0 0 0 8%;
+}
+
+.p-hypo__step {
+  position: absolute;
+  width: 45%;
+}
+
+.p-hypo__step--one {
+  top: 26.4%;
+  left: 3.18%;
+}
+
+.p-hypo__step--two {
+  top: 43.3%;
+  left: 53.45%;
+  width: 45%;
+}
+
+.p-hypo__step--three {
+  top: 71.75%;
+  left: 21.98%;
+  width: 49%;
+}
+
+/* =========================================
+  05. Step Heading
+========================================= */
+
+.p-hypo__step-head {
+  position: relative;
+  isolation: isolate;
+
+  display: flex;
+  align-items: center;
+
+  width: max-content;
+  max-width: 100%;
+  gap: 26px;
+}
+
+/* Red underline */
+
+.p-hypo__step-head::after {
+  content: "";
+
+  position: absolute;
+  z-index: -1;
+
+  left: clamp(51px, 4.05vw, 77px);
+  right: -28px;
+  bottom: clamp(8px, 0.6vw, 12px);
+
+  height: 6px;
+  background: var(--p-hypo-red);
+
+  transform-origin: left center;
+
+  transition:
+    transform 350ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Red number circle */
+
+.p-hypo__number {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+
+  width: clamp(66px, 5.21vw, 100px);
+  height: clamp(66px, 5.21vw, 100px);
+
+  border-radius: 50%;
+  background: var(--p-hypo-red);
+
+  color: var(--p-hypo-card);
+  font-size: clamp(29px, 2.5vw, 48px);
+  font-weight: 900;
+  line-height: 1;
+
+  transform-origin: center;
+
+  transition:
+    transform 300ms cubic-bezier(0.22, 1.5, 0.36, 1),
+    box-shadow 300ms ease;
+}
+
+/* Step title */
+
+.p-hypo__step-title {
+  margin: 0;
+
+  font-size: clamp(25px, 1.5625vw, 30px);
+  font-weight: 800;
+  line-height: 1.28;
+}
+
+/* Step body */
+
+.p-hypo__step-copy {
+  margin: 10px 0 0;
+
+  font-size: clamp(18px, 1.198vw, 23px);
+  font-weight: 400;
+  line-height: 1.52;
+  letter-spacing: -0.022em;
+
+  word-break: keep-all;
+}
+
+.p-hypo__step-copy strong {
+  font-weight: 700;
+}
+
+/* =========================================
+  06. Yellow Arrows
+========================================= */
+
+.p-hypo__arrow {
+  position: absolute;
+  z-index: 1;
+
+  width: 16%;
+  height: auto;
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition:
+    clip-path 750ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 220ms ease;
+}
+
+/* First arrow: Left -> Right */
+
+.p-hypo__arrow--first {
+  top: 33.3%;
+  left: 38.1%;
+
+  clip-path: inset(0 100% 0 0);
+  transition-delay: 620ms, 620ms;
+}
+
+/* Second arrow: Right -> Left */
+
+.p-hypo__arrow--second {
+  top: 57.5%;
+  left: 40.9%;
+  width: 12%;
+
+  clip-path: inset(0 0 0 100%);
+  transition-delay: 1430ms, 1430ms;
+}
+
+/* =========================================
+  07. Scroll Reveal
+========================================= */
+
+.p-hypo__statement,
+.p-hypo__step {
+  opacity: 0;
+  transform: translateY(26px);
+
+  transition:
+    opacity 700ms ease,
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.p-hypo__statement {
+  transition-delay: 0ms;
+}
+
+.p-hypo__step--one {
+  transition-delay: 180ms;
+}
+
+.p-hypo__step--two {
+  transition-delay: 930ms;
+}
+
+.p-hypo__step--three {
+  transition-delay: 1670ms;
+}
+
+/* Visible */
+
+.p-hypo.is-visible .p-hypo__statement,
+.p-hypo.is-visible .p-hypo__step {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.p-hypo.is-visible .p-hypo__arrow {
+  opacity: 1;
+  clip-path: inset(0 0 0 0);
+}
+
+/* =========================================
+  08. Number Popup
+========================================= */
+
+/* Step 01 */
+
+.p-hypo.is-visible .p-hypo__step--one .p-hypo__number {
+  animation:
+    p-hypo-badge-pop 560ms 200ms backwards;
+}
+
+/* Step 02 */
+
+.p-hypo.is-visible .p-hypo__step--two .p-hypo__number {
+  animation:
+    p-hypo-badge-pop 560ms 970ms backwards;
+}
+
+/* Step 03 */
+
+.p-hypo.is-visible .p-hypo__step--three .p-hypo__number {
+  animation:
+    p-hypo-badge-pop 560ms 1710ms backwards;
+}
+
+@keyframes p-hypo-badge-pop {
+  0% {
+    transform: scale(0.65);
+  }
+
+  65% {
+    transform: scale(1.12);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* =========================================
+  09. Final Step Highlight
+========================================= */
+
+.p-hypo__highlight {
+  background-image: linear-gradient(var(--p-hypo-yellow),
+      var(--p-hypo-yellow));
+
+  background-position: 0 92%;
+  background-size: 0% 0.3em;
+  background-repeat: no-repeat;
+
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+
+  transition:
+    background-size 740ms ease 2250ms;
+}
+
+.p-hypo.is-visible .p-hypo__highlight {
+  background-size: 100% 0.3em;
+}
+
+/* =========================================
+  10. Desktop Hover
+========================================= */
+
+@media (min-width: 1101px) and (hover: hover) and (pointer: fine) {
+
+  /* Number circle grows */
+
+  .p-hypo__step:hover .p-hypo__number {
+    transform: scale(1.12);
+
+    box-shadow:
+      0 6px 16px rgba(226, 61, 40, 0.18);
+  }
+
+  /* Red underline expands */
+
+  .p-hypo__step:hover .p-hypo__step-head::after {
+    transform: scaleX(1.2);
+  }
+}
+
+/* =========================================
+  11. Tablet
+========================================= */
+
+@media (max-width: 1100px) {
+  .p-hypo {
+    min-height: 0;
+    aspect-ratio: auto;
+    padding: 32px 5% 80px;
+  }
+
+  .p-hypo__eyebrow,
+  .p-hypo__statement,
+  .p-hypo__flow,
+  .p-hypo__step {
+    position: relative;
+
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
+
+  .p-hypo__eyebrow {
+    font-size: 20px;
+  }
+
+  .p-hypo__statement {
+    width: 100%;
+    margin: 65px auto 65px;
+    font-size: 24px;
+  }
+
+  .p-hypo__flow {
+    display: grid;
+    gap: 54px;
+  }
+
+  .p-hypo__step,
+  .p-hypo__step--two,
+  .p-hypo__step--three {
+    width: 100%;
+    max-width: 850px;
+  }
+
+  .p-hypo__step--two {
+    justify-self: end;
+  }
+
+  .p-hypo__step-head {
+    gap: 18px;
+  }
+
+  /* Tablet underline connection */
+
+  .p-hypo__step-head::after {
+    left: 58px;
+    right: -18px;
+    bottom: 9px;
+    height: 5px;
+  }
+
+  .p-hypo__number {
+    width: 76px;
+    height: 76px;
+    font-size: 36px;
+  }
+
+  .p-hypo__step-title {
+    font-size: 24px;
+  }
+
+  .p-hypo__step-copy {
+    margin-top: 14px;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  /* No hover-based arrows on touch */
+
+  .p-hypo__desktop-break,
+  .p-hypo__arrow {
+    display: none;
+  }
+
+  .p-hypo__yellow-shape {
+    width: 100%;
+    height: 55%;
+  }
+}
+
+/* =========================================
+  12. Mobile
+========================================= */
+
+@media (max-width: 767px) {
+  .p-hypo {
+    padding: 28px 20px 65px;
+  }
+
+  .p-hypo__eyebrow {
+    font-size: 16px;
+  }
+
+  .p-hypo__statement {
+    margin: 48px auto 50px;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .p-hypo__flow {
+    gap: 40px;
+  }
+
+  .p-hypo__step-head {
+    gap: 15px;
+  }
+
+  /* Mobile underline connection */
+
+  .p-hypo__step-head::after {
+    left: 44px;
+    right: -12px;
+    bottom: 7px;
+    height: 4px;
+  }
+
+  .p-hypo__number {
+    width: 58px;
+    height: 58px;
+    font-size: 27px;
+  }
+
+  .p-hypo__step-title {
+    font-size: 20px;
+  }
+
+  .p-hypo__step-copy {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .p-hypo__yellow-shape {
+    height: 57%;
+  }
+}
+
+/* =========================================
+  13. Accessibility
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .p-hypo__statement,
+  .p-hypo__step,
+  .p-hypo__arrow {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .p-hypo__arrow {
+    clip-path: inset(0 0 0 0) !important;
+  }
+
+  .p-hypo__number {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .p-hypo__step-head::after {
+    transition: none !important;
+  }
+
+  .p-hypo__highlight {
+    background-size: 100% 0.3em !important;
+    transition: none !important;
+  }
+}

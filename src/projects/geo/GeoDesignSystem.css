@@ -1,0 +1,1212 @@
+/* =====================================
+   01. Design System - Basic
+===================================== */
+
+.geo-ds {
+  --ds-green: #1f5a22;
+  --ds-subgreen: #66bb6a;
+  --ds-black: #111111;
+  --ds-gray: #666666;
+
+  width: 100%;
+  padding: 25px 0 80px;
+
+  background: #fdfdfd;
+  color: #0f0f0f;
+
+  font-family: "Pretendard", sans-serif;
+}
+
+.geo-ds,
+.geo-ds * {
+  box-sizing: border-box;
+}
+
+.geo-ds__heading {
+  margin: 0;
+
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.geo-ds__inner {
+  width: calc(100% - 80px);
+  max-width: 1540px;
+
+  margin: 65px auto 0;
+}
+
+.geo-ds__title {
+  margin: 0 0 20px;
+
+  font-size: 27px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.geo-ds__description {
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+
+  word-break: keep-all;
+}
+
+/* =====================================
+   02. Two Column Layout
+===================================== */
+
+.geo-ds__two-columns {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.95fr) minmax(0, 1.15fr);
+
+  align-items: start;
+  gap: 65px;
+}
+
+/* =====================================
+   03. Color
+===================================== */
+
+.geo-ds__colors span {
+  display: block;
+}
+
+.geo-ds__color-main,
+.geo-ds__color-sub,
+.geo-ds__color-light,
+.geo-ds__color-gray,
+.geo-ds__color-black {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+  padding: 18px 22px;
+
+  border-radius: 20px;
+
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.geo-ds__color-main {
+  width: 100%;
+  height: 145px;
+
+  background: var(--ds-green);
+  color: #fff;
+}
+
+.geo-ds__color-sub {
+  width: 68%;
+  height: 125px;
+
+  margin-top: 18px;
+
+  background: var(--ds-subgreen);
+  color: #111;
+}
+
+.geo-ds__neutral-colors {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.geo-ds__color-light,
+.geo-ds__color-gray,
+.geo-ds__color-black {
+  min-width: 0;
+  height: 125px;
+
+  padding: 16px;
+  font-size: 18px;
+}
+
+.geo-ds__color-light {
+  border: 1px solid #999;
+
+  background: #f5f5f5;
+  color: #111;
+}
+
+.geo-ds__color-gray {
+  background: #666;
+  color: #fff;
+}
+
+.geo-ds__color-black {
+  background: #111;
+  color: #fff;
+}
+
+/* =====================================
+   04. Tables
+===================================== */
+
+.geo-ds__font-name {
+  margin: -6px 0 25px;
+
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.geo-ds__table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.geo-ds__type-table,
+.geo-ds__variable-table {
+  width: 100%;
+
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.geo-ds__type-table th,
+.geo-ds__variable-table th {
+  padding: 12px 10px 16px;
+
+  border-bottom: 1px solid #777;
+
+  font-size: 18px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.geo-ds__type-table td,
+.geo-ds__variable-table td {
+  padding: 15px 10px;
+
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.geo-ds__type-table td:first-child {
+  font-weight: 600;
+}
+
+.geo-ds__type-table td:nth-child(2),
+.geo-ds__type-table td:nth-child(3) {
+  font-weight: 600;
+}
+
+/* =====================================
+   05. Logo + Responsive Variables
+===================================== */
+
+.geo-ds__middle {
+  margin-top: 115px;
+}
+
+.geo-ds__logo-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  min-height: 300px;
+}
+
+.geo-ds__logo-image img {
+  display: block;
+
+  width: 290px;
+  max-width: 70%;
+  height: auto;
+
+  object-fit: contain;
+}
+
+.geo-ds__logo-caption {
+  margin: 20px 0 0;
+
+  font-size: 19px;
+  line-height: 1.5;
+
+  word-break: keep-all;
+}
+
+.geo-ds__hashtags {
+  margin: 12px 0 0;
+
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.geo-ds__variables .geo-ds__description {
+  margin-bottom: 25px;
+}
+
+.geo-ds__variable-table th:not(:first-child),
+.geo-ds__variable-table td:not(:first-child) {
+  text-align: center;
+}
+
+.geo-ds__variable-table th {
+  border-bottom: 2px solid var(--ds-green);
+}
+
+.geo-ds__variable-table td {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* =====================================
+   06. Icon Collection
+===================================== */
+
+.geo-ds__icons {
+  margin-top: 115px;
+}
+
+.geo-ds__icon-groups {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.25fr) minmax(0, 0.8fr) minmax(0, 1fr);
+
+  gap: 35px;
+  margin-top: 35px;
+}
+
+.geo-ds__icon-group {
+  min-width: 0;
+}
+
+.geo-ds__icon-group h4 {
+  margin: 0 0 18px;
+
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.geo-ds__icon-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.geo-ds__icon-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 55px;
+  height: 55px;
+
+  flex-shrink: 0;
+}
+
+.geo-ds__icon-item img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+.geo-ds__ai-note {
+  margin: 14px 0 0;
+
+  color: #888;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+/* =====================================
+   07. Component - Basic
+===================================== */
+
+.geo-ds__components {
+  margin-top: 110px;
+}
+
+.geo-ds__component-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.95fr) minmax(0, 1.1fr) minmax(0, 1.15fr);
+
+  align-items: start;
+  gap: 45px;
+
+  margin-top: 65px;
+}
+
+.geo-ds__component-column {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  min-width: 0;
+}
+
+.geo-ds__component-caption {
+  width: 100%;
+  margin: 15px 0 40px;
+
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.4;
+
+  text-align: center;
+  word-break: keep-all;
+}
+
+/* =====================================
+   08. Main Block Button
+===================================== */
+
+
+.geo-ds__shortcut-examples {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  width: 100%;
+  gap: 30px;
+  padding-top: 10px;
+
+  overflow: visible;
+}
+
+
+.geo-ds__shortcut {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 8px;
+  width: 140px;
+}
+
+
+
+.geo-ds__shortcut-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 75px;
+  height: 75px;
+  padding: 7px;
+
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+.geo-ds__shortcut-icon img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+
+
+.geo-ds__shortcut>span:nth-child(2) {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.geo-ds__demo-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 8px 20px;
+  border-radius: 22px;
+
+  background: var(--ds-green);
+  color: #fff;
+
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.geo-ds__shortcut--hover .geo-ds__demo-button {
+  background: var(--ds-subgreen);
+
+  box-shadow: 3px 3px 8px rgba(46, 125, 50, 0.45);
+}
+
+/* =====================================
+   09. Support Service Cards
+===================================== */
+
+.geo-ds__support-examples {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 12px;
+  width: 100%;
+  max-width: 410px;
+}
+
+.geo-ds__support-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 10px;
+  min-width: 0;
+  min-height: 225px;
+
+  padding: 14px 9px;
+
+  border-radius: 10px;
+
+  background: #fff;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.geo-ds__support-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 70px;
+  height: 70px;
+
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.geo-ds__support-icon img {
+  display: block;
+
+  width: 70px;
+  height: 70px;
+  max-width: 100%;
+  max-height: 100%;
+
+  object-fit: contain;
+}
+
+/* 업무지원만 실제 이미지 크기를 줄임 */
+.geo-ds__support-icon--work img {
+  width: 43px;
+  height: 43px;
+}
+
+.geo-ds__support-card strong {
+  font-size: 17px;
+  text-align: center;
+}
+
+.geo-ds__support-card p {
+  margin: 0;
+
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.45;
+
+  word-break: keep-all;
+}
+
+/* =====================================
+   10. Map Service Card
+===================================== */
+
+.geo-ds__map-card {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+
+  align-items: center;
+  gap: 14px;
+
+  width: 100%;
+  max-width: 425px;
+  min-height: 170px;
+
+  margin-bottom: 18px;
+  padding: 12px;
+
+  border-radius: 12px;
+
+  background: #fff;
+  box-shadow:
+    2px 2px 7px rgba(0, 0, 0, 0.1),
+    -1px -1px 5px rgba(0, 0, 0, 0.06);
+}
+
+.geo-ds__map-card>img {
+  display: block;
+
+  width: 112px;
+  height: 112px;
+
+  border-radius: 9px;
+  object-fit: cover;
+}
+
+.geo-ds__map-card-content {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-end;
+  min-width: 0;
+  gap: 9px;
+}
+
+.geo-ds__map-card-content h4 {
+  align-self: stretch;
+
+  margin: 0;
+
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.geo-ds__map-card-content p {
+  margin: 0;
+
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.45;
+
+  word-break: keep-all;
+}
+
+.geo-ds__map-card--hover .geo-ds__demo-button {
+  background: var(--ds-subgreen);
+
+  box-shadow: 3px 3px 8px rgba(46, 125, 50, 0.45);
+}
+
+/* =====================================
+   11. Archive List
+===================================== */
+
+.geo-ds__archive-examples,
+.geo-ds__search-examples {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  gap: 16px;
+}
+
+.geo-ds__archive {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+  width: 100%;
+  min-height: 66px;
+
+  padding: 10px 14px;
+
+  border-radius: 10px;
+
+  background: #fff;
+  box-shadow: 3px 3px 8px rgba(163, 163, 163, 0.15);
+}
+
+.geo-ds__archive-tag {
+  flex-shrink: 0;
+
+  padding: 7px 12px;
+  border-radius: 6px;
+
+  background: var(--ds-subgreen);
+  color: #fff;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.geo-ds__archive p {
+  flex: 1;
+  min-width: 0;
+
+  margin: 0;
+
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.45;
+
+  word-break: keep-all;
+}
+
+.geo-ds__archive-arrow {
+  flex-shrink: 0;
+
+  color: var(--ds-green);
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.geo-ds__archive--hover .geo-ds__archive-arrow {
+  color: var(--ds-subgreen);
+
+  filter: drop-shadow(2px 2px 3px #66bb6a);
+}
+
+/* =====================================
+   12. Search Bar Samples
+===================================== */
+
+.geo-ds__search-demo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  min-height: 62px;
+
+  padding: 8px 16px;
+
+  border: 1px solid #2e7d32;
+  border-radius: 18px;
+
+  background: #fff;
+}
+
+.geo-ds__search-demo>span:first-child {
+  color: #a9a9a9;
+
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.geo-ds__search-demo img {
+  width: 40px;
+  height: 40px;
+
+  object-fit: contain;
+}
+
+.geo-ds__search-demo--focus {
+  box-shadow: 0 4px 10px rgba(102, 187, 106, 0.08);
+}
+
+.geo-ds__cursor {
+  display: block;
+
+  width: 2px;
+  height: 28px;
+
+  background: #2e7d32;
+}
+
+/* =====================================
+   13. Tablet
+===================================== */
+
+@media (max-width: 1200px) {
+  .geo-ds {
+    padding: 20px 0 60px;
+  }
+
+  .geo-ds__heading {
+    font-size: 20px;
+  }
+
+  .geo-ds__inner {
+    width: calc(100% - 55px);
+    margin-top: 45px;
+  }
+
+  .geo-ds__title {
+    margin-bottom: 16px;
+    font-size: 22px;
+  }
+
+  .geo-ds__description {
+    font-size: 15px;
+  }
+
+  .geo-ds__two-columns {
+    gap: 28px;
+  }
+
+  .geo-ds__color-main {
+    height: 115px;
+  }
+
+  .geo-ds__color-sub,
+  .geo-ds__color-light,
+  .geo-ds__color-gray,
+  .geo-ds__color-black {
+    height: 100px;
+  }
+
+  .geo-ds__color-main,
+  .geo-ds__color-sub,
+  .geo-ds__color-light,
+  .geo-ds__color-gray,
+  .geo-ds__color-black {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .geo-ds__neutral-colors {
+    gap: 8px;
+  }
+
+  .geo-ds__font-name {
+    font-size: 17px;
+  }
+
+  .geo-ds__type-table th,
+  .geo-ds__type-table td,
+  .geo-ds__variable-table th,
+  .geo-ds__variable-table td {
+    padding: 10px 7px;
+    font-size: 14px;
+  }
+
+  .geo-ds__middle {
+    margin-top: 85px;
+  }
+
+  .geo-ds__logo-image {
+    min-height: 220px;
+  }
+
+  .geo-ds__logo-image img {
+    width: 220px;
+  }
+
+  .geo-ds__logo-caption,
+  .geo-ds__hashtags {
+    font-size: 14px;
+  }
+
+  .geo-ds__icons,
+  .geo-ds__components {
+    margin-top: 80px;
+  }
+
+  .geo-ds__icon-groups {
+    gap: 20px;
+  }
+
+  .geo-ds__icon-group h4 {
+    font-size: 16px;
+  }
+
+  .geo-ds__icon-item {
+    width: 42px;
+    height: 42px;
+  }
+
+  .geo-ds__icon-list {
+    gap: 8px;
+  }
+
+  .geo-ds__component-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 32px;
+    margin-top: 45px;
+  }
+
+  .geo-ds__component-column:last-child {
+    grid-column: 1 / -1;
+
+    width: 100%;
+    max-width: 500px;
+
+    justify-self: center;
+  }
+
+  .geo-ds__component-caption {
+    font-size: 14px;
+  }
+}
+
+/* =====================================
+   14. Mobile
+===================================== */
+
+@media (max-width: 767px) {
+  .geo-ds {
+    padding: 20px 0 45px;
+  }
+
+  .geo-ds__heading {
+    font-size: 16px;
+  }
+
+  .geo-ds__inner {
+    width: calc(100% - 30px);
+    margin-top: 35px;
+  }
+
+  .geo-ds__title {
+    font-size: 20px;
+  }
+
+  .geo-ds__two-columns {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .geo-ds__neutral-colors {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .geo-ds__color-sub {
+    width: 72%;
+  }
+
+  .geo-ds__font-name {
+    margin-bottom: 15px;
+  }
+
+  .geo-ds__type-table th,
+  .geo-ds__type-table td {
+    font-size: 13px;
+  }
+
+  .geo-ds__middle {
+    margin-top: 65px;
+  }
+
+  .geo-ds__logo-image {
+    min-height: 190px;
+  }
+
+  .geo-ds__logo-image img {
+    width: 190px;
+  }
+
+  .geo-ds__variables .geo-ds__table-scroll {
+    overflow-x: auto;
+  }
+
+  .geo-ds__variable-table {
+    min-width: 500px;
+  }
+
+  .geo-ds__icons,
+  .geo-ds__components {
+    margin-top: 65px;
+  }
+
+  .geo-ds__icon-groups {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .geo-ds__icon-group h4 {
+    font-size: 17px;
+  }
+
+  .geo-ds__icon-item {
+    width: 45px;
+    height: 45px;
+  }
+
+  .geo-ds__component-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+
+    margin-top: 40px;
+  }
+
+  .geo-ds__component-column:last-child {
+    grid-column: auto;
+  }
+
+  .geo-ds__component-caption {
+    margin-bottom: 35px;
+  }
+
+  .geo-ds__map-card {
+    max-width: 400px;
+  }
+
+  .geo-ds__archive-examples,
+  .geo-ds__search-examples {
+    max-width: 420px;
+  }
+}
+
+
+/* =====================================
+   15. Component - Original Site Interaction
+===================================== */
+
+/* 공통: 기존 카드 디자인 유지 */
+.geo-ds__shortcut,
+.geo-ds__map-card,
+.geo-ds__archive {
+  color: inherit;
+  text-decoration: none;
+}
+
+.geo-ds__shortcut--default,
+.geo-ds__map-card--default,
+.geo-ds__archive--default {
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.2s ease;
+}
+
+/* 바로가기 버튼 */
+.geo-ds__demo-button {
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.geo-ds__shortcut--default .geo-ds__shortcut-icon {
+  border-radius: 20px;
+  outline: 1px solid transparent;
+
+  transition:
+    outline-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* =====================================
+   Archive List - Original Arrow
+===================================== */
+
+/* 기존 문자 화살표 대신 실제 PNG 사용 */
+.geo-ds__archive-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-shrink: 0;
+  width: 35px;
+  height: 35px;
+
+  transition: transform 0.2s ease;
+}
+
+.geo-ds__archive-arrow img {
+  display: block;
+
+  width: 35px;
+  height: 35px;
+
+  object-fit: contain;
+}
+
+/* 기존 hover 예시 */
+.geo-ds__archive--hover {
+  background-color: #e8f5e9;
+  transform: translateX(4px);
+}
+
+.geo-ds__archive--hover .geo-ds__archive-arrow {
+  transform: translateX(4px);
+
+  /* 이전 문자 화살표용 효과 제거 */
+  filter: none;
+}
+
+/* =====================================
+   Search Bar - Real Focus Interaction
+===================================== */
+
+.geo-ds__search-input {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+
+  padding: 0;
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+  color: var(--ds-black);
+
+  font-family: "Pretendard", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+
+  caret-color: #2e7d32;
+}
+
+.geo-ds__search-input::placeholder {
+  color: #a9a9a9;
+  opacity: 1;
+}
+
+.geo-ds__search-demo--interactive:focus-within {
+  border-color: #2e7d32;
+  box-shadow: 0 4px 10px rgba(102, 187, 106, 0.08);
+}
+
+/* =====================================
+   Desktop - Actual Hover
+===================================== */
+
+@media (min-width: 1201px) and (hover: hover) and (pointer: fine) {
+
+  /* 01. Main Block Button */
+
+  .geo-ds__shortcut--default:hover {
+    transform: translateY(-5px);
+  }
+
+  .geo-ds__shortcut--default:hover .geo-ds__shortcut-icon {
+    outline-color: var(--ds-green);
+
+    box-shadow:
+      0 8px 16px rgba(0, 0, 0, 0.12);
+  }
+
+  .geo-ds__shortcut--default:hover .geo-ds__demo-button {
+    background-color: var(--ds-subgreen);
+    transform: scale(1.05);
+
+    box-shadow:
+      0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  /* 02. Map Service Card */
+
+  .geo-ds__map-card--default:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+      0 10px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .geo-ds__map-card--default:hover .geo-ds__demo-button {
+    background-color: var(--ds-subgreen);
+    transform: scale(1.05);
+
+    box-shadow:
+      0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  /* 03. Archive List */
+
+  .geo-ds__archive--default:hover {
+    transform: translateX(4px);
+    background-color: #e8f5e9;
+  }
+
+  .geo-ds__archive--default:hover .geo-ds__archive-arrow {
+    transform: translateX(4px);
+  }
+}
+
+/* =====================================
+   Keyboard Focus
+===================================== */
+
+.geo-ds__shortcut:focus-visible,
+.geo-ds__map-card:focus-visible,
+.geo-ds__archive:focus-visible {
+  outline: 2px solid var(--ds-green);
+  outline-offset: 3px;
+}
+
+/* =====================================
+   Reduced Motion
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .geo-ds__shortcut--default,
+  .geo-ds__map-card--default,
+  .geo-ds__archive--default,
+  .geo-ds__demo-button,
+  .geo-ds__shortcut-icon,
+  .geo-ds__archive-arrow {
+    transition: none;
+  }
+
+  .geo-ds__shortcut--default:hover,
+  .geo-ds__map-card--default:hover,
+  .geo-ds__archive--default:hover,
+  .geo-ds__archive--default:hover .geo-ds__archive-arrow {
+    transform: none;
+  }
+}
+
+
+/* =====================================
+   Component - Interaction Final Fix
+===================================== */
+
+/* 실제 검색창 */
+.geo-ds__search-demo--interactive {
+  gap: 12px;
+  padding-right: 10px;
+
+  transition:
+    outline-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* 클릭 시 원본처럼 초록색 테두리 강조 */
+.geo-ds__search-demo--interactive:focus-within {
+  outline: 3px solid #66bb6a;
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+/* 원본 사이트의 원형 돋보기 버튼 */
+.geo-ds__search-btn {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+
+  background-color: #4ec855;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+
+  background-repeat: no-repeat;
+  background-position: center;
+
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* 돋보기 버튼 호버 */
+.geo-ds__search-btn:hover {
+  background-color: #388e3c;
+}
+
+.geo-ds__search-btn:focus-visible {
+  outline: 2px solid #1f5a22;
+  outline-offset: 3px;
+}
+
+/* =====================================
+   Desktop - 정적인 중복 예시 숨김
+===================================== */
+
+@media (min-width: 1201px) and (hover: hover) and (pointer: fine) {
+
+  .geo-ds__shortcut--hover,
+  .geo-ds__map-card--hover,
+  .geo-ds__archive--hover,
+  .geo-ds__search-demo--focus {
+    display: none;
+  }
+}

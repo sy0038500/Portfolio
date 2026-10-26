@@ -1,0 +1,382 @@
+/* =========================================
+09. Project Review
+========================================= */
+
+.ai-project-review,
+.ai-project-review * {
+  box-sizing: border-box;
+}
+
+.ai-project-review {
+  position: relative;
+
+  width: 100%;
+  max-width: 1920px;
+  min-height: 1339px;
+
+  margin: 0 auto;
+  padding: 63px 0 105px;
+
+  background: #fff;
+  color: #0f0f0f;
+  font-family: "Pretendard", sans-serif;
+}
+
+/* =========================================
+   01. 페이지 타이틀
+========================================= */
+
+.ai-project-review__title {
+  margin: 0 0 0 61px;
+
+  font-size: clamp(24px, 1.75vw, 32px);
+  font-weight: 700;
+  line-height: 1.22;
+}
+
+/* =========================================
+   02. 3열 레이아웃
+========================================= */
+
+.ai-project-review__columns {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: clamp(30px, 8.02vw, 154px);
+
+  width: calc(100% - 120px);
+  max-width: 1696px;
+
+  margin: 76px auto 0;
+  align-items: start;
+}
+
+.ai-project-review__column {
+  min-width: 0;
+}
+
+/* =========================================
+   03. 제목 카드 Glass UI
+
+   Fill: White 6% → White 3%
+   Stroke: Gradient CENTER 1px
+   Radius: 32px
+========================================= */
+
+.ai-project-review__heading-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: clamp(180px, 12.97vw, 249px);
+
+  padding: 20px;
+
+  border: 0;
+  border-radius: 32px;
+
+  background: linear-gradient(
+    146.331deg,
+    rgba(255, 255, 255, 0.06) 0.83423%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+
+  backdrop-filter: blur(12.5px);
+  -webkit-backdrop-filter: blur(12.5px);
+
+  box-shadow:
+    0 4px 28px rgba(31, 41, 55, 0.05),
+    3px 10px 30px rgba(31, 41, 55, 0.04);
+
+  transition:
+    transform 280ms ease,
+    box-shadow 280ms ease;
+}
+
+/* Next Steps 카드 Fill */
+
+.ai-project-review__column--next
+.ai-project-review__heading-card {
+  background: linear-gradient(
+    145.755deg,
+    rgba(255, 255, 255, 0.06) 0.83423%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+}
+
+/* =========================================
+   04. Gradient Stroke
+========================================= */
+
+.ai-project-review__heading-card::before {
+  content: "";
+  position: absolute;
+
+  inset: -0.5px;
+  padding: 1px;
+
+  border-radius: inherit;
+  pointer-events: none;
+
+  background: linear-gradient(
+    81deg,
+    rgba(255, 255, 255, 0.5),
+    rgba(102, 102, 102, 0.5)
+  );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  mask-composite: exclude;
+}
+
+/* =========================================
+   05. 카드 숫자 및 제목
+========================================= */
+
+.ai-project-review__number {
+  color: #ffa500;
+
+  font-size: clamp(54px, 5.73vw, 110px);
+  font-weight: 900;
+  line-height: 1.02;
+}
+
+.ai-project-review__heading-card h3 {
+  margin: 4px 0 0;
+
+  font-size: clamp(22px, 2.344vw, 32px);
+  font-weight: 600;
+  line-height: 1.2;
+
+  text-align: center;
+}
+
+/* =========================================
+   06. 리뷰 항목 레이아웃
+========================================= */
+
+.ai-project-review__entries {
+  display: grid;
+
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+
+  min-height: 750px;
+  gap: 10px;
+  margin-top: 45px;
+}
+
+.ai-project-review__entry {
+  min-width: 0;
+  padding: 0 6px;
+}
+
+/* =========================================
+   07. 항목 소제목
+========================================= */
+
+.ai-project-review__entry h4 {
+  display: table;
+  width: fit-content;
+
+  margin: 0 0 15px;
+  padding-bottom: 2px;
+
+  border-bottom: 5px solid #ffe211;
+
+  font-size: clamp(18px, 1.56vw, 30px);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+/* Limitations: 주황색 밑줄 */
+
+.ai-project-review__column--limitations
+.ai-project-review__entry h4 {
+  border-bottom-color: #ffa500;
+}
+
+/* =========================================
+   08. 리뷰 본문
+========================================= */
+
+.ai-project-review__entry p {
+  margin: 0 0 0 30px;
+
+  font-size: clamp(15px, 1.458vw, 28px);
+  font-weight: 500;
+  line-height: 1.36;
+
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 화살표 및 결과 문장 */
+
+.ai-project-review__result {
+  display: block;
+}
+
+.ai-project-review__arrow {
+  color: #ffa500;
+  font-weight: 900;
+}
+
+/* Achievements 결과 강조 */
+
+.ai-project-review__column--achievements
+.ai-project-review__result span:last-child,
+.ai-project-review__entry p > strong {
+  font-weight: 700;
+}
+
+/* =========================================
+   09. Hover
+========================================= */
+
+@media (hover: hover) and (pointer: fine) {
+  .ai-project-review__heading-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+      0 10px 32px rgba(31, 41, 55, 0.07),
+      3px 14px 38px rgba(31, 41, 55, 0.05);
+  }
+}
+
+/* =========================================
+   10. Tablet / 1100px
+========================================= */
+
+@media (max-width: 1100px) {
+  .ai-project-review {
+    min-height: 0;
+    padding: 32px 0 90px;
+  }
+
+  .ai-project-review__title {
+    margin-left: 5%;
+    font-size: 24px;
+  }
+
+  .ai-project-review__columns {
+    grid-template-columns: 1fr;
+
+    width: 90%;
+    max-width: 750px;
+
+    margin-top: 48px;
+    gap: 55px;
+  }
+
+  .ai-project-review__heading-card {
+    height: 160px;
+    border-radius: 24px;
+  }
+
+  .ai-project-review__number {
+    font-size: 62px;
+  }
+
+  .ai-project-review__heading-card h3 {
+    font-size: 27px;
+  }
+
+  .ai-project-review__entries {
+    min-height: 0;
+
+    display: grid;
+    grid-template-rows: none;
+
+    gap: 32px;
+    margin-top: 32px;
+  }
+
+  .ai-project-review__entry h4 {
+    font-size: 22px;
+  }
+
+  .ai-project-review__entry p {
+    font-size: 19px;
+  }
+}
+
+/* =========================================
+   11. Mobile / 767px
+========================================= */
+
+@media (max-width: 767px) {
+  .ai-project-review {
+    padding: 28px 0 65px;
+  }
+
+  .ai-project-review__title {
+    margin-left: 20px;
+    font-size: 20px;
+  }
+
+  .ai-project-review__columns {
+    width: calc(100% - 40px);
+
+    margin-top: 37px;
+    gap: 45px;
+  }
+
+  .ai-project-review__heading-card {
+    height: 140px;
+    border-radius: 18px;
+  }
+
+  .ai-project-review__number {
+    font-size: 56px;
+  }
+
+  .ai-project-review__heading-card h3 {
+    font-size: 23px;
+  }
+
+  .ai-project-review__entries {
+    margin-top: 29px;
+    gap: 26px;
+  }
+
+  .ai-project-review__entry {
+    padding: 0 4px;
+  }
+
+  .ai-project-review__entry h4 {
+    margin-bottom: 10px;
+
+    font-size: 18px;
+    border-bottom-width: 3px;
+  }
+
+  .ai-project-review__entry p {
+    margin-left: 10px;
+
+    font-size: 15px;
+    line-height: 1.53;
+  }
+}
+
+/* =========================================
+   12. Accessibility
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-project-review__heading-card {
+    transition: none !important;
+  }
+}

@@ -1,0 +1,395 @@
+/* =========================================
+   AI DASHBOARD / 03. Core UX Hypothesis
+   Figma 362:854
+========================================= */
+
+.ai-hypothesis,
+.ai-hypothesis * {
+  box-sizing: border-box;
+}
+
+.ai-hypothesis {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  min-height: 1080px;
+  margin: 0 auto;
+  padding: 35px 0 115px;
+  overflow: hidden;
+  color: #0f0f0f;
+  font-family: "Pretendard", sans-serif;
+
+  /* 이전 Background 페이지의 마지막 색상에서 정확히 시작 */
+  background:
+    linear-gradient(to bottom,
+      rgba(255, 226, 17, 0.25) 0%,
+      rgba(255, 226, 17, 0) 49.17%,
+      rgba(255, 226, 17, 0) 100%),
+    #ffffff;
+}
+
+/* 01. 좌측 상단 페이지 제목 - 다른 프로젝트와 동일 */
+.ai-hypothesis__eyebrow {
+  margin: 0 0 0 1.615%;
+  color: #4b5563;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* 02. 가설 문장 */
+.ai-hypothesis__intro {
+  width: 93%;
+  margin: 85px auto 0;
+  text-align: center;
+}
+
+.ai-hypothesis__intro h3 {
+  margin: 0;
+  font-size: clamp(32px, 3.02vw, 58px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  word-break: keep-all;
+}
+
+.ai-hypothesis__intro p {
+  margin: 12px 0 0;
+  color: #4b5563;
+  font-size: clamp(19px, 1.67vw, 32px);
+  font-weight: 400;
+  line-height: 1.45;
+  word-break: keep-all;
+}
+
+/* 03. 원1 + 원2 + 원3 */
+.ai-hypothesis__equation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(12px, 2.29vw, 44px);
+
+  width: 95%;
+  margin: 65px auto 0;
+}
+
+.ai-hypothesis__circle {
+  flex: 0 1 clamp(180px, 19.79vw, 380px);
+  width: clamp(180px, 19.79vw, 380px);
+  aspect-ratio: 1;
+  min-width: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background: linear-gradient(122.279deg,
+      rgba(255, 255, 255, 0.06) 17.662%,
+      rgba(255, 255, 255, 0.03) 85.352%);
+  backdrop-filter: blur(12.5px);
+  -webkit-backdrop-filter: blur(12.5px);
+  box-shadow:
+    0 4px 28px rgba(31, 41, 55, 0.05),
+    3px 10px 30px rgba(31, 41, 55, 0.04);
+  --figma-stroke: linear-gradient(107.5deg,
+      rgba(154, 106, 83, 0.5),
+      rgba(31, 41, 55, 0.5));
+  font-size: clamp(20px, 1.875vw, 36px);
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+  word-break: keep-all;
+}
+
+
+.ai-hypothesis__circle::before {
+  content: "";
+  position: absolute;
+  inset: -0.5px;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--figma-stroke);
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+
+.ai-hypothesis__circle span {
+  display: block;
+}
+
+.ai-hypothesis__plus {
+  flex: 0 0 clamp(48px, 4.27vw, 82px);
+  width: clamp(48px, 4.27vw, 82px);
+  height: auto;
+  filter: drop-shadow(0 3px 3px rgba(31, 41, 55, 0.1));
+}
+
+/* 04. 아래 화살표 */
+.ai-hypothesis__arrow {
+  display: block;
+  width: clamp(60px, 5vw, 96px);
+  height: auto;
+  margin: 15px auto 0;
+  filter: drop-shadow(0 3px 3px rgba(31, 41, 55, 0.12));
+}
+
+/* 05. 최종 결론 */
+.ai-hypothesis__conclusion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 2.03vw, 39px);
+  width: 93%;
+  margin: 45px auto 0;
+}
+
+.ai-hypothesis__conclusion img {
+  flex: 0 0 clamp(35px, 3.39vw, 65px);
+  width: clamp(35px, 3.39vw, 65px);
+  height: auto;
+  filter: drop-shadow(0 3px 3px rgba(31, 41, 55, 0.1));
+}
+
+.ai-hypothesis__conclusion p {
+  margin: 0;
+  font-size: clamp(30px, 3.02vw, 58px);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+  text-align: center;
+  word-break: keep-all;
+}
+
+/* =========================================
+   06. 요청한 순차 '뚱' 등장 애니메이션
+   ① 원 -> + -> ② 원 -> + -> ③ 원
+      -> 아래 화살표 -> 결론
+========================================= */
+
+.ai-hypothesis__step,
+.ai-hypothesis__arrow,
+.ai-hypothesis__conclusion {
+  opacity: 0;
+  transform: scale(0.6);
+}
+
+.ai-hypothesis.is-visible .ai-hypothesis__step {
+  animation: ai-hypothesis-pop 480ms cubic-bezier(0.2, 0.9, 0.35, 1) both;
+}
+
+.ai-hypothesis.is-visible .ai-hypothesis__step:nth-child(1) {
+  animation-delay: 100ms;
+}
+
+.ai-hypothesis.is-visible .ai-hypothesis__step:nth-child(2) {
+  animation-delay: 430ms;
+}
+
+.ai-hypothesis.is-visible .ai-hypothesis__step:nth-child(3) {
+  animation-delay: 760ms;
+}
+
+.ai-hypothesis.is-visible .ai-hypothesis__step:nth-child(4) {
+  animation-delay: 1090ms;
+}
+
+.ai-hypothesis.is-visible .ai-hypothesis__step:nth-child(5) {
+  animation-delay: 1420ms;
+}
+
+/* 마지막 원 뒤에 화살표가 나타남 */
+.ai-hypothesis.is-visible .ai-hypothesis__arrow {
+  animation: ai-hypothesis-pop 550ms ease-out 1950ms both;
+}
+
+/* 화살표 뒤에 결론 문구 등장 */
+.ai-hypothesis.is-visible .ai-hypothesis__conclusion {
+  animation: ai-hypothesis-rise 700ms ease-out 2500ms both;
+}
+
+@keyframes ai-hypothesis-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+
+  68% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes ai-hypothesis-rise {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   07. 태블릿
+========================================= */
+
+@media (max-width: 1100px) {
+  .ai-hypothesis {
+    min-height: 0;
+    padding: 32px 0 90px;
+  }
+
+  .ai-hypothesis__eyebrow {
+    margin-left: 5%;
+    font-size: 20px;
+  }
+
+  .ai-hypothesis__intro {
+    width: 90%;
+    margin-top: 75px;
+  }
+
+  .ai-hypothesis__intro h3 {
+    font-size: clamp(30px, 3.2vw, 38px);
+  }
+
+  .ai-hypothesis__intro p {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .ai-hypothesis__equation {
+    width: 90%;
+    gap: 10px;
+    margin-top: 65px;
+  }
+
+  .ai-hypothesis__circle {
+    flex: 1 1 0;
+    width: auto;
+    max-width: 240px;
+    font-size: clamp(17px, 2.3vw, 24px);
+  }
+
+  .ai-hypothesis__plus {
+    flex-basis: 40px;
+    width: 40px;
+  }
+
+  .ai-hypothesis__conclusion {
+    width: 90%;
+    gap: 12px;
+    margin-top: 35px;
+  }
+
+  .ai-hypothesis__conclusion p {
+    font-size: clamp(27px, 3vw, 36px);
+  }
+
+  .ai-hypothesis__conclusion img {
+    flex-basis: 40px;
+    width: 40px;
+  }
+}
+
+/* =========================================
+   08. 모바일: 세로 배치, 등장 순서는 동일
+========================================= */
+
+@media (max-width: 767px) {
+  .ai-hypothesis {
+    padding: 28px 0 70px;
+  }
+
+  .ai-hypothesis__eyebrow {
+    margin-left: 20px;
+    font-size: 16px;
+  }
+
+  .ai-hypothesis__intro {
+    width: calc(100% - 40px);
+    margin-top: 60px;
+  }
+
+  .ai-hypothesis__intro h3 {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  .ai-hypothesis__intro p {
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .ai-hypothesis__equation {
+    flex-direction: column;
+    width: calc(100% - 40px);
+    gap: 8px;
+    margin-top: 48px;
+  }
+
+  .ai-hypothesis__circle {
+    flex: none;
+    width: min(58vw, 235px);
+    max-width: none;
+    font-size: 20px;
+  }
+
+  .ai-hypothesis__plus {
+    flex: none;
+    width: 55px;
+  }
+
+  .ai-hypothesis__arrow {
+    width: 68px;
+    margin-top: 20px;
+  }
+
+  .ai-hypothesis__conclusion {
+    width: calc(100% - 40px);
+    gap: 6px;
+    margin-top: 24px;
+  }
+
+  .ai-hypothesis__conclusion img {
+    flex: 0 0 26px;
+    width: 26px;
+  }
+
+  .ai-hypothesis__conclusion p {
+    font-size: 22px;
+    line-height: 1.45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .ai-hypothesis__step,
+  .ai-hypothesis__arrow,
+  .ai-hypothesis__conclusion {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}

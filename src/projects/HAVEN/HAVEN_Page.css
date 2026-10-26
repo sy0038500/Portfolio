@@ -1,0 +1,550 @@
+/* =========================================
+    HAVEN / URBAN PROJECT - 03
+========================================= */
+
+.haven-page {
+  --haven-bg: #eaf0f6;
+  --haven-blue: #18365c;
+  --haven-soft-blue: #d5e1ed;
+  --haven-muted-blue: #6881ab;
+  --haven-text: #0f0f0f;
+
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 80px;
+  background: var(--haven-bg);
+  color: var(--haven-text);
+  font-family: "Pretendard", sans-serif;
+}
+
+.haven-page,
+.haven-page * {
+  box-sizing: border-box;
+}
+
+/* 01. 프로젝트 번호 - 패널과 독립된 페이지 좌측 상단 */
+.haven-page__eyebrow {
+  position: absolute;
+  z-index: 1;
+  top: 108px;
+  left: max(5%, calc((100% - 1440px) / 2));
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* 02. 콘텐츠 폭과 기본 2열 */
+.haven-page__container {
+  display: grid;
+  grid-template-columns: minmax(0, 1.83fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(24px, 2.6vw, 48px);
+  width: min(90%, 1440px);
+  margin: 0 auto;
+  padding: 83px 0 76px;
+}
+
+.haven-page__content,
+.haven-page__panel {
+  min-width: 0;
+}
+
+/* 03. 타이틀, 부제, 메타 정보 */
+.haven-page__intro h1 {
+  margin: 0;
+  font-size: clamp(54px, 5vw, 84px);
+  font-weight: 800;
+  line-height: 1.07;
+  letter-spacing: -0.045em;
+}
+
+.haven-page__subtitle {
+  margin: 4px 0 0;
+  color: var(--haven-blue);
+  font-size: clamp(21px, 1.72vw, 32px);
+  font-weight: 600;
+  line-height: 1.28;
+  word-break: keep-all;
+}
+
+.haven-page__meta {
+  margin: 5px 0 0;
+  color: var(--haven-blue);
+  font-size: clamp(14px, 1.25vw, 22px);
+  font-weight: 400;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+
+/* 04. 공통 설명 영역 / 원본의 수평 구분선 */
+.haven-page__section {
+  padding: 18px 0;
+  border-top: 1px solid rgba(104, 129, 171, 0.42);
+}
+
+.haven-page__overview {
+  margin-top: 22px;
+}
+
+.haven-page__section h2 {
+  margin: 0 0 12px;
+  font-size: clamp(21px, 1.65vw, 30px);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.haven-page__overview p {
+  margin: 0;
+  font-size: clamp(17px, 1.38vw, 24px);
+  font-weight: 400;
+  line-height: 1.48;
+  word-break: keep-all;
+}
+
+/* 05. Design Approach - 번호 01/02/03과 문구 */
+.haven-page__approach-list {
+  display: grid;
+  gap: 16px;
+}
+
+.haven-page__approach-row {
+  display: grid;
+  grid-template-columns: clamp(56px, 5.4vw, 86px) minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+  padding: 5px 10px 5px 0;
+  border-radius: 10px;
+  transition: background-color 250ms ease, transform 250ms ease;
+}
+
+.haven-page__step-number {
+  color: rgba(104, 129, 171, 0.8);
+  font-size: clamp(44px, 3.65vw, 64px);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.haven-page__approach-copy h3 {
+  margin: 0 0 5px;
+  font-size: clamp(18px, 1.56vw, 27px);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.haven-page__approach-copy p {
+  margin: 0;
+  font-size: clamp(16px, 1.25vw, 22px);
+  font-weight: 400;
+  line-height: 1.43;
+  word-break: keep-all;
+}
+
+@media (hover: hover) {
+  .haven-page__approach-row:hover {
+    background-color: rgba(213, 225, 237, 0.42);
+    transform: translateX(5px);
+  }
+}
+
+/* 06. My Contribution - 남색 왼쪽 강조선 */
+.haven-page__contribution {
+  position: relative;
+  margin-top: 19px;
+  padding: 20px 26px 19px 31px;
+  border-left: 8px solid var(--haven-blue);
+  background: var(--haven-soft-blue);
+  transition: box-shadow 280ms ease, background-color 280ms ease;
+}
+
+.haven-page__contribution h2 {
+  margin: 0;
+  font-size: clamp(21px, 1.65vw, 29px);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.haven-page__contribution h2 small {
+  color: #334e6f;
+  font-size: 0.72em;
+  font-weight: 300;
+}
+
+.haven-page__contribution-accent {
+  display: block;
+  width: 95px;
+  height: 3px;
+  margin: 6px 0 16px;
+  background: var(--haven-blue);
+}
+
+.haven-page__contribution-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.haven-page__contribution-grid h3 {
+  margin: 0 0 5px;
+  color: var(--haven-blue);
+  font-size: clamp(17px, 1.42vw, 25px);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.haven-page__contribution-grid p {
+  margin: 0;
+  font-size: clamp(15px, 1.18vw, 21px);
+  line-height: 1.4;
+  word-break: keep-all;
+}
+
+.haven-page__contribution-note {
+  margin: 20px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid rgba(104, 129, 171, 0.55);
+  color: var(--haven-muted-blue);
+  font-size: clamp(13px, 1.02vw, 18px);
+  line-height: 1.45;
+  word-break: keep-all;
+}
+
+@media (hover: hover) {
+  .haven-page__contribution:hover {
+    background-color: #dce8f2;
+    box-shadow: 0 14px 30px rgba(24, 54, 92, 0.09);
+  }
+}
+
+/* 07. 오른쪽 패널 - 원본 비율 보존, 클릭 확대 */
+.haven-page__figure {
+  margin: 0;
+}
+
+.haven-page__figure figcaption {
+  margin-bottom: 10px;
+  font-size: clamp(22px, 1.65vw, 30px);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.haven-page__panel-button {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: zoom-in;
+  transition: transform 280ms ease, box-shadow 280ms ease;
+}
+
+.haven-page__panel-button img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.haven-page__zoom-label {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 9px 13px;
+  border-radius: 999px;
+  background: rgba(24, 54, 92, 0.91);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 220ms ease, transform 220ms ease;
+  pointer-events: none;
+}
+
+.haven-page__panel-button:focus-visible {
+  outline: 3px solid var(--haven-blue);
+  outline-offset: 4px;
+}
+
+.haven-page__panel-button:focus-visible .haven-page__zoom-label {
+  opacity: 1;
+  transform: none;
+}
+
+@media (hover: hover) {
+  .haven-page__panel-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 36px rgba(24, 54, 92, 0.15);
+  }
+
+  .haven-page__panel-button:hover .haven-page__zoom-label {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* 08. 이미지 확대 다이얼로그 */
+.haven-page__lightbox {
+  position: fixed;
+  inset: 0;
+  width: min(96vw, 1340px);
+  max-width: none;
+  max-height: 94dvh;
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  border: 1px solid #91a9c6;
+  border-radius: 16px;
+  background: var(--haven-bg);
+  color: var(--haven-text);
+  box-shadow: 0 26px 95px rgba(0, 0, 0, 0.33);
+}
+
+.haven-page__lightbox::backdrop {
+  background: rgba(5, 18, 34, 0.84);
+  backdrop-filter: blur(5px);
+}
+
+.haven-page__lightbox-content {
+  padding: 12px;
+}
+
+.haven-page__lightbox-toolbar {
+  position: sticky;
+  z-index: 2;
+  top: -12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 8px 12px;
+  background: var(--haven-bg);
+  color: var(--haven-blue);
+  font-size: 16px;
+}
+
+
+.haven-page__lightbox-close {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--haven-blue);
+  color: transparent;
+  font-size: 0;
+  cursor: pointer;
+}
+
+
+/* X 아이콘을 원의 정중앙에 배치 */
+.haven-page__lightbox-close::before,
+.haven-page__lightbox-close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 19px;
+  height: 3px;
+  border-radius: 2px;
+  background: #fff;
+}
+
+.haven-page__lightbox-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.haven-page__lightbox-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
+.haven-page__lightbox-close:focus-visible {
+  outline: 3px solid #6e8fae;
+  outline-offset: 3px;
+}
+
+.haven-page__lightbox-content>img {
+  display: block;
+  width: min(100%, 1050px);
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/* 09. 태블릿 - 프로젝트 번호 위치·글씨는 기존 01/02와 동일 */
+@media (max-width: 1200px) {
+  .haven-page__eyebrow {
+    left: 5%;
+    font-size: 20px;
+  }
+
+  .haven-page__container {
+    grid-template-columns: minmax(0, 1fr);
+    width: 90%;
+    padding-top: 78px;
+    row-gap: 32px;
+  }
+
+  .haven-page__content {
+    order: 1;
+  }
+
+  .haven-page__panel {
+    order: 2;
+    width: min(100%, 650px);
+    margin: 0 auto;
+  }
+}
+
+/* 10. 모바일 - 20px 여백 / 헤더 아래 제목 간격 축소 */
+@media (max-width: 767px) {
+  .haven-page__eyebrow {
+    top: 96px;
+    left: 20px;
+    font-size: 18px;
+  }
+
+  .haven-page__container {
+    width: calc(100% - 40px);
+    padding: 56px 0 54px;
+    row-gap: 26px;
+  }
+
+  .haven-page__intro h1 {
+    font-size: clamp(46px, 12vw, 64px);
+  }
+
+  .haven-page__subtitle {
+    font-size: 20px;
+  }
+
+  .haven-page__meta {
+    font-size: 13px;
+  }
+
+  .haven-page__overview {
+    margin-top: 20px;
+  }
+
+  .haven-page__section {
+    padding: 18px 0;
+  }
+
+  .haven-page__section h2 {
+    font-size: 19px;
+  }
+
+  .haven-page__overview p,
+  .haven-page__approach-copy p {
+    font-size: 15px;
+  }
+
+  .haven-page__approach-list {
+    gap: 13px;
+  }
+
+  .haven-page__approach-row {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 16px;
+  }
+
+
+  .haven-page__step-number {
+    font-size: 42px;
+  }
+
+  .haven-page__approach-copy h3 {
+    font-size: 17px;
+  }
+
+  .haven-page__contribution {
+    margin-top: 18px;
+    padding: 17px 17px 17px 20px;
+    border-left-width: 6px;
+  }
+
+  .haven-page__contribution h2 {
+    font-size: 19px;
+  }
+
+  .haven-page__contribution h2 small {
+    display: block;
+    margin-top: 3px;
+    font-size: 13px;
+  }
+
+  .haven-page__contribution-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 17px;
+  }
+
+  .haven-page__contribution-grid h3 {
+    font-size: 16px;
+  }
+
+  .haven-page__contribution-grid p {
+    font-size: 14px;
+  }
+
+  .haven-page__contribution-note {
+    font-size: 12px;
+  }
+
+  .haven-page__figure figcaption {
+    font-size: 18px;
+  }
+
+  .haven-page__zoom-label {
+    opacity: 1;
+    transform: none;
+    font-size: 11px;
+  }
+
+  .haven-page__lightbox {
+    width: 96vw;
+    max-height: 92dvh;
+    border-radius: 12px;
+  }
+
+  .haven-page__lightbox-toolbar {
+    font-size: 13px;
+  }
+}
+
+/* 11. 모션 감소 및 스크롤 등장 */
+.haven-page__approach-row.is-visible,
+.haven-page__contribution.is-visible {
+  animation: haven-gentle-enter 550ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes haven-gentle-enter {
+  from {
+    opacity: 0.6;
+    translate: 0 9px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .haven-page__approach-row,
+  .haven-page__contribution,
+  .haven-page__panel-button,
+  .haven-page__zoom-label {
+    transition: none;
+    animation: none;
+  }
+}

@@ -1,0 +1,436 @@
+
+/* =====================================
+   01. Implementation - Basic
+===================================== */
+
+.geo-impl {
+  width: 100%;
+  padding: 30px 0 65px;
+
+  background-color: #fdfdfd;
+  color: #0f0f0f;
+
+  font-family: "Pretendard", sans-serif;
+}
+
+.geo-impl,
+.geo-impl * {
+  box-sizing: border-box;
+}
+
+.geo-impl__heading {
+  margin: 0 0 0 33px;
+
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+/* =====================================
+   02. Mockup Images - Desktop
+===================================== */
+
+.geo-impl__visual {
+  position: relative;
+
+  width: 100%;
+  max-width: 1920px;
+
+  aspect-ratio: 1920 / 850;
+
+  margin: 0 auto;
+}
+
+/* 왼쪽 노트북 */
+.geo-impl__laptop {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  display: block;
+
+  width: 77.4%;
+  height: auto;
+
+  opacity: 0.75;
+  object-fit: contain;
+}
+
+/* 오른쪽 코드 목업 */
+.geo-impl__code-frame {
+  position: absolute;
+  z-index: 2;
+
+  top: 1.5%;
+  left: 47.7%;
+
+  width: 41%;
+  aspect-ratio: 788 / 726;
+
+  overflow: hidden;
+
+  /* 피그마 원본의 그림자 */
+  box-shadow:
+    -20px 20px 45px 10px rgba(0, 0, 0, 0.43);
+}
+
+/* 이미지 안쪽 흰 여백 크롭 */
+.geo-impl__code {
+  position: absolute;
+
+  top: -4.8%;
+  left: -9.8%;
+
+  display: block;
+
+  width: 114%;
+  height: auto;
+  max-width: none;
+
+  opacity: 1;
+}
+
+/* =====================================
+   03. Implementation Cards
+===================================== */
+
+.geo-impl__cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  align-items: stretch;
+  gap: 56px;
+
+  width: calc(100% - 120px);
+  max-width: 1678px;
+
+  margin: 0 auto;
+}
+
+.geo-impl__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 24px;
+  min-width: 0;
+}
+
+/* 공통 박스: 흰 배경, 얇은 테두리, 그림자 */
+.geo-impl__card-title,
+.geo-impl__card-description {
+  width: 100%;
+
+  border: 1px solid #e6e9e6;
+  border-right-color: #9ac49f;
+  border-radius: 25px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 4px 28px rgba(31, 41, 55, 0.05),
+    3px 10px 30px rgba(31, 41, 55, 0.04);
+}
+
+/* 상단 제목 */
+.geo-impl__card-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 70px;
+  padding: 18px 20px;
+
+  text-align: center;
+}
+
+.geo-impl__card-title h3 {
+  margin: 0;
+
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.35;
+
+  word-break: keep-all;
+}
+
+/* 피그마 색상의 아래쪽 정삼각형 */
+.geo-impl__arrow {
+  display: block;
+
+  width: 28px;
+  height: 24.25px;
+
+  flex-shrink: 0;
+
+  background-color: #dcd6c3;
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    50% 100%
+  );
+}
+
+/* 아래 설명 박스 */
+.geo-impl__card-description {
+  display: flex;
+  align-items: flex-start;
+
+  flex: 1;
+  min-height: 150px;
+
+  padding: 24px;
+}
+
+.geo-impl__card-description p {
+  margin: 0;
+
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.5;
+
+  word-break: keep-all;
+}
+
+/* =====================================
+   04. Tablet
+===================================== */
+
+@media (max-width: 1200px) {
+  .geo-impl {
+    padding: 25px 0 55px;
+  }
+
+  .geo-impl__heading {
+    margin-left: 25px;
+    font-size: 20px;
+  }
+
+  /* 목업 겹침 구조 그대로 유지 */
+  .geo-impl__visual {
+    aspect-ratio: 1920 / 850;
+    margin-top: 10px;
+  }
+
+  .geo-impl__code-frame {
+    box-shadow:
+      -12px 12px 28px 5px rgba(0, 0, 0, 0.4);
+  }
+
+  .geo-impl__cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+
+    width: calc(100% - 60px);
+    max-width: 1050px;
+  }
+
+  .geo-impl__card {
+    gap: 16px;
+  }
+
+  .geo-impl__card-title,
+  .geo-impl__card-description {
+    border-radius: 18px;
+  }
+
+  .geo-impl__card-title {
+    min-height: 60px;
+    padding: 14px 10px;
+  }
+
+  .geo-impl__card-title h3 {
+    font-size: 18px;
+  }
+
+  .geo-impl__arrow {
+    width: 24px;
+    height: 20.78px;
+  }
+
+  .geo-impl__card-description {
+    min-height: 135px;
+    padding: 16px;
+  }
+
+  .geo-impl__card-description p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+}
+
+/* =====================================
+   05. Mobile
+===================================== */
+
+@media (max-width: 767px) {
+  .geo-impl {
+    padding: 20px 0 40px;
+  }
+
+  .geo-impl__heading {
+    margin-left: 20px;
+    font-size: 16px;
+  }
+
+  /*
+     모바일에서도 두 목업을 겹쳐 배치.
+     PC 비율과 위치를 그대로 축소.
+  */
+  .geo-impl__visual {
+    display: block;
+
+    width: 100%;
+    aspect-ratio: 1920 / 850;
+
+    margin: 18px auto 0;
+  }
+
+  .geo-impl__laptop {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 77.4%;
+    height: auto;
+
+    opacity: 0.75;
+  }
+
+  .geo-impl__code-frame {
+    position: absolute;
+
+    top: 1.5%;
+    left: 47.7%;
+
+    width: 41%;
+    aspect-ratio: 788 / 726;
+
+    margin: 0;
+
+    box-shadow:
+      -5px 5px 12px 2px rgba(0, 0, 0, 0.4);
+  }
+
+  .geo-impl__code {
+    position: absolute;
+
+    top: -4.8%;
+    left: -9.8%;
+
+    width: 114%;
+    height: auto;
+  }
+
+  /* 하단 설명은 가독성을 위해 세로 배치 */
+  .geo-impl__cards {
+    grid-template-columns: 1fr;
+
+    gap: 24px;
+
+    width: calc(100% - 40px);
+    max-width: 460px;
+
+    margin-top: 15px;
+  }
+
+  .geo-impl__card {
+    gap: 12px;
+  }
+
+  .geo-impl__card-title,
+  .geo-impl__card-description {
+    border-radius: 15px;
+  }
+
+  .geo-impl__card-title {
+    min-height: 52px;
+    padding: 12px;
+  }
+
+  .geo-impl__card-title h3 {
+    font-size: 17px;
+  }
+
+  .geo-impl__arrow {
+    width: 22px;
+    height: 19.05px;
+  }
+
+  .geo-impl__card-description {
+    min-height: 0;
+    padding: 18px;
+  }
+
+  .geo-impl__card-description p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+}
+
+
+/* =====================================
+   Implementation - Scroll Reveal
+===================================== */
+
+/* 노트북 목업 */
+.geo-impl__visual.geo-impl--reveal-ready
+.geo-impl__laptop {
+  opacity: 0;
+
+  transition: opacity 0.9s ease;
+}
+
+/* 코드 목업 */
+.geo-impl__visual.geo-impl--reveal-ready
+.geo-impl__code-frame {
+  opacity: 0;
+
+  transition:
+    opacity 0.9s ease 0.25s,
+    translate 0.3s ease;
+}
+
+/* 스크롤 진입 - 노트북 등장 */
+.geo-impl__visual.geo-impl--reveal-ready.is-visible
+.geo-impl__laptop {
+  opacity: 0.75;
+}
+
+/* 스크롤 진입 - 코드 등장 */
+.geo-impl__visual.geo-impl--reveal-ready.is-visible
+.geo-impl__code-frame {
+  opacity: 1;
+}
+
+/* =====================================
+   Code Mockup - Hover
+===================================== */
+
+.geo-impl__code-frame {
+  transition: translate 0.3s ease;
+}
+
+@media (hover: hover) {
+  .geo-impl__code-frame:hover {
+    translate: 0 -5px;
+  }
+}
+
+/* =====================================
+    Accessibility
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .geo-impl__code-frame {
+    transition: none;
+  }
+
+  .geo-impl__code-frame:hover {
+    translate: none;
+  }
+}

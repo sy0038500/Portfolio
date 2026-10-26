@@ -1,0 +1,37 @@
+/* =====================================
+    POWER - Original Mouse Interaction
+===================================== */
+
+.p-page {
+  /*
+   * 원본 컴포넌트에서 사용한 색상 변수.
+   * 주황색과 갈색은 원본 CSS 수치 기준.
+   * 노란색은 현재 Figma 색상으로 임시 적용.
+   */
+  --retro-orange: #e86f2d;
+  --retro-brown: #5a2e1b;
+  --retro-yellow: #f4b720;
+}
+
+/* 마우스 사용 환경에서만 기본 커서 숨기기 */
+@media (hover: hover) and (pointer: fine) {
+  .p-page,
+  .p-page * {
+    cursor: none !important;
+  }
+}
+
+/* 태블릿·모바일에서는 기본 터치 동작 유지 */
+@media (hover: none), (pointer: coarse) {
+  .p-page .custom-cursor,
+  .p-page .cursor-ring {
+    display: none;
+  }
+}
+
+/* 모션 줄이기 설정 존중 */
+@media (prefers-reduced-motion: reduce) {
+  .p-page .click-spark {
+    display: none;
+  }
+}

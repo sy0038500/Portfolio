@@ -1,0 +1,92 @@
+/* =========================================
+   RETRO CELL — 상세페이지 공통 가로 여백
+   표지 / 엔딩 제외
+========================================= */
+
+/* 01. 데스크탑 — 최대 콘텐츠 1440px */
+@media (min-width: 1201px) {
+
+  .p-page :is(.p-back,
+    .p-hypo,
+    .p-strategy,
+    .p-main,
+    .p-showcase,
+    .p-review) {
+    --p-content-gutter: max(5%,
+        calc((100% - 1440px) / 2));
+  }
+
+  /* Background & Goal */
+  .p-page .p-back__eyebrow {
+    left: var(--p-content-gutter);
+  }
+
+  .p-page .p-back__quote {
+    left: var(--p-content-gutter);
+    width: calc(50% - var(--p-content-gutter));
+  }
+
+  .p-page .p-back__why {
+    right: var(--p-content-gutter);
+    width: auto;
+  }
+
+  .p-page .p-back__cards {
+    left: var(--p-content-gutter);
+    right: var(--p-content-gutter);
+  }
+
+  /* UX Hypothesis */
+  .p-page .p-hypo__eyebrow {
+    left: var(--p-content-gutter);
+  }
+
+  .p-page .p-hypo__flow {
+    left: var(--p-content-gutter);
+    right: var(--p-content-gutter);
+  }
+
+  /* UX Strategy — 배경 장식은 그대로 유지 */
+  .p-page .p-strategy {
+    padding-right: var(--p-content-gutter);
+    padding-left: var(--p-content-gutter);
+  }
+
+  /* Main Design — 목업 크기는 유지 */
+  .p-page .p-main__title {
+    left: var(--p-content-gutter);
+  }
+
+  /* KEY Interactions */
+  .p-page .p-showcase {
+    padding-right: var(--p-content-gutter);
+    padding-left: var(--p-content-gutter);
+  }
+
+  .p-page .p-showcase__title {
+    left: var(--p-content-gutter);
+  }
+
+  /* Result & Review */
+  .p-page .p-review__eyebrow {
+    margin-left: var(--p-content-gutter);
+  }
+
+  .p-page .p-review__stats,
+  .p-page .p-review__reflection {
+    width: min(90%, 1440px);
+    max-width: 1440px;
+  }
+}
+
+/* 02. 태블릿 — 기존 5% 기준과 제목 위치 통일 */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .p-page .p-review__eyebrow {
+    margin-left: 5%;
+  }
+}
+
+/* 03. 모바일
+   기존 섹션별 좌우 20px 여백 유지.
+   패딩을 중복으로 추가하지 않음.
+*/

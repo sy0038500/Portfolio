@@ -1,0 +1,341 @@
+/* =====================================
+   01. Core UX Hypothesis - Basic
+===================================== */
+
+.geo-hypothesis {
+  width: 100%;
+  padding: 30px 0 75px;
+
+  background-color: #fdfdfd;
+  color: #0f0f0f;
+
+  font-family: "Pretendard", sans-serif;
+}
+
+.geo-hypothesis__heading {
+  margin: 0;
+
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+/* =====================================
+   02. Overall Flow
+===================================== */
+
+.geo-hypothesis__flow {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.13fr);
+
+  align-items: center;
+  gap: 55px;
+
+  width: calc(100% - 160px);
+  max-width: 1400px;
+
+  margin: 75px auto 0;
+}
+
+/* =====================================
+   03. Persona Problem
+===================================== */
+
+.geo-hypothesis__problem {
+  position: relative;
+  min-width: 0;
+}
+
+.geo-hypothesis__problem-title {
+  margin: 0 0 6px;
+
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.geo-hypothesis__problem-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 145px;
+  padding: 24px 22px;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  box-shadow:
+    0 4px 28px rgba(31, 41, 55, 0.05),
+    3px 10px 30px rgba(31, 41, 55, 0.04);
+
+  box-sizing: border-box;
+}
+
+.geo-hypothesis__problem-box p {
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+
+  text-align: center;
+  word-break: keep-all;
+}
+
+/* =====================================
+   04. Solution Cards
+===================================== */
+
+.geo-hypothesis__solutions {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 75px;
+  min-width: 0;
+}
+
+
+.geo-hypothesis__solution {
+  position: relative;
+  min-width: 0;
+}
+
+.geo-hypothesis__solution-title {
+  margin: 0 0 6px;
+
+  color: #66bb6a;
+
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.geo-hypothesis__solution-box {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 138px;
+  padding: 18px 20px;
+
+  border: 1px solid #66bb6a;
+  border-radius: 16px;
+
+  background: linear-gradient(105deg,
+      rgba(102, 187, 106, 0.06),
+      rgba(255, 255, 255, 0.7));
+
+  box-shadow:
+    0 4px 28px rgba(31, 41, 55, 0.05),
+    3px 10px 30px rgba(31, 41, 55, 0.04);
+
+  box-sizing: border-box;
+}
+
+.geo-hypothesis__solution-box p {
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+
+  text-align: center;
+  word-break: keep-all;
+}
+
+/* =====================================
+   05. Final Hypothesis
+===================================== */
+
+.geo-hypothesis__result {
+  position: relative;
+  min-width: 0;
+}
+
+.geo-hypothesis__result p {
+  margin: 0;
+
+  color: #1f5a22;
+
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.5;
+
+  text-align: center;
+  word-break: keep-all;
+}
+
+
+/* =====================================
+   06. Tablet
+===================================== */
+
+@media (max-width: 1200px) {
+  .geo-hypothesis {
+    padding: 25px 0 60px;
+  }
+
+  .geo-hypothesis__heading {
+    font-size: 20px;
+  }
+
+  .geo-hypothesis__flow {
+    grid-template-columns:
+      minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.1fr);
+
+    gap: 25px;
+
+    width: calc(100% - 70px);
+    max-width: 990px;
+
+    margin: 50px auto 0;
+  }
+
+  .geo-hypothesis__problem-title {
+    font-size: 18px;
+  }
+
+  .geo-hypothesis__problem-box {
+    min-height: 125px;
+    padding: 16px 14px;
+
+    border-radius: 16px;
+  }
+
+  .geo-hypothesis__problem-box p {
+    font-size: 14px;
+  }
+
+  .geo-hypothesis__solutions {
+    gap: 48px;
+  }
+
+  .geo-hypothesis__solution-title {
+    font-size: 17px;
+  }
+
+  .geo-hypothesis__solution-box {
+    min-height: 115px;
+    padding: 14px 12px;
+
+    border-radius: 14px;
+  }
+
+  .geo-hypothesis__solution-box p {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .geo-hypothesis__result p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+}
+
+/* =====================================
+   07. Mobile
+===================================== */
+
+@media (max-width: 767px) {
+  .geo-hypothesis {
+    padding: 20px 0 50px;
+  }
+
+  .geo-hypothesis__heading {
+    font-size: 16px;
+  }
+
+  .geo-hypothesis__flow {
+    grid-template-columns: 1fr;
+    gap: 30px;
+
+    width: 100%;
+    max-width: none;
+
+    margin: 35px auto 0;
+  }
+
+  .geo-hypothesis__problem-title {
+    font-size: 18px;
+  }
+
+  .geo-hypothesis__problem-box {
+    min-height: 0;
+    padding: 20px 18px;
+  }
+
+  .geo-hypothesis__problem-box p {
+    font-size: 15px;
+  }
+
+  .geo-hypothesis__solutions {
+    gap: 20px;
+  }
+
+  .geo-hypothesis__solution-title {
+    font-size: 17px;
+  }
+
+  .geo-hypothesis__solution-box {
+    min-height: 0;
+    padding: 20px 18px;
+  }
+
+  .geo-hypothesis__solution-box p {
+    font-size: 15px;
+  }
+
+  .geo-hypothesis__result {
+    position: relative;
+
+    padding-top: 65px;
+    border-top: none;
+  }
+
+  .geo-hypothesis__result p {
+    font-size: 17px;
+  }
+
+  /* 최종 가설로 향하는 아래쪽 화살표 */
+
+  .geo-hypothesis__result::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    display: block;
+    width: 2px;
+    height: 28px;
+
+    background-color: #66bb6a;
+    transform: translateX(-50%);
+  }
+
+  .geo-hypothesis__result::after {
+    content: "";
+
+    position: absolute;
+    top: 27px;
+    left: 50%;
+
+    display: block;
+    width: 0;
+    height: 0;
+
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 13px solid #66bb6a;
+
+    transform: translateX(-50%);
+  }
+}

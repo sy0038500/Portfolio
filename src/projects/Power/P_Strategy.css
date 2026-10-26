@@ -1,0 +1,447 @@
+
+/* =========================================
+04. UX Strategy
+========================================= */
+
+.p-strategy,
+.p-strategy * {
+  box-sizing: border-box;
+}
+
+/* 01. Basic */
+
+.p-strategy {
+  --p-navy: #172a52;
+  --p-red: #e23d28;
+  --p-cream: #faf4e7;
+  --p-cell: #faf1db;
+  --p-yellow: #f4b720;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  width: 100%;
+  max-width: 1920px;
+  min-height: 1000px;
+  aspect-ratio: 16 / 9;
+  margin-inline: auto;
+  padding: 35px 3.125% 70px;
+
+  color: var(--p-navy);
+  background: var(--p-cream);
+  font-family: "Pretendard", sans-serif;
+}
+
+/* 02. Original Figma Background */
+
+.p-strategy__decor {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.p-strategy__decor img {
+  position: absolute;
+  display: block;
+  height: auto;
+  max-width: none;
+}
+
+.p-strategy__yellow {
+  top: 0;
+  left: 0;
+  width: 63.125%;
+}
+
+.p-strategy__red {
+  right: 0;
+  bottom: 0;
+  width: 57.03125%;
+}
+
+.p-strategy__line {
+  left: 0;
+  width: 76.72%;
+}
+
+.p-strategy__line--1 {
+  top: 0;
+}
+
+.p-strategy__line--2 {
+  top: -2.315%;
+}
+
+.p-strategy__line--3 {
+  top: -4.63%;
+}
+
+.p-strategy__line--4 {
+  top: -6.945%;
+}
+
+.p-strategy__line--5 {
+  top: -9.26%;
+}
+
+/* 03. Section Titles */
+
+.p-strategy__eyebrow {
+  position: relative;
+  z-index: 1;
+
+  margin: 0;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.p-strategy__title {
+  position: relative;
+  z-index: 1;
+
+  margin: 18px auto 88px;
+
+  font-size: clamp(32px, 2.5vw, 48px);
+  font-weight: 700;
+  line-height: 1.22;
+  letter-spacing: -0.035em;
+
+  text-align: center;
+  word-break: keep-all;
+}
+
+.p-strategy__title span {
+  display: block;
+}
+
+/* 04. Strategy Table */
+
+.p-strategy__table {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+
+  color: var(--p-navy);
+}
+
+/* Figma Column Proportions */
+
+.p-strategy__col-principle {
+  width: 20%;
+}
+
+.p-strategy__col-problem {
+  width: 30%;
+}
+
+.p-strategy__col-method {
+  width: 17.28%;
+}
+
+.p-strategy__col-reason {
+  width: 32.72%;
+}
+
+/* Table Header */
+
+.p-strategy__table thead tr {
+  height: 70px;
+}
+
+.p-strategy__table th {
+  padding: 13px 16px;
+
+  background: var(--p-navy);
+  color: #f8ebc8;
+
+  font-size: clamp(18px, 1.25vw, 24px);
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+}
+
+/* Table Body */
+
+.p-strategy__table tbody tr {
+  height: 150px;
+}
+
+.p-strategy__table td {
+  padding: 18px;
+
+  border-right: 1px solid var(--p-navy);
+  border-bottom: 1px solid var(--p-navy);
+
+  background: var(--p-cell);
+
+  font-size: clamp(16px, 1.18vw, 22px);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -0.018em;
+
+  vertical-align: middle;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+
+  transition: background-color 250ms ease;
+}
+
+.p-strategy__table td:first-child {
+  text-align: center;
+}
+
+.p-strategy__table td:last-child {
+  border-right: 0;
+}
+
+.p-strategy__table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+
+/* Desktop - 표 하단 모서리 */
+@media (min-width: 1101px) {
+  .p-strategy__table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 50px;
+  }
+
+  .p-strategy__table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 50px;
+  }
+}
+
+
+.p-strategy__table td strong {
+  font-weight: 600;
+}
+
+.p-strategy__method {
+  font-weight: 500 !important;
+}
+
+.p-strategy__mobile-label {
+  display: none;
+}
+
+/* 05. Scroll Reveal */
+
+.p-strategy__title,
+.p-strategy__table thead,
+.p-strategy__table tbody tr {
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+}
+
+.p-strategy:not(.is-visible) .p-strategy__title,
+.p-strategy:not(.is-visible) .p-strategy__table thead,
+.p-strategy:not(.is-visible) .p-strategy__table tbody tr {
+  opacity: 0;
+  transform: translateY(22px);
+}
+
+/* Sequential Appearance */
+
+.p-strategy__table thead {
+  transition-delay: 120ms;
+}
+
+.p-strategy__table tbody tr:nth-child(1) {
+  transition-delay: 210ms;
+}
+
+.p-strategy__table tbody tr:nth-child(2) {
+  transition-delay: 310ms;
+}
+
+.p-strategy__table tbody tr:nth-child(3) {
+  transition-delay: 410ms;
+}
+
+.p-strategy__table tbody tr:nth-child(4) {
+  transition-delay: 510ms;
+}
+
+/* 06. Desktop Hover */
+
+@media (hover: hover) and (pointer: fine) {
+  .p-strategy__table tbody tr:hover td {
+    background: #ffefd0;
+  }
+}
+
+/* =========================================
+   07. Tablet
+========================================= */
+
+@media (max-width: 1100px) {
+  .p-strategy {
+    min-height: 0;
+    aspect-ratio: auto;
+    padding: 32px 5% 80px;
+  }
+
+  .p-strategy__eyebrow {
+    font-size: 20px;
+  }
+
+  .p-strategy__title {
+    margin: 62px auto 50px;
+    font-size: 28px;
+    line-height: 1.4;
+  }
+
+  /* Table -> Cards */
+
+  .p-strategy__table,
+  .p-strategy__table tbody {
+    display: block;
+  }
+
+  .p-strategy__table colgroup,
+  .p-strategy__table thead {
+    display: none;
+  }
+
+  .p-strategy__table tbody {
+    display: grid;
+    grid-template-columns: repeat(
+      2,
+      minmax(0, 1fr)
+    );
+    gap: 22px;
+  }
+
+  .p-strategy__table tbody tr {
+    display: flex;
+    flex-direction: column;
+
+    height: auto;
+    border: 2px solid var(--p-navy);
+    border-radius: 16px;
+
+    overflow: hidden;
+    background: var(--p-cell);
+  }
+
+  .p-strategy__table td,
+  .p-strategy__table tbody tr:last-child td {
+    display: block;
+
+    width: 100%;
+    padding: 18px 20px;
+
+    border: 0;
+    border-bottom: 1px solid
+      rgba(23, 42, 82, 0.25);
+    border-radius: 0;
+
+    font-size: 17px;
+    line-height: 1.55;
+    text-align: left;
+  }
+
+  .p-strategy__table td:first-child {
+    font-weight: 600;
+    text-align: left;
+  }
+
+  .p-strategy__table td:last-child,
+  .p-strategy__table tbody tr:last-child td:last-child {
+    border-bottom: 0;
+    border-radius: 0;
+  }
+
+  .p-strategy__mobile-label {
+    display: block;
+    margin-bottom: 7px;
+
+    color: var(--p-red);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  /* Responsive Decorations */
+
+  .p-strategy__yellow {
+    width: 95%;
+    opacity: 0.28;
+  }
+
+  .p-strategy__red {
+    width: 80%;
+    opacity: 0.8;
+  }
+
+  .p-strategy__line {
+    display: none !important;
+  }
+}
+
+/* =========================================
+  08. Mobile
+========================================= */
+
+@media (max-width: 767px) {
+  .p-strategy {
+    padding: 28px 20px 65px;
+  }
+
+  .p-strategy__eyebrow {
+    font-size: 16px;
+  }
+
+  .p-strategy__title {
+    margin: 48px 0 40px;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .p-strategy__table tbody {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .p-strategy__table td,
+  .p-strategy__table tbody tr:last-child td {
+    padding: 16px 18px;
+    font-size: 16px;
+  }
+
+  .p-strategy__table td:last-child,
+  .p-strategy__table tbody tr:last-child td:last-child {
+    border-bottom: 0;
+  }
+
+  .p-strategy__yellow {
+    width: 115%;
+    opacity: 0.22;
+  }
+
+  .p-strategy__red {
+    width: 110%;
+    opacity: 0.8;
+  }
+}
+
+/* 09. Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .p-strategy__title,
+  .p-strategy__table thead,
+  .p-strategy__table tbody tr {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

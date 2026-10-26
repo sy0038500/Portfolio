@@ -1,0 +1,349 @@
+
+/* =====================================
+   01. Problem Definition - Basic
+===================================== */
+
+.geo-problem {
+  width: 100%;
+  margin-top: 30px;
+  padding: 35px 0 80px;
+
+  background-color: #fdfdfd;
+  color: #0f0f0f;
+}
+
+.geo-problem__heading {
+  margin: 0;
+
+  font-family: "Pretendard", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+/* =====================================
+   02. Intro
+===================================== */
+
+.geo-problem__intro {
+  max-width: 1600px;
+  margin: 70px auto 0;
+
+  font-family: "Pretendard", sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.5;
+
+  text-align: center;
+  word-break: keep-all;
+}
+
+.geo-problem__intro strong {
+  font-weight: 600;
+}
+
+.geo-problem__intro span {
+  display: block;
+}
+
+/* =====================================
+   03. Card Layout
+===================================== */
+
+.geo-problem__cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 38px;
+
+  width: 100%;
+  max-width: 1700px;
+
+  margin: 65px auto 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.geo-problem__card {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  min-height: 445px;
+  padding: 38px 30px;
+
+  border: 1px solid #e2e2e2;
+  border-radius: 35px;
+
+  background: rgba(255, 255, 255, 0.85);
+
+  box-shadow:
+    0 4px 28px rgba(31, 41, 55, 0.05),
+    3px 10px 30px rgba(31, 41, 55, 0.04);
+
+  box-sizing: border-box;
+}
+
+/* =====================================
+   04. Card Heading
+===================================== */
+
+.geo-problem__card-top {
+  display: flex;
+  align-items: flex-end;
+
+  gap: 22px;
+  min-width: 0;
+}
+
+.geo-problem__number-group {
+  display: flex;
+  flex-direction: column;
+
+  flex-shrink: 0;
+  gap: 10px;
+}
+
+.geo-problem__label {
+  font-family: "Pretendard", sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.geo-problem__number {
+  color: #1f5a22;
+
+  font-family: "GangwonEduPower", sans-serif;
+  font-size: 115px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.geo-problem__card-title {
+  min-width: 0;
+  margin: 0 0 8px;
+
+  font-family: "Pretendard", sans-serif;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1.4;
+
+  word-break: keep-all;
+}
+
+.geo-problem__card-title span {
+  display: block;
+}
+
+/* =====================================
+   05. Card Description
+===================================== */
+
+.geo-problem__card-description {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  margin-top: 32px;
+
+  font-family: "Pretendard", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+
+  word-break: keep-all;
+}
+
+.geo-problem__card-description p {
+  margin: 0;
+}
+
+/* =====================================
+   06. Conclusion
+===================================== */
+
+.geo-problem__conclusion {
+  max-width: 1600px;
+  margin: 55px auto 0;
+
+  font-family: "Pretendard", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.5;
+
+  text-align: center;
+  word-break: keep-all;
+}
+
+.geo-problem__conclusion span {
+  display: block;
+}
+
+/* =====================================
+   07. Tablet
+===================================== */
+
+@media (max-width: 1200px) {
+  .geo-problem {
+    margin-top: 25px;
+    padding: 30px 0 65px;
+  }
+
+  .geo-problem__heading {
+    font-size: 20px;
+  }
+
+  .geo-problem__intro {
+    margin-top: 45px;
+    font-size: 20px;
+  }
+
+  .geo-problem__cards {
+    gap: 18px;
+    margin-top: 45px;
+  }
+
+  .geo-problem__card {
+    min-height: 360px;
+    padding: 26px 18px;
+
+    border-radius: 25px;
+  }
+
+  .geo-problem__card-top {
+    gap: 12px;
+  }
+
+  .geo-problem__number-group {
+    gap: 10px;
+  }
+
+  .geo-problem__label {
+    font-size: 19px;
+  }
+
+  .geo-problem__number {
+    font-size: 78px;
+  }
+
+  .geo-problem__card-title {
+    margin-bottom: 5px;
+
+    font-size: 17px;
+    line-height: 1.4;
+  }
+
+  .geo-problem__card-description {
+    margin-top: 28px;
+
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .geo-problem__conclusion {
+    margin-top: 45px;
+    font-size: 19px;
+  }
+}
+
+/* =====================================
+   08. Mobile
+===================================== */
+
+@media (max-width: 767px) {
+  .geo-problem {
+    margin-top: 20px;
+    padding: 25px 0 55px;
+  }
+
+  .geo-problem__heading {
+    font-size: 16px;
+  }
+
+  .geo-problem__intro {
+    margin-top: 35px;
+
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  .geo-problem__cards {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+    margin-top: 35px;
+  }
+
+  .geo-problem__card {
+    min-height: 0;
+    padding: 25px 24px;
+
+    border-radius: 25px;
+  }
+
+  .geo-problem__card-top {
+    gap: 22px;
+  }
+
+  .geo-problem__number-group {
+    gap: 6px;
+  }
+
+  .geo-problem__label {
+    font-size: 18px;
+  }
+
+  .geo-problem__number {
+    font-size: 85px;
+  }
+
+  .geo-problem__card-title {
+    margin-bottom: 5px;
+
+    font-size: 19px;
+  }
+
+  .geo-problem__card-description {
+    margin-top: 20px;
+
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .geo-problem__conclusion {
+    margin-top: 35px;
+
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+
+/* =====================================
+    Pain Point - Individual Card Hover
+===================================== */
+
+.geo-problem__card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.geo-problem__card:hover {
+  transform: translateY(-6px);
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* 움직임 감소 설정 */
+@media (prefers-reduced-motion: reduce) {
+  .geo-problem__card {
+    transition: none;
+  }
+
+  .geo-problem__card:hover {
+    transform: none;
+  }
+}

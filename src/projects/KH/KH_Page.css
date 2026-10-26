@@ -1,0 +1,587 @@
+/* =========================================
+    김해 야간경관 / URBAN PROJECT - 02
+========================================= */
+
+.kh-page {
+  --kh-bg: #000028;
+  --kh-cream: #f8f4eb;
+  --kh-gold: #d9b36c;
+  --kh-border: rgba(217, 179, 108, 0.65);
+  --kh-glass: linear-gradient(100deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.05));
+  --kh-shadow: 0 4px 28px rgba(31, 41, 55, 0.05),
+    3px 10px 30px rgba(31, 41, 55, 0.04);
+
+  width: 100%;
+  min-height: 100vh;
+  background: var(--kh-bg);
+  color: var(--kh-cream);
+  font-family: "Pretendard", sans-serif;
+
+  position: relative;
+  padding-top: 80px;
+}
+
+.kh-page,
+.kh-page * {
+  box-sizing: border-box;
+}
+
+.kh-page__container {
+  display: grid;
+  grid-template-columns: minmax(0, 0.36fr) minmax(0, 0.64fr);
+  align-items: start;
+  column-gap: clamp(22px, 2vw, 38px);
+
+  width: min(90%, 1440px);
+  margin: 0 auto;
+  padding: 35px 0 70px;
+}
+
+/* =========================================
+   01. 왼쪽 - FINAL DESIGN
+========================================= */
+
+.kh-page__left,
+.kh-page__right {
+  min-width: 0;
+}
+
+/* 데스크탑 - 패널을 프로젝트 번호 아래에 배치 */
+.kh-page__left {
+  padding-top: 48px;
+}
+
+.kh-page__eyebrow {
+  position: absolute;
+  z-index: 1;
+  top: 108px;
+  left: max(5%, calc((100% - 1440px) / 2));
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.kh-page__figure {
+  margin: 0;
+}
+
+.kh-page__figure figcaption {
+  margin: 0 0 10px;
+  font-size: clamp(20px, 1.667vw, 32px);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.kh-page__panel-button {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  text-align: left;
+  cursor: zoom-in;
+  transition: filter 280ms ease, transform 280ms ease;
+}
+
+.kh-page__panel-button img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.kh-page__zoom-label {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 13px;
+  border: 1px solid var(--kh-gold);
+  border-radius: 999px;
+  background: rgba(0, 0, 40, 0.91);
+  color: var(--kh-cream);
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 220ms ease, transform 220ms ease;
+  pointer-events: none;
+}
+
+.kh-page__panel-button:focus-visible {
+  outline: 3px solid var(--kh-gold);
+  outline-offset: 4px;
+}
+
+.kh-page__panel-button:focus-visible .kh-page__zoom-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (hover: hover) {
+  .kh-page__panel-button:hover {
+    filter: brightness(1.08);
+    transform: translateY(-4px);
+  }
+
+  .kh-page__panel-button:hover .kh-page__zoom-label {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   02. 오른쪽 - 제목과 소개 카드
+========================================= */
+
+.kh-page__right {
+  display: grid;
+  gap: 16px;
+}
+
+.kh-page__intro h1 {
+  margin: 0;
+  color: #f9f4eb;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+  word-break: keep-all;
+}
+
+.kh-page__name {
+  font-size: clamp(37px, 3.9vw, 75px);
+}
+
+.kh-page__tagline {
+  font-size: clamp(23px, 2.4vw, 46px);
+}
+
+.kh-page__meta,
+.kh-page__year {
+  margin: 0;
+  color: var(--kh-gold);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.kh-page__meta {
+  margin-top: 2px;
+  font-size: clamp(15px, 1.458vw, 28px);
+  word-break: keep-all;
+}
+
+.kh-page__year {
+  font-size: clamp(13px, 1.146vw, 22px);
+}
+
+/* 피그마 반투명 유리 카드 */
+.kh-page__card {
+  min-width: 0;
+  padding: 20px 24px;
+  border: 1px solid var(--kh-border);
+  border-radius: 25px;
+  background: var(--kh-glass);
+  box-shadow: var(--kh-shadow);
+  backdrop-filter: blur(12.5px);
+  -webkit-backdrop-filter: blur(12.5px);
+  transition: background-color 250ms ease, box-shadow 250ms ease,
+    transform 250ms ease;
+}
+
+.kh-page__card h2 {
+  margin: 0 0 10px;
+  color: var(--kh-gold);
+  font-size: clamp(19px, 1.667vw, 32px);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.kh-page__card p {
+  margin: 0;
+  font-size: clamp(15px, 1.3vw, 25px);
+  font-weight: 400;
+  line-height: 1.42;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.kh-page__card p+p {
+  margin-top: 16px;
+}
+
+@media (hover: hover) {
+  .kh-page__card:hover {
+    background-color: rgba(255, 255, 255, 0.045);
+    box-shadow: 0 10px 34px rgba(0, 0, 0, 0.23);
+    transform: translateY(-3px);
+  }
+}
+
+/* =========================================
+   03. DESIGN APPROACH - 단계별 정보
+========================================= */
+
+.kh-page__approach-list {
+  display: grid;
+  gap: 14px;
+}
+
+.kh-page__approach-row {
+  display: grid;
+  grid-template-columns: 44px minmax(130px, 0.85fr) minmax(0, 2fr);
+  align-items: center;
+  gap: 14px;
+}
+
+.kh-page__step-number {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--kh-gold);
+  border-radius: 50%;
+  color: var(--kh-gold);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.kh-page__approach-row h3 {
+  margin: 0;
+  font-size: clamp(16px, 1.5625vw, 30px);
+  font-weight: 500;
+  line-height: 1.3;
+  word-break: keep-all;
+}
+
+.kh-page__approach-row p {
+  font-size: clamp(14px, 1.25vw, 24px);
+  line-height: 1.4;
+}
+
+.kh-page__contribution h2 small {
+  color: #dad4c9;
+  font-size: 0.72em;
+  font-weight: 300;
+}
+
+.kh-page__achievement {
+  width: min(100%, 67%);
+}
+
+.kh-page__achievement p span {
+  display: block;
+}
+
+.kh-page__review p {
+  font-size: clamp(15px, 1.25vw, 24px);
+  line-height: 1.46;
+}
+
+.kh-page__review strong {
+  font-weight: 600;
+}
+
+/* =========================================
+   04. 이미지 확대 팝업
+========================================= */
+
+.kh-page__lightbox {
+  position: fixed;
+  inset: 0;
+  width: min(96vw, 1320px);
+  max-width: none;
+  max-height: 94dvh;
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  border: 1px solid var(--kh-border);
+  border-radius: 16px;
+  background: var(--kh-bg);
+  color: var(--kh-cream);
+  box-shadow: 0 26px 95px rgba(0, 0, 0, 0.55);
+}
+
+.kh-page__lightbox::backdrop {
+  background: rgba(0, 0, 15, 0.86);
+  backdrop-filter: blur(5px);
+}
+
+.kh-page__lightbox-content {
+  padding: 12px;
+}
+
+.kh-page__lightbox-toolbar {
+  position: sticky;
+  z-index: 2;
+  top: -12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 8px 8px 12px;
+  background: var(--kh-bg);
+  color: var(--kh-gold);
+  font-size: 16px;
+}
+
+
+/* 이미지 확대 팝업 - 닫기 버튼 */
+.kh-page__lightbox-close {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid var(--kh-gold);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  cursor: pointer;
+}
+
+/* X 아이콘 중앙 정렬 */
+.kh-page__lightbox-close::before,
+.kh-page__lightbox-close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--kh-cream);
+}
+
+.kh-page__lightbox-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.kh-page__lightbox-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
+.kh-page__lightbox-close:focus-visible {
+  outline: 3px solid var(--kh-gold);
+  outline-offset: 3px;
+}
+
+/* 세로 패널은 크게 표시하고 팝업 내부 스크롤로 전체 확인 */
+.kh-page__lightbox-content>img {
+  display: block;
+  width: min(100%, 1050px);
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/* =========================================
+    05. 태블릿 - 가로 여백 5%
+========================================= */
+
+@media (max-width: 1200px) {
+  .kh-page__container {
+    width: 90%;
+    grid-template-columns: minmax(0, 1fr);
+    padding-top: 78px;
+    row-gap: 26px;
+  }
+
+
+  .kh-page__card {
+    padding: 20px;
+  }
+
+  .kh-page__approach-row {
+    grid-template-columns: 40px minmax(100px, 0.8fr) minmax(0, 2fr);
+    gap: 10px;
+  }
+
+  .kh-page__step-number {
+    width: 40px;
+    height: 40px;
+  }
+
+  .kh-page__eyebrow {
+    left: 5%;
+    font-size: 20px;
+  }
+
+  .kh-page__right {
+    order: 1;
+  }
+
+  .kh-page__left {
+    order: 2;
+    padding-top: 0;
+  }
+
+  .kh-page__figure {
+    width: min(100%, 650px);
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1100px) {
+  .kh-page__figure figcaption {
+    font-size: 20px;
+  }
+
+  .kh-page__right {
+    gap: 18px;
+  }
+
+  .kh-page__approach-row {
+    grid-template-columns: 44px minmax(145px, 0.7fr) minmax(0, 2fr);
+    gap: 16px;
+  }
+
+  .kh-page__step-number {
+    width: 44px;
+    height: 44px;
+  }
+
+  .kh-page__achievement {
+    width: min(100%, 650px);
+  }
+}
+
+/* =========================================
+    06. 모바일 - 좌우 20px
+========================================= */
+
+@media (max-width: 767px) {
+  .kh-page__container {
+    width: calc(100% - 40px);
+    padding: 56px 0 54px;
+    row-gap: 20px;
+  }
+
+  .kh-page__eyebrow {
+    top: 96px;
+    left: 20px;
+    font-size: 18px;
+  }
+
+  .kh-page__figure figcaption {
+    font-size: 18px;
+  }
+
+  .kh-page__panel-button {
+    max-width: 100%;
+  }
+
+  .kh-page__right {
+    gap: 14px;
+  }
+
+  .kh-page__intro h1 {
+    line-height: 1.22;
+  }
+
+  .kh-page__name {
+    font-size: clamp(35px, 9vw, 55px);
+  }
+
+  .kh-page__tagline {
+    display: block;
+    font-size: clamp(21px, 5.4vw, 30px);
+  }
+
+  .kh-page__meta {
+    font-size: 14px;
+  }
+
+  .kh-page__year {
+    font-size: 13px;
+  }
+
+  .kh-page__card {
+    padding: 20px 18px;
+    border-radius: 18px;
+  }
+
+  .kh-page__card h2 {
+    font-size: 19px;
+    margin-bottom: 12px;
+  }
+
+  .kh-page__card p,
+  .kh-page__review p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .kh-page__approach-list {
+    gap: 18px;
+  }
+
+  .kh-page__approach-row {
+    grid-template-columns: 38px minmax(0, 1fr);
+    align-items: start;
+    gap: 3px 12px;
+  }
+
+  .kh-page__step-number {
+    grid-row: span 2;
+    width: 36px;
+    height: 36px;
+    font-size: 13px;
+  }
+
+  .kh-page__approach-row h3 {
+    font-size: 16px;
+  }
+
+  .kh-page__approach-row p {
+    grid-column: 2;
+    font-size: 14px;
+  }
+
+  .kh-page__contribution h2 small {
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+  }
+
+  .kh-page__achievement {
+    width: 100%;
+  }
+
+  .kh-page__lightbox {
+    width: 96vw;
+    max-height: 92dvh;
+    border-radius: 12px;
+  }
+
+  .kh-page__lightbox-toolbar {
+    font-size: 13px;
+  }
+}
+
+/* =========================================
+    07. 모션 감소 설정
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .kh-page__panel-button,
+  .kh-page__zoom-label,
+  .kh-page__card {
+    transition: none;
+  }
+}

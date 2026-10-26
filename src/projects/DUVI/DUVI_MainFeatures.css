@@ -1,0 +1,203 @@
+/* ========================================
+   DUVI 09 — MAIN FEATURES
+   Figma: 362:1406
+======================================== */
+
+.duvi-main-features,
+.duvi-main-features * {
+  box-sizing: border-box;
+}
+
+/* 01. 전체 페이지
+   08 아래쪽 연파랑에서 흰색으로 연결 */
+.duvi-main-features {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 126px 24px 90px;
+
+  color: #0f0f0f;
+  font-family: "Pretendard", sans-serif;
+
+  background: linear-gradient(180deg,
+      #bdd7e7 0%,
+      #c3dbe9 9%,
+      #ffffff 75.867%,
+      #ffffff 100%);
+}
+
+/* 02. 좌측 상단 타이틀 */
+.duvi-main-features__eyebrow {
+  position: absolute;
+  top: 32px;
+  left: 31px;
+
+  margin: 0;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* 03. 기능 3개 가로 배열
+   전체 콘텐츠 최대 너비 제한 */
+.duvi-main-features__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: clamp(20px, 3.2vw, 65px);
+  align-items: start;
+
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+/* 04. 기능별 영역 */
+.duvi-main-features__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-width: 0;
+  margin: 0;
+  text-align: center;
+}
+
+/* 05. 기능 제목
+   Figma ExtraBold 800 유지 */
+.duvi-main-features__title {
+  margin: 0 0 18px;
+  color: #08519c;
+
+  font-size: clamp(18px, 1.66vw, 32px);
+  font-weight: 800;
+  line-height: 1.25;
+  word-break: keep-all;
+}
+
+/* 06. 휴대폰 이미지 영역
+   Figma 원본 프레임 450×915
+   세로 비율 유지 + 크기 제한 */
+.duvi-main-features__screen {
+  position: relative;
+  width: 100%;
+  max-width: 310px;
+  aspect-ratio: 450 / 915;
+
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+/* 07. Figma 원본 이미지 크롭
+   이미지 위치와 확대 비율 재현 */
+.duvi-main-features__screen img {
+  position: absolute;
+  display: block;
+
+  top: -0.04%;
+  left: -136.57%;
+  width: 373.13%;
+  height: 100.08%;
+
+  max-width: none;
+  object-fit: fill;
+  pointer-events: none;
+}
+
+/* 08. 휴대폰 아래 설명
+   Figma Medium 500 유지 */
+.duvi-main-features__description {
+  width: 100%;
+  max-width: 390px;
+  margin: 18px 0 0;
+
+  font-size: clamp(14px, 1.05vw, 20px);
+  font-weight: 500;
+  line-height: 1.48;
+  word-break: keep-all;
+}
+
+/* ========================================
+   09. 태블릿 — 1100px 이하
+======================================== */
+@media (max-width: 1100px) {
+
+  /* 페이지 여백 */
+  .duvi-main-features {
+    padding: 105px 5% 72px;
+  }
+
+  /* 좌측 상단 타이틀 */
+  .duvi-main-features__eyebrow {
+    top: 28px;
+    left: 5%;
+    font-size: 20px;
+  }
+
+  /* 기능 3열 유지 */
+  .duvi-main-features__grid {
+    column-gap: 18px;
+  }
+
+  /* 기능 제목 축소 */
+  .duvi-main-features__title {
+    margin-bottom: 12px;
+    font-size: clamp(17px, 2.1vw, 24px);
+  }
+
+  /* 목업 크기 제한 */
+  .duvi-main-features__screen {
+    max-width: 250px;
+  }
+
+  /* 설명 글씨 축소 */
+  .duvi-main-features__description {
+    margin-top: 12px;
+    font-size: clamp(13px, 1.35vw, 16px);
+  }
+}
+
+/* ========================================
+   10. 모바일 — 767px 이하
+======================================== */
+@media (max-width: 767px) {
+
+  /* 페이지 상하좌우 여백 */
+  .duvi-main-features {
+    padding: 76px 18px 58px;
+  }
+
+  /* 좌측 상단 타이틀 */
+  .duvi-main-features__eyebrow {
+    top: 22px;
+    left: 18px;
+    font-size: 18px;
+  }
+
+  /* 모바일에서는 가독성을 위해 세로 배치 */
+  .duvi-main-features__grid {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 46px;
+    max-width: 420px;
+  }
+
+  /* 기능 제목 */
+  .duvi-main-features__title {
+    margin-bottom: 12px;
+    font-size: 20px;
+  }
+
+  /* 목업 이미지 과대 확대 방지 */
+  .duvi-main-features__screen {
+    width: min(100%, 210px);
+    max-width: 210px;
+  }
+
+  /* 기능 설명 */
+  .duvi-main-features__description {
+    max-width: 340px;
+    margin-top: 12px;
+
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}

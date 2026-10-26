@@ -1,0 +1,489 @@
+
+/* =========================================
+  Background & Goal
+========================================= */
+
+/* 01. Basic */
+.p-back,
+.p-back * {
+  box-sizing: border-box;
+}
+
+.p-back {
+  --p-back-navy: #172a52;
+  --p-back-yellow: #f4b720;
+  --p-back-red: #e23d28;
+  --p-back-card: #f8ebc8;
+  --p-back-cream: #faf4e7;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1920px;
+  aspect-ratio: 16 / 9;
+  margin-inline: auto;
+
+  background: var(--p-back-cream);
+  color: var(--p-back-navy);
+  font-family: "Pretendard", sans-serif;
+}
+
+/* 02. Original Figma SVG */
+.p-back__art {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.p-back__art img {
+  position: absolute;
+  display: block;
+  max-width: none;
+  object-fit: fill;
+}
+
+.p-back__art-left {
+  top: 12.04%;
+  left: 0;
+  width: 50%;
+  height: 23.8%;
+}
+
+
+.p-back__art .p-back__art-right {
+  display: none;
+}
+
+
+.p-back__art-navy {
+  top: 28.89%;
+  left: 27.97%;
+  width: 72.03%;
+  height: 72.31%;
+}
+
+/* 03. Section Heading & Quote */
+.p-back__eyebrow {
+  position: absolute;
+  z-index: 2;
+  top: 3.24%;
+  left: 1.615%;
+
+  margin: 0;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.p-back__intro {
+  display: contents;
+}
+
+.p-back__quote {
+  position: absolute;
+  z-index: 2;
+  top: 21.7%;
+  left: 0;
+  width: 50%;
+  padding-right: 2%;
+
+  margin: 0;
+  font-size: clamp(36px, 2.5vw, 48px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  text-align: center;
+  word-break: keep-all;
+
+  transition:
+    opacity 800ms ease,
+    transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* 04. WHY */
+.p-back__why {
+  position: absolute;
+  z-index: 2;
+  top: 16%;
+  left: 50.36%;
+  width: 46.98%;
+
+  font-size: 23px;
+  line-height: 1.5;
+  word-break: keep-all;
+
+  transition:
+    opacity 800ms ease 130ms,
+    transform 800ms cubic-bezier(0.22, 1, 0.36, 1) 130ms;
+}
+
+.p-back__why h3 {
+  margin: 0 0 6px;
+  color: var(--p-back-red);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.p-back__why p {
+  margin: 0;
+}
+
+.p-back__why-emphasis {
+  font-weight: 700;
+}
+
+/* 05. Background / Goal Cards */
+.p-back__cards {
+  position: absolute;
+  z-index: 3;
+  top: 41.57%;
+  left: 7.24%;
+  right: 7.24%;
+  height: 52.96%;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3.16%;
+}
+
+.p-back__card {
+  min-width: 0;
+  height: 100%;
+  padding:
+    clamp(20px, 1.667vw, 32px)
+    clamp(22px, 2.188vw, 42px);
+
+  border: 3px solid var(--p-back-navy);
+  background: var(--p-back-card);
+  box-shadow: 10px 10px 2.5px rgba(226, 61, 40, 0.45);
+
+  transition-property: opacity, box-shadow, transform;
+  transition-duration: 800ms, 350ms, 800ms;
+  transition-timing-function:
+    ease,
+    ease,
+    cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: 270ms, 0ms, 270ms;
+}
+
+.p-back__card--goal {
+  transition-delay: 420ms, 0ms, 420ms;
+}
+
+.p-back__card h3 {
+  margin: 0;
+  color: var(--p-back-red);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.p-back__card-copy {
+  color: var(--p-back-navy);
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.018em;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.p-back__card-copy p {
+  margin: 0;
+}
+
+.p-back__card-copy p + p {
+  margin-top: 1.40625em;
+}
+
+.p-back__card--background .p-back__card-copy {
+  margin-top: clamp(24px, 3.177vw, 61px);
+}
+
+.p-back__card--goal .p-back__card-copy {
+  margin-top: clamp(44px, 6.094vw, 117px);
+}
+
+/* 06. Scroll Reveal */
+.p-back:not(.is-visible) .p-back__quote,
+.p-back:not(.is-visible) .p-back__why,
+.p-back:not(.is-visible) .p-back__card {
+  opacity: 0;
+  transform: translateY(36px);
+}
+
+/* Desktop - Quote Center Alignment */
+@media (min-width: 1101px) {
+  .p-back__quote {
+    transform: translateY(-50%);
+  }
+
+  .p-back:not(.is-visible) .p-back__quote {
+    transform: translateY(calc(-50% + 36px));
+  }
+}
+
+
+
+/* Desktop - Medium Width Layout */
+@media (min-width: 1101px) and (max-width: 1750px) {
+  .p-back {
+    aspect-ratio: auto;
+    min-height: clamp(850px, 56.25vw, 985px);
+  }
+
+  /* WHY - 노란 SVG 라인 아래로 배치 */
+  .p-back__why {
+    font-size: clamp(16px, 1.2vw, 21px);
+    line-height: 1.35;
+  }
+
+  .p-back__why h3 {
+    font-size: clamp(20px, 1.55vw, 24px);
+    margin-bottom: 4px;
+  }
+
+  /* 카드 위치 및 높이 */
+  .p-back__cards {
+    top: 48%;
+    height: 42%;
+  }
+
+  .p-back__card {
+    height: 100%;
+  }
+
+  /* 카드 텍스트 */
+  .p-back__card-copy {
+    font-size: clamp(17px, 1.25vw, 22px);
+    line-height: 1.5;
+  }
+
+  .p-back__card--background .p-back__card-copy {
+    margin-top: clamp(20px, 2vw, 34px);
+  }
+
+  .p-back__card--goal .p-back__card-copy {
+    margin-top: clamp(28px, 3vw, 50px);
+  }
+}
+
+
+/* Desktop Hover */
+@media (hover: hover) and (pointer: fine) {
+  .p-back.is-visible .p-back__card:hover {
+    transform: translateY(-8px);
+    box-shadow: 14px 16px 4px rgba(226, 61, 40, 0.45);
+  }
+}
+
+/* =========================================
+   07. Tablet
+========================================= */
+
+@media (max-width: 1100px) {
+  .p-back {
+    aspect-ratio: auto;
+    min-height: 0;
+    padding: 32px 5% 78px;
+  }
+
+  .p-back__eyebrow,
+  .p-back__quote,
+  .p-back__why,
+  .p-back__cards {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
+
+  .p-back__eyebrow {
+    font-size: 20px;
+  }
+
+  .p-back__intro {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    margin-top: 66px;
+  }
+
+  .p-back__quote {
+    width: 100%;
+    max-width: none;
+    padding: 24px 24px 26px;
+
+    background: var(--p-back-yellow);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .p-back__why {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 2px;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .p-back__why h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .p-back__why p + p {
+    margin-top: 8px;
+  }
+
+  .p-back__cards {
+    z-index: 3;
+    width: 100%;
+    height: auto;
+    margin-top: 54px;
+    gap: 24px;
+  }
+
+  .p-back__card {
+    min-height: 405px;
+    height: auto;
+    padding: 28px 27px 38px;
+  }
+
+  .p-back__card h3 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .p-back__card-copy {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .p-back__card--background .p-back__card-copy,
+  .p-back__card--goal .p-back__card-copy {
+    margin-top: 34px;
+  }
+
+  .p-back__card-copy p + p {
+    margin-top: 1em;
+  }
+
+  /* Hide overlapping yellow SVGs */
+  .p-back__art .p-back__art-left,
+  .p-back__art .p-back__art-right {
+    display: none;
+  }
+
+  .p-back__art-navy {
+    top: 46%;
+    left: 20%;
+    width: 85%;
+    height: 56%;
+  }
+}
+
+/* =========================================
+   08. Mobile
+========================================= */
+
+@media (max-width: 767px) {
+  .p-back {
+    padding: 28px 20px 62px;
+  }
+
+  .p-back__eyebrow {
+    font-size: 16px;
+  }
+
+  .p-back__intro {
+    gap: 38px;
+    margin-top: 46px;
+  }
+
+  .p-back__quote {
+    width: 100%;
+    padding: 22px 12px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: -0.045em;
+  }
+
+  .p-back__quote br {
+    display: none;
+  }
+
+  .p-back__why {
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .p-back__why h3 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .p-back__cards {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+    margin-top: 44px;
+  }
+
+  .p-back__card {
+    min-height: 0;
+    padding: 28px 23px 34px;
+    border-width: 2px;
+    box-shadow: 7px 8px 2px rgba(226, 61, 40, 0.45);
+  }
+
+  .p-back__card h3 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .p-back__card-copy {
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: -0.025em;
+  }
+
+  .p-back__card--background .p-back__card-copy,
+  .p-back__card--goal .p-back__card-copy {
+    margin-top: 25px;
+  }
+
+  .p-back__art-navy {
+    top: 52%;
+    left: 12%;
+    width: 103%;
+    height: 48%;
+  }
+}
+
+/* 09. Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .p-back__quote,
+  .p-back__why,
+  .p-back__card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (min-width: 1101px) {
+  .p-back__quote {
+    transform: translateY(-50%) !important;
+  }
+}

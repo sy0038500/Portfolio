@@ -1,0 +1,82 @@
+/* ========================================
+   DUVI 08 — MAIN DESIGN
+   Figma: 362:1402
+======================================== */
+
+.duvi-main-design,
+.duvi-main-design * {
+  box-sizing: border-box;
+}
+
+/* 01. 전체 배경: 흰색 → 연파랑 */
+.duvi-main-design {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 88px 24px 0;
+  overflow: hidden;
+
+  color: #0f0f0f;
+  font-family: "Pretendard", sans-serif;
+
+  background: linear-gradient(180deg,
+      #ffffff 0%,
+      #ffffff 11%,
+      #bdd7e7 100%);
+}
+
+/* 02. 좌측 상단 타이틀 */
+.duvi-main-design__eyebrow {
+  position: absolute;
+  top: 32px;
+  left: 31px;
+  z-index: 1;
+
+  margin: 0;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* 03. 디바이스 목업 전체 영역
+   max-width로 과도한 확대 방지 */
+.duvi-main-design__visual {
+  width: 100%;
+  max-width: 1420px;
+  margin: 0 auto;
+}
+
+/* 04. 목업 이미지 원본 비율 유지 */
+.duvi-main-design__visual img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* 05. 태블릿 */
+@media (max-width: 1100px) {
+  .duvi-main-design {
+    padding: 78px 5% 0;
+  }
+
+  .duvi-main-design__eyebrow {
+    top: 28px;
+    left: 5%;
+    font-size: 20px;
+  }
+}
+
+/* 06. 모바일 */
+@media (max-width: 767px) {
+  .duvi-main-design {
+    padding: 64px 16px 0;
+  }
+
+  .duvi-main-design__eyebrow {
+    top: 22px;
+    left: 16px;
+    font-size: 18px;
+  }
+}

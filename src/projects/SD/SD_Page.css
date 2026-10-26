@@ -1,0 +1,695 @@
+/* =========================================
+   송도 도시설계 / URBAN PROJECT - 04
+   Figma 362:1714
+   PC 최대 1440px / 태블릿 5% / 모바일 20px
+   프로젝트 번호 위치: WELL · KH · HAVEN과 통일
+========================================= */
+
+.sd-page {
+  --sd-background: #faf5f7;
+  --sd-pink: #d5788d;
+  --sd-pink-soft: #dc8fa0;
+  --sd-text: #0f0f0f;
+
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 80px;
+  background: var(--sd-background);
+  color: var(--sd-text);
+  font-family: "Pretendard", sans-serif;
+}
+
+.sd-page,
+.sd-page * {
+  box-sizing: border-box;
+}
+
+/* 01. 좌상단 프로젝트 번호 - 패널과 분리된 독립 타이틀 */
+.sd-page__eyebrow {
+  position: absolute;
+  z-index: 1;
+  top: 108px;
+  left: max(5%, calc((100% - 1440px) / 2));
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* 02. 공통 콘텐츠 너비 */
+.sd-page__container {
+  width: min(90%, 1440px);
+  margin: 0 auto;
+  padding: 83px 0 80px;
+}
+
+/* 03. 메인 타이틀 / 연분홍 좌측 강조선 */
+.sd-page__intro-accent {
+  padding: 2px 0 2px 22px;
+  border-left: 9px solid var(--sd-pink);
+}
+
+.sd-page__intro h1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 clamp(11px, 1.1vw, 20px);
+  margin: 0;
+  font-weight: 800;
+  line-height: 1.14;
+  letter-spacing: -0.04em;
+  word-break: keep-all;
+}
+
+.sd-page__title-first {
+  font-size: clamp(26px, 2.34vw, 45px);
+}
+
+.sd-page__title-main {
+  font-size: clamp(42px, 3.75vw, 72px);
+}
+
+.sd-page__meta {
+  margin: 8px 0 0;
+  color: var(--sd-pink);
+  font-size: clamp(14px, 1.46vw, 25px);
+  font-weight: 400;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+
+/* 04. 프로젝트 개요 / 전체 폭의 가로선 */
+.sd-page__overview {
+  margin-top: 22px;
+  padding: 16px 0 20px;
+  border-top: 1px solid rgba(213, 120, 141, 0.25);
+  border-bottom: 1px solid rgba(213, 120, 141, 0.25);
+}
+
+.sd-page__overview h2,
+.sd-page__approach h2,
+.sd-page__strategy h2 {
+  margin: 0 0 12px;
+  font-size: clamp(21px, 1.67vw, 30px);
+  font-weight: 600;
+  line-height: 1.28;
+}
+
+.sd-page__overview p {
+  margin: 0;
+  font-size: clamp(16px, 1.35vw, 24px);
+  font-weight: 400;
+  line-height: 1.48;
+  word-break: keep-all;
+}
+
+/* 05. PC 3열: 설계 접근 | 최종 패널 | 공간 전략 */
+.sd-page__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.94fr) minmax(0, 1.04fr);
+  align-items: start;
+  gap: clamp(20px, 2.1vw, 40px);
+  margin-top: 25px;
+}
+
+.sd-page__approach,
+.sd-page__panel,
+.sd-page__right {
+  min-width: 0;
+}
+
+/* 06. DESIGN APPROACH */
+.sd-page__approach-list {
+  display: grid;
+  gap: 14px;
+}
+
+.sd-page__approach-row {
+  padding: 4px 8px 14px 0;
+  border-bottom: 1px solid rgba(213, 120, 141, 0.27);
+  border-radius: 6px;
+  transition: background-color 240ms ease, transform 240ms ease;
+}
+
+.sd-page__approach-row:last-child {
+  border-bottom: 0;
+}
+
+.sd-page__approach-number {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--sd-pink);
+  font-size: clamp(40px, 3vw, 56px);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.sd-page__approach-copy h3 {
+  margin: 0 0 4px;
+  font-size: clamp(19px, 1.53vw, 29px);
+  font-weight: 500;
+  line-height: 1.28;
+}
+
+.sd-page__approach-copy p {
+  margin: 0;
+  font-size: clamp(15px, 1.18vw, 22px);
+  line-height: 1.45;
+  word-break: keep-all;
+}
+
+/* 07. 최종 패널: 원본 이미지 비율 보존 */
+.sd-page__panel {
+  margin: 0;
+}
+
+/* PC에서는 패널 제목 숨김 */
+.sd-page__panel-caption {
+  display: none;
+  margin: 0 0 10px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.sd-page__panel-button {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  background: transparent;
+  text-align: left;
+  cursor: zoom-in;
+  transition: transform 280ms ease, box-shadow 280ms ease;
+}
+
+.sd-page__panel-button img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.sd-page__zoom-label {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: rgba(15, 15, 15, 0.78);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(7px);
+  transition: opacity 240ms ease, transform 240ms ease;
+  pointer-events: none;
+}
+
+.sd-page__panel-button:focus-visible {
+  outline: 3px solid var(--sd-pink);
+  outline-offset: 4px;
+}
+
+.sd-page__panel-button:focus-visible .sd-page__zoom-label {
+  opacity: 1;
+  transform: none;
+}
+
+/* 08. SPATIAL STRATEGY */
+.sd-page__right {
+  display: grid;
+  gap: 30px;
+}
+
+.sd-page__strategy-list {
+  display: grid;
+  gap: 0;
+}
+
+.sd-page__strategy-row {
+  display: grid;
+  grid-template-columns: clamp(40px, 3.2vw, 58px) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(10px, 1.2vw, 23px);
+  padding: 0 6px 15px 0;
+  border-bottom: 1px solid rgba(213, 120, 141, 0.28);
+  transition: background-color 240ms ease, transform 240ms ease;
+}
+
+.sd-page__strategy-row+.sd-page__strategy-row {
+  padding-top: 15px;
+}
+
+.sd-page__strategy-row:last-child {
+  border-bottom: 0;
+}
+
+.sd-page__strategy-number {
+  color: var(--sd-pink);
+  font-size: clamp(33px, 2.5vw, 42px);
+  font-weight: 900;
+  line-height: 1.14;
+}
+
+.sd-page__strategy-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 3px 9px;
+  margin: 0 0 10px;
+}
+
+.sd-page__strategy-heading h3 {
+  margin: 0;
+  font-size: clamp(19px, 1.56vw, 30px);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.sd-page__strategy-heading span {
+  color: var(--sd-pink-soft);
+  font-size: clamp(11px, 1.04vw, 18px);
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.sd-page__strategy-row p {
+  margin: 0;
+  font-size: clamp(15px, 1.18vw, 22px);
+  line-height: 1.45;
+  word-break: keep-all;
+}
+
+/* 09. 기여도: Figma 연분홍 배경과 두꺼운 강조선 */
+.sd-page__contribution {
+  padding: 21px 22px 21px 25px;
+  border-left: 9px solid var(--sd-pink);
+  background: rgba(228, 170, 182, 0.7);
+  transition: background-color 280ms ease, box-shadow 280ms ease;
+}
+
+.sd-page__contribution h2 {
+  margin: 0;
+  font-size: clamp(20px, 1.65vw, 30px);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.sd-page__contribution h2 small {
+  color: var(--sd-background);
+  font-size: 0.68em;
+  font-weight: 300;
+}
+
+.sd-page__contribution-rule {
+  display: block;
+  width: 115px;
+  height: 2px;
+  margin: 7px 0 17px;
+  background: var(--sd-pink);
+}
+
+.sd-page__contribution-item+.sd-page__contribution-item {
+  margin-top: 17px;
+}
+
+.sd-page__contribution-item h3 {
+  margin: 0 0 5px;
+  color: var(--sd-pink);
+  font-size: clamp(18px, 1.44vw, 26px);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.sd-page__contribution-item p {
+  margin: 0;
+  font-size: clamp(15px, 1.18vw, 22px);
+  line-height: 1.42;
+  word-break: keep-all;
+}
+
+.sd-page__contribution-note {
+  margin: 18px 0 0;
+  padding-top: 10px;
+  border-top: 1px solid rgba(213, 120, 141, 0.5);
+  color: var(--sd-background);
+  font-size: clamp(14px, 1.09vw, 20px);
+  line-height: 1.4;
+}
+
+/* 은은한 마우스 호버 효과 */
+@media (hover: hover) {
+
+  .sd-page__approach-row:hover,
+  .sd-page__strategy-row:hover {
+    background-color: rgba(228, 170, 182, 0.13);
+    transform: translateX(4px);
+  }
+
+  .sd-page__contribution:hover {
+    background-color: rgba(228, 170, 182, 0.82);
+    box-shadow: 0 12px 30px rgba(213, 120, 141, 0.12);
+  }
+
+  .sd-page__panel-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 38px rgba(81, 39, 51, 0.16);
+  }
+
+  .sd-page__panel-button:hover .sd-page__zoom-label {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* 화면에 진입한 요소만 가볍게 나타나며, 기본 상태에서도 내용은 보임 */
+@media (prefers-reduced-motion: no-preference) {
+  [data-sd-reveal].is-visible {
+    animation: sd-page-reveal 600ms cubic-bezier(0.2, 0.75, 0.3, 1) both;
+  }
+}
+
+@keyframes sd-page-reveal {
+  from {
+    opacity: 0.5;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 10. 확대 팝업 + 중앙 정렬 X 아이콘 */
+.sd-page__lightbox {
+  position: fixed;
+  inset: 0;
+  width: min(96vw, 1340px);
+  max-width: none;
+  max-height: 94dvh;
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  border: 1px solid #e1a9b5;
+  border-radius: 16px;
+  background: var(--sd-background);
+  color: var(--sd-text);
+  box-shadow: 0 26px 95px rgba(0, 0, 0, 0.3);
+}
+
+.sd-page__lightbox::backdrop {
+  background: rgba(23, 12, 18, 0.84);
+  backdrop-filter: blur(5px);
+}
+
+.sd-page__lightbox-content {
+  padding: 12px;
+}
+
+.sd-page__lightbox-toolbar {
+  position: sticky;
+  z-index: 2;
+  top: -12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 8px 12px;
+  background: var(--sd-background);
+  color: var(--sd-pink);
+  font-size: 16px;
+}
+
+.sd-page__lightbox-close {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--sd-pink);
+  color: transparent;
+  font-size: 0;
+  cursor: pointer;
+}
+
+.sd-page__lightbox-close::before,
+.sd-page__lightbox-close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 19px;
+  height: 3px;
+  border-radius: 2px;
+  background: #fff;
+}
+
+.sd-page__lightbox-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.sd-page__lightbox-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.sd-page__lightbox-close:focus-visible {
+  outline: 3px solid #ae5b70;
+  outline-offset: 3px;
+}
+
+.sd-page__lightbox-content>img {
+  display: block;
+  width: min(100%, 1050px);
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.sd-page__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 11. 태블릿: 5% 여백 / 패널 마지막 */
+@media (max-width: 1200px) {
+  .sd-page__eyebrow {
+    left: 5%;
+    font-size: 20px;
+  }
+
+  .sd-page__container {
+    width: 90%;
+    padding-top: 78px;
+  }
+
+  .sd-page__layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+  }
+
+  .sd-page__approach {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .sd-page__right {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .sd-page__panel {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: min(100%, 650px);
+    margin: 0 auto;
+  }
+
+  /* 태블릿 - FINAL DESIGN 표시 */
+  .sd-page__panel-caption {
+    display: block;
+    font-size: 22px;
+  }
+}
+
+/* 12. 작은 태블릿은 한 열로 재배치 */
+@media (max-width: 900px) {
+  .sd-page__layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 26px;
+  }
+
+  .sd-page__approach,
+  .sd-page__right,
+  .sd-page__panel {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .sd-page__approach {
+    order: 1;
+  }
+
+  .sd-page__right {
+    order: 2;
+  }
+
+  .sd-page__panel {
+    order: 3;
+    width: min(100%, 650px);
+  }
+}
+
+/* 13. 모바일: 프로젝트 번호는 헤더 아래 16px / 20px 가로 여백 */
+@media (max-width: 767px) {
+  .sd-page__eyebrow {
+    top: 96px;
+    left: 20px;
+    font-size: 18px;
+  }
+
+  .sd-page__container {
+    width: calc(100% - 40px);
+    padding: 56px 0 54px;
+  }
+
+  .sd-page__intro-accent {
+    padding-left: 13px;
+    border-left-width: 6px;
+  }
+
+  .sd-page__intro h1 {
+    gap: 0 8px;
+    line-height: 1.18;
+  }
+
+  .sd-page__title-first {
+    font-size: clamp(22px, 6.8vw, 30px);
+  }
+
+  .sd-page__title-main {
+    font-size: clamp(32px, 9vw, 44px);
+  }
+
+  .sd-page__meta {
+    font-size: 13px;
+  }
+
+  .sd-page__overview {
+    margin-top: 19px;
+    padding: 15px 0;
+  }
+
+  .sd-page__overview h2,
+  .sd-page__approach h2,
+  .sd-page__strategy h2 {
+    font-size: 19px;
+  }
+
+  .sd-page__overview p,
+  .sd-page__approach-copy p,
+  .sd-page__strategy-row p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .sd-page__layout {
+    gap: 24px;
+    margin-top: 20px;
+  }
+
+  .sd-page__approach-list {
+    gap: 8px;
+  }
+
+  .sd-page__approach-number {
+    font-size: 39px;
+  }
+
+  .sd-page__approach-copy h3,
+  .sd-page__strategy-heading h3 {
+    font-size: 18px;
+  }
+
+  .sd-page__strategy-number {
+    font-size: 33px;
+  }
+
+  .sd-page__strategy-heading span {
+    font-size: 11px;
+  }
+
+  .sd-page__contribution {
+    padding: 17px 16px 19px 19px;
+    border-left-width: 6px;
+  }
+
+  .sd-page__contribution h2 {
+    font-size: 19px;
+  }
+
+  .sd-page__contribution h2 small {
+    display: block;
+    margin-top: 3px;
+    font-size: 13px;
+  }
+
+  .sd-page__contribution-item h3 {
+    font-size: 17px;
+  }
+
+  .sd-page__contribution-item p {
+    font-size: 14px;
+  }
+
+  .sd-page__contribution-note {
+    font-size: 13px;
+  }
+
+  .sd-page__lightbox {
+    width: 96vw;
+    max-height: 92dvh;
+    border-radius: 12px;
+  }
+
+  .sd-page__lightbox-toolbar {
+    font-size: 13px;
+  }
+
+  .sd-page__zoom-label {
+    opacity: 1;
+    transform: none;
+    font-size: 11px;
+  }
+
+  /* 모바일 - HAVEN과 동일한 글씨 크기 */
+  .sd-page__panel-caption {
+    font-size: 18px;
+  }
+}
+
+/* 14. 접근성: 사용자 환경이 모션 감소를 원하면 애니메이션 비활성화 */
+@media (prefers-reduced-motion: reduce) {
+
+  .sd-page__panel-button,
+  .sd-page__zoom-label,
+  .sd-page__approach-row,
+  .sd-page__strategy-row,
+  .sd-page__contribution {
+    transition: none;
+  }
+}

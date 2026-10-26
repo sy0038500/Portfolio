@@ -1,0 +1,264 @@
+/* =========================================
+    WELL-BEING 공통 규격 / 이미지 확대 팝업
+========================================= */
+.w-page {
+  --w-green: #1f5a22;
+  --w-bg: #edf2e8;
+  --w-cream: #f9f6ec;
+  --w-text: #0f0f0f;
+  --w-shadow: 0 4px 28px rgba(31, 41, 55, 0.05),
+    3px 10px 30px rgba(31, 41, 55, 0.04);
+
+  width: 100%;
+  background: var(--w-bg);
+  color: var(--w-text);
+  font-family: "Pretendard", sans-serif;
+}
+
+.w-page,
+.w-page * {
+  box-sizing: border-box;
+}
+
+.w-page__container {
+  width: min(90%, 1440px);
+  margin-inline: auto;
+}
+
+.w-page__section {
+  width: 100%;
+  background: var(--w-bg);
+}
+
+.w-page__glass {
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 25px;
+  background: linear-gradient(125deg,
+      rgba(255, 255, 255, 0.22),
+      rgba(255, 255, 255, 0.06));
+  box-shadow: var(--w-shadow);
+  backdrop-filter: blur(12.5px);
+  -webkit-backdrop-filter: blur(12.5px);
+}
+
+/* 이미지 확대 버튼 — 기본 이미지를 변형하거나 자르지 않음 */
+.w-page__image-button {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 25px;
+  background: transparent;
+  text-align: left;
+  cursor: zoom-in;
+  box-shadow: var(--w-shadow);
+  transition: box-shadow 280ms ease, transform 280ms ease;
+}
+
+.w-page__image-button img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.w-page__zoom-label {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 12px;
+  border-radius: 999px;
+  background: rgba(15, 15, 15, 0.76);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 240ms ease, transform 240ms ease;
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .w-page__image-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(31, 41, 55, 0.16);
+  }
+
+  .w-page__image-button:hover img {
+    transform: scale(1.035);
+  }
+
+  .w-page__image-button:hover .w-page__zoom-label {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.w-page__image-button:focus-visible {
+  outline: 3px solid var(--w-green);
+  outline-offset: 4px;
+}
+
+.w-page__image-button:focus-visible .w-page__zoom-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 공통 이미지 확대 다이얼로그 */
+.w-page__lightbox {
+  position: fixed;
+  inset: 0;
+  width: min(96vw, 1500px);
+  max-width: none;
+  max-height: 94dvh;
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  border: 0;
+  border-radius: 18px;
+  background: var(--w-cream);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.3);
+  color: var(--w-text);
+}
+
+.w-page__lightbox::backdrop {
+  background: rgba(9, 18, 12, 0.82);
+  backdrop-filter: blur(5px);
+}
+
+.w-page__lightbox-panel {
+  width: 100%;
+  padding: 12px;
+}
+
+.w-page__lightbox-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 4px 8px 12px;
+  color: var(--w-green);
+  font-size: 16px;
+}
+
+
+/* 이미지 확대 팝업 - 닫기 버튼 */
+.w-page__lightbox-close {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--w-green);
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  cursor: pointer;
+}
+
+/* X 아이콘 중앙 정렬 */
+.w-page__lightbox-close::before,
+.w-page__lightbox-close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 3px;
+  border-radius: 2px;
+  background: #ffffff;
+}
+
+.w-page__lightbox-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.w-page__lightbox-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
+.w-page__lightbox-close:focus-visible {
+  outline: 3px solid #6bac72;
+  outline-offset: 2px;
+}
+
+.w-page__lightbox-image {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: calc(94dvh - 95px);
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/* 세로로 긴 최종 패널은 높이 제한 없이 크게 보여주고 스크롤로 탐색 */
+.w-page__lightbox-image--panel {
+  width: min(1100px, 100%);
+  max-height: none;
+}
+
+@media (max-width: 767px) {
+  .w-page__container {
+    width: calc(100% - 40px);
+  }
+
+  .w-page__lightbox {
+    width: 96vw;
+    max-height: 92dvh;
+    border-radius: 12px;
+  }
+
+  .w-page__lightbox-image {
+    max-height: calc(92dvh - 90px);
+  }
+
+  .w-page__lightbox-image--panel {
+    max-height: none;
+  }
+
+  .w-page__zoom-label {
+    opacity: 1;
+    transform: none;
+    font-size: 11px;
+  }
+
+  .w-overview {
+    padding-top: 16px;
+  }
+
+  .w-overview__eyebrow {
+    font-family: "Pretendard", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .w-page__image-button,
+  .w-page__image-button img,
+  .w-page__zoom-label {
+    transition: none;
+  }
+}
+
+
+/* =========================================
+    WELL-BEING — 고정 헤더 겹침 방지
+========================================= */
+
+.w-page {
+  padding-top: 80px;
+}

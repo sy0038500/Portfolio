@@ -1,0 +1,496 @@
+@import url("https://cdn.jsdelivr.net/gh/fonts-archive/GangwonEduPower/GangwonEduPower.css");
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  background-color: #f9f6ec;
+  font-family: "Pretendard", sans-serif;
+}
+
+button,
+a,
+input {
+  font: inherit;
+}
+
+#root {
+  width: 100%;
+}
+
+
+/* =====================================
+    01. INDEX - Basic
+===================================== */
+
+.index-section {
+  width: 100%;
+  padding: 62px clamp(24px, 5.73vw, 110px) 130px;
+
+  background-color: #f9f6ec;
+  color: #37251b;
+
+  scroll-margin-top: 80px;
+}
+
+.index__inner {
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+.index__title {
+  margin: 0;
+
+  font-family: "GangwonEdu Power",
+    "GangwonEduPower", sans-serif;
+
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+/* =====================================
+    02. Group Heading
+===================================== */
+
+.index__group {
+  width: 100%;
+}
+
+.index__group--web {
+  margin-top: 32px;
+}
+
+.index__group-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+}
+
+.index__group-title {
+  margin: 0;
+
+  font-family: "Pretendard", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.index__group-label {
+  font-family: "Pretendard", sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.3;
+
+  color: #777777;
+  white-space: nowrap;
+}
+
+/* =====================================
+    03. WEB & UI/UX
+===================================== */
+
+.index__web-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: clamp(18px, 3.33vw, 64px);
+
+  margin-top: 45px;
+  padding: 0 14px;
+}
+
+.index__web-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-width: 0;
+  margin: 0;
+}
+
+
+/* 웹 프로젝트 카드 전체 클릭 */
+
+.index__web-card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+
+  display: block;
+  border-radius: inherit;
+  cursor: pointer;
+}
+
+.index__web-card-link:focus-visible {
+  outline: 3px solid #111111;
+  outline-offset: 4px;
+}
+
+
+/* 제목은 이미지 위쪽 */
+.index__web-caption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 56px;
+  margin-bottom: 24px;
+
+  font-family: "Pretendard", sans-serif;
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.3;
+
+  text-align: center;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.index__web-image {
+  width: 100%;
+  aspect-ratio: 370 / 760;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.index__web-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+/* 웹 프로젝트 호버 */
+.index__web-card:hover .index__web-image img {
+  transform: translateY(-8px) scale(1.035);
+  filter: brightness(1.04);
+}
+
+/* =====================================
+    04. URBAN DESIGN
+===================================== */
+
+.index__group--urban {
+  margin-top: 86px;
+  padding-top: 52px;
+
+  border-top: 2px solid #d7cfc2;
+}
+
+.index__urban-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  column-gap: 50px;
+  row-gap: 52px;
+
+  margin-top: 46px;
+  padding: 0 14px;
+}
+
+.index__urban-card {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  margin: 0;
+
+  border-radius: 26px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+
+/* 도시 프로젝트 카드 전체 클릭 영역 */
+.index__urban-card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: block;
+  border-radius: inherit;
+  cursor: pointer;
+}
+
+.index__urban-card-link:focus-visible {
+  outline: 3px solid #f5c400;
+  outline-offset: -4px;
+}
+
+
+.index__urban-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 사진 위에 그라데이션 + 텍스트 */
+.index__urban-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+
+  padding: 32px 32px;
+
+  color: #ffffff;
+
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(102, 102, 102, 0.35) 55%,
+      rgba(42, 42, 42, 0.85) 100%);
+
+  opacity: 0;
+  transition: opacity 0.35s ease;
+
+  pointer-events: none;
+}
+
+/* 마우스 호버 / 키보드 포커스 */
+.index__urban-card:hover .index__urban-overlay,
+.index__urban-card:focus-within .index__urban-overlay {
+  opacity: 1;
+}
+
+/* Figma: 제목 Pretendard SemiBold 24px */
+.index__urban-title {
+  margin: 0;
+
+  font-family: "Pretendard", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+
+  text-align: left;
+  word-break: keep-all;
+}
+
+/* Figma: 서브타이틀 Pretendard Light 20px */
+.index__urban-subtitle {
+  margin: 4px 0 0;
+
+  font-family: "Pretendard", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.2;
+
+  text-align: left;
+  word-break: keep-all;
+}
+
+/* 키보드 접근성 */
+.index__web-grid:focus-visible,
+.index__urban-card:focus-visible {
+  outline: 3px solid #f5c400;
+  outline-offset: 5px;
+}
+
+/* =====================================
+    05. Tablet - 1024px
+===================================== */
+
+@media (max-width: 1024px) {
+  .index-section {
+    padding: 70px 48px 100px;
+  }
+
+  .index__title {
+    font-size: 44px;
+  }
+
+  .index__group-title {
+    font-size: 24px;
+  }
+
+  .index__group-label {
+    font-size: 18px;
+  }
+
+  .index__web-grid {
+    gap: 22px;
+    margin-top: 35px;
+    padding: 0;
+  }
+
+  .index__web-caption {
+    min-height: 50px;
+    margin-bottom: 18px;
+    font-size: 17px;
+  }
+
+  .index__group--urban {
+    margin-top: 65px;
+    padding-top: 36px;
+  }
+
+  .index__urban-grid {
+    gap: 28px;
+    margin-top: 35px;
+    padding: 0;
+  }
+
+  .index__urban-card {
+    border-radius: 24px;
+  }
+
+  .index__urban-overlay {
+    padding: 20px;
+  }
+
+  .index__urban-title {
+    font-size: 18px;
+  }
+
+  .index__urban-subtitle {
+    font-size: 14px;
+  }
+}
+
+/* =====================================
+    06. Mobile - 767px
+===================================== */
+
+@media (max-width: 767px) {
+  .index-section {
+    padding: 70px 24px 80px;
+  }
+
+  .index__title {
+    font-size: 32px;
+  }
+
+  .index__group--web {
+    margin-top: 22px;
+  }
+
+  .index__group-heading {
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .index__group-title {
+    font-size: 18px;
+  }
+
+  .index__group-label {
+    font-size: 14px;
+  }
+
+  /* 웹 목업: 가로 스와이프 */
+  .index__web-grid {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(195px, 68vw);
+
+    gap: 16px;
+    margin-top: 28px;
+    padding: 0 4px 18px;
+
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+  }
+
+  .index__web-card {
+    scroll-snap-align: start;
+  }
+
+  .index__web-caption {
+    min-height: 46px;
+    margin-bottom: 12px;
+    font-size: 16px;
+  }
+
+  .index__group--urban {
+    margin-top: 50px;
+    padding-top: 30px;
+  }
+
+  /* 도시공학: 가로형 카드 1열 */
+  .index__urban-grid {
+    grid-template-columns: 1fr;
+    row-gap: 22px;
+
+    margin-top: 26px;
+  }
+
+  .index__urban-card {
+    border-radius: 24px;
+  }
+
+  .index__urban-overlay {
+    padding: 20px;
+
+    /* 모바일은 호버가 없으므로 기본 표시 */
+    opacity: 1;
+  }
+
+  .index__urban-title {
+    font-size: 18px;
+  }
+
+  .index__urban-subtitle {
+    margin-top: 4px;
+    font-size: 14px;
+  }
+}
+
+/* =====================================
+    07. Touch Devices
+===================================== */
+
+@media (hover: none) {
+  .index__urban-overlay {
+    opacity: 1;
+  }
+}
+
+/* =====================================
+    08. Accessibility
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .index__web-image img,
+  .index__urban-image,
+  .index__urban-overlay {
+    transition: none;
+  }
+}
+
+
+/* Tablet - 도시 작업물 정보 항상 표시 */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .index__urban-overlay {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,203 @@
+/* =========================================
+   NATIONAL GEO PLATFORM / ENDING
+========================================= */
+
+.geo-ending,
+.geo-ending * {
+  box-sizing: border-box;
+}
+
+/* 01. Desktop */
+
+.geo-ending {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  width: 100%;
+  max-width: 1920px;
+  min-height: clamp(720px, 56.25vw, 1080px);
+  margin: 0 auto;
+
+  background: #f4faf4;
+  color: #0f0f0f;
+  font-family: "Pretendard", sans-serif;
+}
+
+.geo-ending__inner {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 612fr) minmax(0, 385fr);
+  align-items: center;
+  gap: clamp(35px, 4.53vw, 87px);
+
+  width: min(1084px, 85%);
+  margin: 0 auto;
+
+  transform: translateX(clamp(-70px, -3.65vw, -20px));
+}
+
+/* Ending quote */
+
+.geo-ending__quote {
+  min-width: 0;
+  margin: 0;
+
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+
+  transform: translateY(-70px);
+
+  transition:
+    opacity 800ms ease,
+    transform 800ms ease;
+}
+
+.geo-ending__quote-line,
+.geo-ending__quote-mark {
+  display: block;
+}
+
+.geo-ending__quote strong {
+  font-weight: 700;
+}
+
+.geo-ending__quote-mark {
+  line-height: 1.22;
+}
+
+/* Mobile mockup */
+
+.geo-ending__phone {
+  width: 100%;
+  max-width: 385px;
+  aspect-ratio: 385 / 791;
+
+  margin: 0;
+  justify-self: center;
+
+  transition:
+    opacity 850ms ease 150ms,
+    transform 850ms ease 150ms;
+}
+
+.geo-ending__phone img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* Scroll reveal */
+
+.geo-ending:not(.is-visible) .geo-ending__quote {
+  opacity: 0;
+  transform: translate(-25px, -70px);
+}
+
+.geo-ending:not(.is-visible) .geo-ending__phone {
+  opacity: 0;
+  transform: translateX(25px);
+}
+
+/* Mockup hover */
+
+@media (hover: hover) and (pointer: fine) {
+  .geo-ending.is-visible .geo-ending__phone:hover {
+    transform: translateY(-10px);
+  }
+}
+
+/* =========================================
+   02. Tablet
+========================================= */
+
+@media (max-width: 1200px) {
+  .geo-ending {
+    min-height: 720px;
+    padding: 70px 5%;
+  }
+
+  .geo-ending__inner {
+    grid-template-columns:
+      minmax(0, 1fr) minmax(0, 290px);
+
+    gap: 32px;
+    width: 100%;
+    max-width: 1000px;
+
+    transform: none;
+  }
+
+  .geo-ending__quote {
+    font-size: 34px;
+    line-height: 1.35;
+    transform: none;
+  }
+
+  .geo-ending__phone {
+    max-width: 290px;
+  }
+
+  .geo-ending:not(.is-visible) .geo-ending__quote {
+    transform: translateX(-25px);
+  }
+}
+
+/* =========================================
+   03. Mobile
+========================================= */
+
+@media (max-width: 767px) {
+  .geo-ending {
+    min-height: 0;
+    padding: 60px 20px 70px;
+  }
+
+  .geo-ending__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .geo-ending__quote {
+    width: 100%;
+
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.45;
+    letter-spacing: -0.025em;
+  }
+
+  .geo-ending__phone {
+    width: min(235px, 65vw);
+    max-width: none;
+  }
+
+  .geo-ending:not(.is-visible) .geo-ending__quote {
+    transform: translateY(25px);
+  }
+
+  .geo-ending:not(.is-visible) .geo-ending__phone {
+    transform: translateY(25px);
+  }
+}
+
+/* 04. Reduced Motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .geo-ending__quote,
+  .geo-ending__phone {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

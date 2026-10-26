@@ -1,0 +1,424 @@
+/* =========================================
+08. Result & Review
+========================================= */
+
+.ai-result-review,
+.ai-result-review * {
+  box-sizing: border-box;
+}
+
+.ai-result-review {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  min-height: 0;
+  
+  margin: 0 auto;
+  padding: 126px 0 50px;
+
+  background: #fff;
+  color: #0f0f0f;
+  font-family: "Pretendard", sans-serif;
+}
+
+/* =========================================
+   01. 페이지 타이틀
+========================================= */
+
+.ai-result-review__eyebrow {
+  position: absolute;
+  top: 35px;
+  left: 31px;
+
+  margin: 0;
+  color: #4B5563;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* =========================================
+   02. 좌우 카드 레이아웃
+   Figma: 932px + 45px + 780px
+========================================= */
+
+.ai-result-review__grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 932fr)
+    minmax(0, 780fr);
+
+  gap: clamp(24px, 2.34vw, 45px);
+
+  width: calc(100% - 146px);
+  max-width: 1757px;
+
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+/* =========================================
+   03. 카드 Glass UI
+   Fill: White 6% → White 3%
+   Stroke: Gradient / CENTER 1px
+========================================= */
+
+.ai-result-review__panel {
+  position: relative;
+  min-width: 0;
+  min-height: clamp(600px, 43.073vw, 827px);
+
+  padding: 47px 32px 40px;
+
+  border: 0;
+  border-radius: 20px;
+
+  background: linear-gradient(
+    132.113deg,
+    rgba(255, 255, 255, 0.06) 0.83423%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+
+  backdrop-filter: blur(12.5px);
+  -webkit-backdrop-filter: blur(12.5px);
+
+  box-shadow:
+    0 4px 28px rgba(31, 41, 55, 0.05),
+    3px 10px 30px rgba(31, 41, 55, 0.04);
+
+  transition:
+    transform 280ms ease,
+    box-shadow 280ms ease;
+}
+
+/* UX 기대 효과 카드 Fill */
+
+.ai-result-review__panel--ux {
+  background: linear-gradient(
+    137.436deg,
+    rgba(255, 255, 255, 0.06) 1.2199%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+}
+
+/* =========================================
+   04. Figma Gradient Stroke
+   1px CENTER: 카드 바깥쪽 0.5px 확장
+========================================= */
+
+.ai-result-review__panel::before {
+  content: "";
+  position: absolute;
+
+  inset: -0.5px;
+  padding: 1px;
+
+  border-radius: inherit;
+  pointer-events: none;
+
+  background: linear-gradient(
+    75deg,
+    rgba(255, 255, 255, 0.5),
+    rgba(102, 102, 102, 0.5)
+  );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  mask-composite: exclude;
+}
+
+.ai-result-review__panel--ux::before {
+  background: linear-gradient(
+    66deg,
+    rgba(255, 255, 255, 0.5),
+    rgba(102, 102, 102, 0.5)
+  );
+}
+
+/* =========================================
+   05. 카드 제목
+========================================= */
+
+.ai-result-review__panel-title {
+  margin: 0;
+
+  font-size: clamp(24px, 2.5vw, 32px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.ai-result-review__panel-title span {
+  color: #ffa500;
+}
+
+.ai-result-review__panel--ux
+.ai-result-review__panel-title span {
+  color: #ffe211;
+}
+
+/* =========================================
+   06. 결과 리스트
+========================================= */
+
+.ai-result-review__list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+
+  padding: 0;
+  margin: 64px auto 0;
+
+  list-style: none;
+}
+
+.ai-result-review__list--technical {
+  max-width: 726px;
+}
+
+.ai-result-review__list--ux {
+  padding-left: 0px;
+  padding-right: 12px;
+  gap: 28px;
+}
+
+/* 개별 리스트 항목 */
+
+.ai-result-review__item {
+  display: flex;
+  align-items: flex-start;
+
+  gap: clamp(13px, 1.66vw, 32px);
+  min-width: 0;
+}
+
+/* =========================================
+   07. 항목 앞 원형 아이콘
+========================================= */
+
+.ai-result-review__dot {
+  position: relative;
+  display: block;
+  flex: 0 0 40px;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+  background: rgba(255, 165, 0, 0.2);
+
+  box-shadow:
+    0 4px 28px rgba(31, 41, 55, 0.05),
+    3px 10px 30px rgba(31, 41, 55, 0.04);
+}
+
+.ai-result-review__dot--ux {
+  background:
+    linear-gradient(
+      125deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.03)
+    ),
+    rgba(252, 211, 77, 0.2);
+}
+
+/* 아이콘 그라데이션 테두리 */
+
+.ai-result-review__dot::before {
+  content: "";
+  position: absolute;
+
+  inset: -0.5px;
+  padding: 1px;
+  border-radius: inherit;
+
+  background: linear-gradient(
+    108deg,
+    rgba(255, 255, 255, 0.5),
+    rgba(102, 102, 102, 0.5)
+  );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* =========================================
+   08. 항목 텍스트
+========================================= */
+
+.ai-result-review__copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.ai-result-review__copy h4 {
+  margin: 0;
+
+  font-size: clamp(16px, 1.56vw, 30px);
+  font-weight: 600;
+  line-height: 1.22;
+
+  overflow-wrap: break-word;
+}
+
+.ai-result-review__copy p {
+  margin: 1px 0 0;
+
+  font-size: clamp(14px, 1.3vw, 25px);
+  line-height: 1.35;
+
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* =========================================
+   09. 카드 Hover
+========================================= */
+
+@media (hover: hover) and (pointer: fine) {
+  .ai-result-review__panel:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+      0 10px 32px rgba(31, 41, 55, 0.07),
+      3px 14px 38px rgba(31, 41, 55, 0.05);
+  }
+}
+
+/* =========================================
+   10. Tablet / 1100px
+========================================= */
+
+@media (max-width: 1100px) {
+  .ai-result-review {
+    min-height: 0;
+    padding: 112px 0 50px;
+  }
+
+  .ai-result-review__eyebrow {
+    top: 32px;
+    left: 5%;
+    font-size: 20px;
+  }
+
+  .ai-result-review__grid {
+    grid-template-columns: 1fr;
+    width: 90%;
+    gap: 24px;
+  }
+
+  .ai-result-review__panel {
+    min-height: 0;
+    padding: 34px;
+  }
+
+  .ai-result-review__panel-title {
+    font-size: clamp(24px, 3.4vw, 36px);
+  }
+
+  .ai-result-review__list {
+    margin-top: 40px;
+    gap: 24px;
+  }
+
+  .ai-result-review__list--technical {
+    max-width: none;
+  }
+
+  .ai-result-review__list--ux {
+    padding: 0;
+  }
+
+  .ai-result-review__copy h4 {
+    font-size: clamp(18px, 2.2vw, 24px);
+  }
+
+  .ai-result-review__copy p {
+    font-size: clamp(16px, 1.8vw, 20px);
+  }
+}
+
+/* =========================================
+   11. Mobile / 767px
+========================================= */
+
+@media (max-width: 767px) {
+  .ai-result-review {
+    padding: 86px 0 60px;
+  }
+
+  .ai-result-review__eyebrow {
+    top: 28px;
+    left: 20px;
+    font-size: 16px;
+  }
+
+  .ai-result-review__grid {
+    width: calc(100% - 40px);
+    gap: 18px;
+  }
+
+  .ai-result-review__panel {
+    padding: 24px 20px 28px;
+    border-radius: 17px;
+  }
+
+  .ai-result-review__panel-title {
+    font-size: 23px;
+  }
+
+  .ai-result-review__list {
+    margin-top: 30px;
+    gap: 22px;
+  }
+
+  .ai-result-review__item {
+    gap: 13px;
+  }
+
+  .ai-result-review__dot {
+    width: 24px;
+    height: 24px;
+    flex-basis: 24px;
+  }
+
+  .ai-result-review__copy h4 {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+
+  .ai-result-review__copy p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+/* =========================================
+   12. Accessibility
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-result-review__panel {
+    transition: none !important;
+  }
+}

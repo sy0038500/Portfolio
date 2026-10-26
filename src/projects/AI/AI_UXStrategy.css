@@ -1,0 +1,598 @@
+/* =========================================
+04. UX Strategy
+========================================= */
+
+.ai-ux-strategy,
+.ai-ux-strategy * {
+  box-sizing: border-box;
+}
+
+.ai-ux-strategy {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  min-height: 1080px;
+  margin: 0 auto;
+  padding: 35px 0 80px;
+
+  background: #fff;
+  color: #0f0f0f;
+  font-family: "Pretendard", sans-serif;
+}
+
+/* =========================================
+    01. 좌측 상단 페이지 타이틀
+========================================= */
+
+.ai-ux-strategy__eyebrow {
+  margin: 0 0 0 1.615%;
+  color: #4b5563;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* =========================================
+    02. 중앙 타이틀 및 설명
+========================================= */
+
+.ai-ux-strategy__intro {
+  width: 86.51%;
+  max-width: 1661px;
+  margin: 14px auto 0;
+  text-align: center;
+}
+
+.ai-ux-strategy__intro h3 {
+  margin: 0;
+  font-size: clamp(32px, 2.344vw, 45px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  word-break: keep-all;
+}
+
+.ai-ux-strategy__intro h3 strong {
+  color: #ffa500;
+  font-weight: 700;
+}
+
+.ai-ux-strategy__intro p {
+  margin: 16px 0 0;
+  font-size: clamp(18px, 1.25vw, 26px);
+  font-weight: 400;
+  line-height: 1.36;
+  letter-spacing: -0.015em;
+  word-break: keep-all;
+}
+
+.ai-ux-strategy__intro p span {
+  display: block;
+}
+
+/* =========================================
+    03. As-is / Arrow / To-be
+========================================= */
+
+.ai-ux-strategy__comparison {
+  width: min(1213px, calc(100% - 80px));
+  margin: 50px auto 0;
+}
+
+.ai-ux-strategy__headings,
+.ai-ux-strategy__row {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr) 43px minmax(0, 1fr);
+
+  column-gap: clamp(20px, 7vw, 134px);
+  align-items: center;
+}
+
+.ai-ux-strategy__headings h4 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.ai-ux-strategy__rows {
+  display: grid;
+  gap: 38px;
+  margin-top: 38px;
+}
+
+/* =========================================
+    04. 카드 공통
+========================================= */
+
+.ai-ux-strategy__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  min-width: 0;
+  height: 133px;
+  border-radius: 20px;
+
+  backdrop-filter: blur(12.5px);
+  -webkit-backdrop-filter: blur(12.5px);
+
+  box-shadow:
+    0 4px 28px rgba(31, 41, 55, 0.05),
+    3px 10px 30px rgba(31, 41, 55, 0.04);
+
+  transition:
+    transform 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.ai-ux-strategy__card p {
+  margin: 0;
+  font-size: clamp(18px, 1.1vw, 21px);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  text-align: center;
+  word-break: keep-all;
+}
+
+.ai-ux-strategy__card p span {
+  display: block;
+}
+
+
+/* As-is 카드 */
+.ai-ux-strategy__card--before {
+  position: relative;
+  padding: 16px 24px;
+  border: 1px solid transparent;
+
+  background: linear-gradient(101.606deg,
+      rgba(255, 255, 255, .06) 23.221%,
+      rgba(255, 255, 255, .03) 88.294%);
+
+  --figma-stroke: linear-gradient(92deg,
+      rgba(255, 255, 255, .75),
+      rgba(102, 102, 102, .75));
+}
+
+/* As-is 나머지 카드별 Fill */
+.ai-ux-strategy__row:nth-child(2) .ai-ux-strategy__card--before {
+  background: linear-gradient(98.473deg,
+      rgba(255, 255, 255, .06) 21.946%,
+      rgba(255, 255, 255, .03) 81.628%);
+}
+
+.ai-ux-strategy__row:nth-child(3) .ai-ux-strategy__card--before {
+  background: linear-gradient(101.39deg,
+      rgba(255, 255, 255, .06) 22.323%,
+      rgba(255, 255, 255, .03) 76.664%);
+}
+
+.ai-ux-strategy__row:nth-child(4) .ai-ux-strategy__card--before {
+  background: linear-gradient(97.848deg,
+      rgba(255, 255, 255, .06) 8.1282%,
+      rgba(255, 255, 255, .03) 92.01%);
+}
+
+/* To-be 카드 공통 */
+.ai-ux-strategy__card--after {
+  position: relative;
+  gap: 6px;
+  padding: 14px 32px;
+  border: 2px solid transparent;
+  --figma-stroke-width: 2px;
+}
+
+/* To-be 노란 카드 */
+.ai-ux-strategy__card--yellow {
+  background: linear-gradient(98.127deg,
+      rgba(255, 255, 255, .03) 9.9615%,
+      rgba(255, 226, 17, .06) 94.984%);
+
+  --figma-stroke: linear-gradient(107.5deg,
+      rgba(255, 226, 17, .5),
+      rgba(31, 41, 55, .25));
+}
+
+/* To-be 주황 카드 */
+.ai-ux-strategy__card--orange {
+  background: linear-gradient(98.127deg,
+      rgba(255, 255, 255, .03) 9.9615%,
+      rgba(255, 165, 0, .06) 94.984%);
+
+  --figma-stroke: linear-gradient(107.5deg,
+      rgba(255, 165, 0, .5),
+      rgba(31, 41, 55, .25));
+}
+
+/* 첫 번째 To-be 카드의 Fill */
+.ai-ux-strategy__row:nth-child(1) .ai-ux-strategy__card--yellow {
+  background: linear-gradient(96.458deg,
+      rgba(255, 255, 255, .03) 7.9912%,
+      rgba(255, 226, 17, .06) 100%);
+  --stroke-inset: -1px;
+}
+
+/* 카드 Gradient Stroke */
+.ai-ux-strategy__card::before {
+  content: "";
+  position: absolute;
+  inset: var(--stroke-inset, 0px);
+  --stroke-inset: -0.5px;
+  border-radius: inherit;
+  padding: var(--figma-stroke-width, 1px);
+  background: var(--figma-stroke);
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+
+.ai-ux-strategy__card--after h5 {
+  margin: 0;
+  color: #ffa500;
+  font-size: clamp(17px, 1vw, 19px);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.ai-ux-strategy__mobile-label {
+  display: none;
+}
+
+/* =========================================
+    07. 화살표 SVG
+========================================= */
+
+.ai-ux-strategy__arrow {
+  position: relative;
+  width: 43px;
+  height: 34px;
+  overflow: hidden;
+  transform: translateY(-2px);
+}
+
+.ai-ux-strategy__arrow img {
+  position: absolute;
+  top: var(--arrow-offset);
+  left: 0;
+
+  display: block;
+  width: 43px;
+  height: 559px;
+  max-width: none;
+  max-height: none;
+}
+
+/* =========================================
+    08. Scroll Entrance Animation
+
+    As-is 4개 순차 등장
+        ↓
+    화살표 4개 등장
+        ↓
+    To-be 4개 순차 등장
+========================================= */
+
+.ai-ux-strategy__card--before,
+.ai-ux-strategy__arrow,
+.ai-ux-strategy__card--after {
+  opacity: 0;
+  translate: 0 23px;
+}
+
+/* As-is 등장 */
+
+.ai-ux-strategy.is-visible .ai-ux-strategy__card--before {
+  animation:
+    ai-ux-strategy-rise 520ms ease-out var(--left-delay) both;
+}
+
+/* 화살표 등장 */
+
+.ai-ux-strategy.is-visible .ai-ux-strategy__arrow {
+  animation:
+    ai-ux-strategy-arrow 360ms ease-out var(--arrow-delay) both;
+}
+
+/* To-be 등장 */
+
+.ai-ux-strategy.is-visible .ai-ux-strategy__card--after {
+  animation:
+    ai-ux-strategy-rise 520ms ease-out var(--right-delay) both;
+}
+
+@keyframes ai-ux-strategy-rise {
+  from {
+    opacity: 0;
+    translate: 0 23px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes ai-ux-strategy-arrow {
+  from {
+    opacity: 0;
+    translate: -18px 0;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+/* =========================================
+    09. Hover
+========================================= */
+
+@media (hover: hover) and (pointer: fine) {
+  .ai-ux-strategy__card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+      0 12px 36px rgba(31, 41, 55, 0.13),
+      4px 18px 40px rgba(31, 41, 55, 0.1);
+  }
+}
+
+/* =========================================
+    10. Tablet
+========================================= */
+
+@media (max-width: 1100px) {
+  .ai-ux-strategy {
+    min-height: 0;
+    padding: 32px 0 95px;
+  }
+
+  .ai-ux-strategy__eyebrow {
+    margin-left: 5%;
+    font-size: 20px;
+  }
+
+  .ai-ux-strategy__intro {
+    width: 90%;
+    margin-top: 65px;
+  }
+
+  .ai-ux-strategy__intro h3 {
+    font-size: clamp(28px, 3.4vw, 38px);
+  }
+
+  .ai-ux-strategy__intro p {
+    font-size: clamp(17px, 2vw, 22px);
+    line-height: 1.5;
+  }
+
+  .ai-ux-strategy__comparison {
+    width: 90%;
+    margin-top: 65px;
+  }
+
+  .ai-ux-strategy__headings h4 {
+    font-size: 26px;
+  }
+
+  .ai-ux-strategy__rows {
+    gap: 22px;
+    margin-top: 26px;
+  }
+
+  .ai-ux-strategy__row {
+    align-items: stretch;
+  }
+
+  .ai-ux-strategy__arrow {
+    align-self: center;
+  }
+
+  .ai-ux-strategy__card {
+    height: auto;
+    min-height: 125px;
+    border-radius: 16px;
+  }
+
+  .ai-ux-strategy__card--before {
+    padding: 14px 18px;
+  }
+
+  .ai-ux-strategy__card--after {
+    padding: 12px 18px;
+    gap: 6px;
+  }
+
+  .ai-ux-strategy__card p {
+    font-size: clamp(15px, 1.65vw, 18px);
+    line-height: 1.45;
+  }
+
+  .ai-ux-strategy__card--after h5 {
+    font-size: 16px;
+  }
+}
+
+
+/* =========================================
+    11. Mobile - 가로 비교 레이아웃
+========================================= */
+
+@media (max-width: 767px) {
+  .ai-ux-strategy {
+    padding: 28px 0 72px;
+  }
+
+  .ai-ux-strategy__eyebrow {
+    margin-left: 20px;
+    font-size: 16px;
+  }
+
+  .ai-ux-strategy__intro {
+    width: calc(100% - 40px);
+    margin-top: 58px;
+  }
+
+  .ai-ux-strategy__intro h3 {
+    font-size: 24px;
+    line-height: 1.45;
+  }
+
+  .ai-ux-strategy__intro p {
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .ai-ux-strategy__intro p span+span {
+    margin-top: 6px;
+  }
+
+  /* 비교 영역 */
+
+  .ai-ux-strategy__comparison {
+    width: calc(100% - 24px);
+    margin-top: 46px;
+  }
+
+  .ai-ux-strategy__headings,
+  .ai-ux-strategy__row {
+    display: grid;
+    grid-template-columns:
+      minmax(0, 1fr) 25px minmax(0, 1fr);
+    column-gap: 7px;
+    align-items: center;
+  }
+
+  .ai-ux-strategy__headings h4 {
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  .ai-ux-strategy__rows {
+    gap: 16px;
+    margin-top: 18px;
+  }
+
+  .ai-ux-strategy__row {
+    align-items: stretch;
+  }
+
+  /* 카드 크기 */
+
+  .ai-ux-strategy__card {
+    height: auto;
+    min-height: 100px;
+    padding: 12px 12px;
+    border-radius: 14px;
+    justify-content: center;
+  }
+
+  .ai-ux-strategy__card--after {
+    gap: 7px;
+    padding: 12px 11px;
+    border-width: 1.5px;
+    --figma-stroke-width: 1.5px
+  }
+
+  /* 카드 본문 글씨 */
+
+  .ai-ux-strategy__card p {
+    font-size: clamp(13px, 3.65vw, 15px);
+    line-height: 1.48;
+    letter-spacing: -0.015em;
+    text-align: left;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  /* 기존 강제 줄바꿈 해제 */
+
+  .ai-ux-strategy__card p span {
+    display: inline;
+  }
+
+  .ai-ux-strategy__card p span+span::before {
+    content: " ";
+  }
+
+  /* To-be 소제목 */
+
+  .ai-ux-strategy__card--after h5 {
+    font-size: clamp(13px, 3.7vw, 16px);
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+
+  .ai-ux-strategy__mobile-label {
+    display: none;
+  }
+
+  /* 화살표 가로 방향 유지 */
+
+  .ai-ux-strategy__arrow {
+    align-self: center;
+    justify-self: center;
+    width: 25px;
+    height: 20px;
+    margin: 0;
+    transform: none;
+  }
+
+  .ai-ux-strategy__arrow img {
+    left: 0;
+    width: 25px;
+    height: 325px;
+    max-width: none;
+    max-height: none;
+  }
+
+  .ai-ux-strategy__row:nth-child(1) .ai-ux-strategy__arrow img {
+    top: 0;
+  }
+
+  .ai-ux-strategy__row:nth-child(2) .ai-ux-strategy__arrow img {
+    top: -101.744px;
+  }
+
+  .ai-ux-strategy__row:nth-child(3) .ai-ux-strategy__arrow img {
+    top: -203.488px;
+  }
+
+  .ai-ux-strategy__row:nth-child(4) .ai-ux-strategy__arrow img {
+    top: -305.233px;
+  }
+
+  .ai-ux-strategy__row:nth-child(1) .ai-ux-strategy__card--yellow {
+    --stroke-inset: -0.75px;
+  }
+}
+
+/* =========================================
+    12. Accessibility
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .ai-ux-strategy__card,
+  .ai-ux-strategy__arrow {
+    opacity: 1 !important;
+    translate: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}

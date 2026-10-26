@@ -1,0 +1,96 @@
+
+/* =========================================
+05. MAIN DESIGN
+========================================= */
+
+.p-main,
+.p-main * {
+  box-sizing: border-box;
+}
+
+/* 01. Desktop */
+
+.p-main {
+  position: relative;
+  overflow: hidden;
+
+  width: 100%;
+  max-width: 1920px;
+  aspect-ratio: 1920 / 1127;
+  margin: 0 auto;
+
+  background: #faf4e7;
+  color: #172a52;
+  font-family: "Pretendard", sans-serif;
+}
+
+.p-main__title {
+  position: absolute;
+  z-index: 2;
+
+  top: 3.1%;
+  left: 1.615%;
+
+  margin: 0;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.p-main__image {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  display: block;
+  width: 92.708%;
+  height: auto;
+
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+}
+
+/* 02. Tablet */
+
+@media (max-width: 1100px) {
+  .p-main {
+    aspect-ratio: auto;
+    padding: 32px 5% 60px;
+  }
+
+  .p-main__title {
+    position: relative;
+    top: auto;
+    left: auto;
+
+    font-size: 20px;
+  }
+
+  .p-main__image {
+    position: relative;
+    top: auto;
+    left: auto;
+
+    width: 100%;
+    margin: 35px auto 0;
+
+    transform: none;
+  }
+}
+
+/* 03. Mobile */
+
+@media (max-width: 767px) {
+  .p-main {
+    padding: 28px 20px 50px;
+  }
+
+  .p-main__title {
+    font-size: 16px;
+  }
+
+  .p-main__image {
+    margin-top: 26px;
+  }
+}
